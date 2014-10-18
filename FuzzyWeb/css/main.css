@@ -1,0 +1,22 @@
+body {
+	margin-left: 0px;
+	font-family: 'Open Sans', Arial;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	width:100%;
+	min-width:1210px;
+}
+:focus {
+outline: 0;
+}
+.boton {
+	background-image: url(../img/botonm.png);
+	width: 301px;
+	height: 32px;
+	cursor: pointer;
+	padding-top: 14px;
+	padding-left:10px;
+	border: 0;
+	font-size:14px;
+}
