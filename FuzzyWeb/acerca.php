@@ -1,5 +1,5 @@
 <?php
-include ("header.php"); // h
+include ("header.php");
 ?>
 <script>
 seleccionado = "introduccion";
