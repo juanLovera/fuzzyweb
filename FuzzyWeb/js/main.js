@@ -51,6 +51,7 @@ function validarCampos()
     arreglo = ['nombre','apellido','institucion','ocupacion','pais','mail','contrasena','confirmar'];
     
     for(i=0; i < arreglo.length; i++){
+        document.getElementById(arreglo[i]).style.borderColor = "#045d6f";
     	if (document.getElementById(arreglo[i]).value == "") {
             if (arreglo[i] == "nombre"){
                alert("El campo 'Nombre' no puede estar vacío.");

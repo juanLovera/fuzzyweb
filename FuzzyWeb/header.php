@@ -18,7 +18,8 @@
             <input id="barra_signin_correo" onclick="clearSearch('Correo Electr&oacute;nico',this);" type="text" value="Correo Electr&oacute;nico" style="font-size:12px; color:#B1B1B1; background-image:url(img/signin_input.png); width:233px; height:38px; border-width:0; padding-left:8px; padding-right:4px; margin-left: 25px; margin-top:25px; font-size:12px;"/>
             <input id="barra_signin_contrasena" onclick="clearSearch('Contrase&ntilde;a',this);" type="text" value="Contrase&ntilde;a" style="font-size:12px; color:#B1B1B1; background-image:url(img/signin_input.png); width:233px; height:38px; border-width:0; padding-left:8px; padding-right:4px; margin-left: 25px; margin-top:17px; font-size:12px;"/>
             <div style="font-size:12px; margin-top:5px; margin-left:25px;">
-                Registrarse &nbsp;-&nbsp; ¿Olvid&oacute; su contrase&ntilde;a?
+                    <a href="comunidad.php" style="color:#1B1B1B;" >Registrarse</a> 
+                &nbsp; -&nbsp;  ¿Olvid&oacute; su contrase&ntilde;a?
                 </div>
             <img src="img/boton-ingresar.png" width="99" height="30" alt="ingresar" style="margin-left: 205px; margin-top:15px" />
             </form>
