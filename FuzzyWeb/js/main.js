@@ -1,8 +1,27 @@
-function clearSearch()
+function clearSearch(s,o)
 {
-	o = document.getElementById("barra_busqueda");
-	if (o.value == "Buscar")
+	if (o.value == s)
+        {
 		o.value = "";
+                o.style.color= "#1b1b1b";
+        }
+            
+}
+
+function abrirSignIn()
+{
+    document.getElementById('botoniniciarsesion').src="img/boton-iniciarS2.png";
+    $("#marco_signin").slideDown("fast");
+    document.getElementById('botoniniciarsesion').onclick=cerrarSignIn;
+    
+}
+
+function cerrarSignIn()
+{
+    document.getElementById('botoniniciarsesion').src="img/boton-iniciarS.png";
+    $("#marco_signin").slideUp("fast");
+    document.getElementById('botoniniciarsesion').onclick=abrirSignIn;
+    
 }
 
 function cambiarPagina(l,o)
