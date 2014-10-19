@@ -3,25 +3,6 @@ include ("header.php");
 ?>
 <script>
 seleccionado = "registro";
-
-function FormValidation(){
-    //First Name Validation 
-    var fn=document.getElementById('nombre').value;
-    if(fn == ""){
-        alert('Ingrese su nombre');
-        document.getElementById('nombre').style.borderColor = "red";
-        return false;
-    }else{
-        document.getElementById('nombre').style.borderColor = "green";
-    }
-    if (/^[0-9]+$/.test(document.getElementById("nombre").value)) {
-        alert("First Name Contains Numbers!");
-        document.getElementById('nombre').style.borderColor = "red";
-        return false;
-    }else{
-        document.getElementById('nombre').style.borderColor = "green";
-    }
-}
 </script>
 <div id="barra_azul" style="background-image:url(img/bg_azul.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
 	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1210px; padding-top:30px; display:table">
@@ -37,10 +18,10 @@ function FormValidation(){
             <div id="registro">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>REGISTRO</strong><br/><br/></span>
-            <form><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
-                    <tr><td>Nombre: </td><td><input type="text" FormValidation() name="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Apellido: </td><td><input type="text" name="apellido" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td></tr>
-                    <tr><td>Institución: </td><td><input type="text" name="apellido" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Ocupación: </td><td><input type="text"  name="ocupacion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                    <tr><td>País de residencia: </td><td><select name="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;">
+            <form onsubmit="return validarCampos()"><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
+                    <tr><td>Nombre: </td><td><input type="text" id="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Apellido: </td><td><input type="text" id="apellido" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td></tr>
+                    <tr><td>Institución: </td><td><input type="text" id="institucion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Ocupación: </td><td><input type="text"  id="ocupacion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                    <tr><td>País de residencia: </td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;">
                                 <option value="seleccione">Seleccione...</option>
 <option value="AF">Afganistán</option>
 <option value="AL">Albania</option>
@@ -278,9 +259,9 @@ function FormValidation(){
 <option value="ZW">Zimbabue</option>
 </select></td></tr>
                     <tr><td style="padding-top:50px;"><strong>Datos de la Cuenta</strong></td></tr>
-                    <tr><td>E-mail: </td><td><input type="text" name="mail" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Contraseña: </td><td><input type="password" name="contrasena" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                    <tr><td>Confirmar contraseña: </td><td><input type="password" name="confirmar" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                    </table><input type="image" src="img/boton-registrar.png" alt="Registrar" style="margin-top: 50px; margin-left: 350px;"></form>
+                    <tr><td>E-mail: </td><td><input type="text" id="mail" validarEmail() style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Contraseña: </td><td><input type="password" id="contrasena" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                    <tr><td>Confirmar contraseña: </td><td><input type="password" id="confirmar" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                </table><input type="image" src="img/boton-registrar.png" alt="Registrar" style="margin-top: 50px; margin-left: 350px;"></form>
             </div>
             </div>
             
