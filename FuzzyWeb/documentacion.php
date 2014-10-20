@@ -1,4 +1,6 @@
 <?php
+session_start();
+include_once("inc/includes.inc.php");
 include ("header.php");
 ?>
 <script>

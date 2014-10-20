@@ -1,11 +1,6 @@
-function clearSearch(s,o)
-{
-	if (o.value == s)
-        {
-		o.value = "";
-                o.style.color= "#1b1b1b";
-        }
-            
+function clearSearch(o)
+{   
+    o.style.color= "#1b1b1b";          
 }
 
 function abrirSignIn()
@@ -156,6 +151,30 @@ function registrar()
             })
     });
     
+}
+
+function iniciarSesion()
+{
+    $("#form-inicio").hide();
+    $("#signin-loading").show();
+    rq = "process/signin.php?mail="+$("#barra_signin_correo").val()+"&contrasena="+$("#barra_signin_contrasena").val();
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#signin-loading").hide();
+                if (res != "OK")
+                {
+                    $("#signin-error").fadeIn("fast");
+                }
+                else
+                {
+                    location.href="index.php";
+                }
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al enviar el formulario.");
+                        $("#form-inicio").fadeIn("fast");
+                        $("#signin-loading").hide();
+            })
 }
 
 	

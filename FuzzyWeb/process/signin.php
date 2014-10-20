@@ -3,45 +3,35 @@
  * signup.php
  * Recibe campos y procesa el registro de un nuevo usuario.
  */
+session_start();
 include_once("../inc/includes.inc.php");
 
 $mail = (string)htmlentities($_GET['mail']);
 $contrasena = (string)htmlentities($_GET['contrasena']);
 
+// Se encripta clave
+$contrasena = encriptar_pass($contrasena);
 
 if (empty($mail) || empty($contrasena))
 {
-    die("Debe ingresar su Email y su contraseña");
+    die("ERROR");
 }
 
 // Conexion a DB
 $db = conectar_db();
 $coleccion = $db->usuario;
 
-// Se encripta clave
-$contrasena = encriptar_pass($contrasena);
 
-// Se verifica si el email ya existe
-$cursor = $coleccion->find(array("correo" => $mail));
-$cursor = iterator_to_array($cursor);
-if (count($cursor) != 0)
+// Se verifica si el usuario existe
+$cursor = $coleccion->findOne(array("correo" => $mail, "contrasena" => $contrasena));
+if ($cursor == NULL)
 {
-    die("El email ingresado ya se encuentra registrado.");
+    die("ERROR");
 }
+// Todo OK. Se procede a crear sesion
+$_SESSION['ss_key'] = $G_SKEY;
+$_SESSION['email'] = $cursor['correo'];
+$_SESSION['nombre'] = $cursor['nombre'];
 
-// Todo OK. Se procede a realizar el registro
-$user = array(
-    "nombre" => $nombre,
-    "apellido" => $apellido,
-    "correo" => $mail,
-    "tipo" => "U_Normal",
-    "ubicacion" => $ubicacion,
-    "ocupacion" => $ocupacion,
-    "institucion" => $institucion,
-    "contrasena" => $contrasena
-);
-
-$coleccion->insert($user);
 echo "OK";
-
 ?>

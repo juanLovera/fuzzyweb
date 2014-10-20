@@ -1,4 +1,6 @@
 <?php
+session_start();
+include_once("inc/includes.inc.php");
 include ("header.php");
 ?>
 <div id="barra_azul" style="background-image:url(img/bg_azul.jpg); height:343px; width:100%;">
