@@ -43,7 +43,9 @@ if ($paso == 1)
 }
 else
 {
-    if ($confirmacion != $_GET['conf'])
+    $contrasena = (string)htmlentities($_GET['contrasena']);
+    $confirmar = (string)htmlentities($_GET['confirmar']);
+    if ($confirmacion != $_GET['con'])
     {
         die("Código de confirmación inválido.");
     }
@@ -55,9 +57,11 @@ else
     {
         die("Las claves introducidas no coinciden.");
     }
-    $contrasena = encriptar_pass($cursor['contrasena']);
+    
+    $contrasena = encriptar_pass($contrasena);
+    $newdata = array('$set' => array("contrasena" => $contrasena));
     $cursor = $coleccion->update(array("correo" => $mail), 
-                                 array("contrasena" => $contrasena));
+                                 $newdata);
     echo "OK";
 }
 ?>
