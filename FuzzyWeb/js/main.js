@@ -177,4 +177,30 @@ function iniciarSesion()
             })
 }
 
+function recuperarClave()
+{
+    $("#recuperar-form").hide();
+    $("#recuperar-loading").show();
+    rq = "process/recuperarpass.php?paso=1&mail="+$("#correoRecuperarContrasena").val();
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#recuperar-loading").hide();
+                if (res != "OK")
+                {
+                    alert(res);
+                    $("#recuperar-form").fadeIn("fast");
+                }
+                else
+                {
+                    $("#recuperar-ok").fadeIn();
+                }
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al enviar el formulario.");
+                        $("#recuperar-form").fadeIn("fast");
+                        $("#recuperar-loading").hide();
+            })
+}
+
+
 	

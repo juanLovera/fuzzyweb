@@ -288,18 +288,26 @@ else
             <div id="registro-loading" style="text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
-            <div id="registro-ok" style="display: none; text-align: center">
-                <br/><br/><br/><br/><strong>Registro completado.</strong><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div id="registro-ok" style="display: none; text-align: center; padding-top: 60px">
+                <strong>Registro completado.</strong>
             </div>
             </div>
             </div>
             
             <div id="recuperarContrasena" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>RECUPERAR CONTRASE&Ntilde;A</strong><br/><br/></span>
-            Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
+            <span style="color:#023e44"><strong>RECUPERAR CONTRASE&Ntilde;A</strong></span>
+            <div id="recuperar-form">
+            <br/><br/>Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
             <input type="text" id="correoRecuperarContrasena" onfocus="clearSearch(this);" placeholder="Correo Electr&oacute;nico" style="border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px; margin-left: 300px; margin-top:30px;" />
-            <img src="img/boton-recuperar.png" width="99" height="30" alt="recuperar" style="margin-left: 340px; margin-top:15px" />
+            <a href="javascript:void(0)" onclick="recuperarClave()"><img src="img/boton-recuperar.png" width="99" height="30" alt="recuperar" style="margin-left: 340px; margin-top:15px; border:0" /></a>
+            </div>
+            <div id="recuperar-loading" style="text-align: center; display: none; padding-top: 60px;">
+                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
+            </div>
+            <div id="recuperar-ok" style="display: none; text-align: center; padding-top: 60px;">
+                <strong>Se le ha enviado un correo con las instrucciones para recuperar su contraseña.</strong>
+            </div>
             </div>
             </div>
             
