@@ -120,7 +120,39 @@ function validarCampos()
             }    
         }    
     }
-    return false;
+    return true;
+}
+
+function registrar()
+{
+    if (!validarCampos())
+        return;
+    $("#registro-form").slideUp("fast", function (){
+    $("#registro-loading").show();
+    rq = "process/signup.php?nombre="+$("#nombre").val()+"&apellido="+$("#apellido").val()
+          +"&mail="+$("#mail").val()+"&contrasena="+$("#contrasena").val()
+          +"&confirmar="+$("#confirmar").val()+"&ubicacion="+$("#ubicacion").val()
+          +"&institucion="+$("#institucion").val()+"&ocupacion="+$("#ocupacion").val();
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#registro-loading").hide();
+                if (res != "OK")
+                {
+                    alert(res);
+                    $("#registro-form").slideDown("fast");
+                }
+                else
+                {
+                    $("#registro-ok").fadeIn("fast");
+                }
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al enviar el formulario.");
+                        $("#registro-form").slideDown("fast");
+                        $("#registro-loading").hide();
+            })
+    });
+    
 }
 
 	

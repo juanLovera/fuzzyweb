@@ -18,7 +18,8 @@ seleccionado = "registro";
             <div id="registro">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>REGISTRO</strong><br/><br/></span>
-            <form onsubmit="return validarCampos()"><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
+            <div id="registro-form">
+            <form><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
                     <tr><td>Nombre: </td><td><input type="text" id="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Apellido: </td><td><input type="text" id="apellido" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td></tr>
                     <tr><td>Institución: </td><td><input type="text" id="institucion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Ocupación: </td><td><input type="text"  id="ocupacion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                     <tr><td>País de residencia: </td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;">
@@ -261,7 +262,13 @@ seleccionado = "registro";
                     <tr><td style="padding-top:50px;"><strong>Datos de la Cuenta</strong></td></tr>
                     <tr><td>E-mail: </td><td><input type="text" id="mail" validarEmail() style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Contraseña: </td><td><input type="password" id="contrasena" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                     <tr><td>Confirmar contraseña: </td><td><input type="password" id="confirmar" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                </table><input type="image" src="img/boton-registrar.png" alt="Registrar" style="margin-top: 50px; margin-left: 350px;"></form>
+                </table><a href="javascript:void(0)"><img src="img/boton-registrar.png" alt="Registrar" style="margin-top: 50px; margin-left: 350px; border:0" onclick="registrar()"></a></form></div>
+            <div id="registro-loading" style="text-align: center; display: none">
+                <img src="img/loading.gif" width="310" height="310" alt="Cargando" />
+            </div>
+            <div id="registro-ok" style="display: none; text-align: center">
+                <br/><br/><br/><br/><strong>Registro completado.</strong><br/><br/><br/><br/><br/><br/><br/><br/>
+            </div>
             </div>
             </div>
             
