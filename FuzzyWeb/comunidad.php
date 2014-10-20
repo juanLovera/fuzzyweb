@@ -10,6 +10,7 @@ seleccionado = "registro";
         <div id="cuadroblanco" style="background-image:url(img/textbox_middle.png); margin-left:auto; margin-right:auto; width:1200px; min-height:500px; position:relative; display:table">
         	<div id="menuizquierdo" style="width:322px; position: absolute; top: -15px; left:0">
                     <div id="selected" class="boton" onClick="cambiarPagina('registro',this)" style="background-image:url(img/boton_seleccionado.png); font-weight:bold">Registro</div>
+                <div class="boton" onClick="cambiarPagina('recuperarContrasena',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Recuperar Contrase&ntilde;a</div>
             	<div class="boton" onClick="cambiarPagina('contactanos',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Contáctanos</div>
                 <div class="boton" onClick="cambiarPagina('donar',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Donar</div>
                 <div class="boton" onClick="cambiarPagina('compartir',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Compartir</div>
@@ -260,7 +261,7 @@ seleccionado = "registro";
 <option value="ZW">Zimbabue</option>
 </select></td></tr>
                     <tr><td style="padding-top:50px;"><strong>Datos de la Cuenta</strong></td></tr>
-                    <tr><td>E-mail: </td><td><input type="text" id="mail" validarEmail() style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Contraseña: </td><td><input type="password" id="contrasena" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                    <tr><td>E-mail: </td><td><input type="text" id="mail" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Contraseña: </td><td><input type="password" id="contrasena" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                     <tr><td>Confirmar contraseña: </td><td><input type="password" id="confirmar" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                 </table><a href="javascript:void(0)"><img src="img/boton-registrar.png" alt="Registrar" style="margin-top: 50px; margin-left: 350px; border:0" onclick="registrar()"></a></form></div>
             <div id="registro-loading" style="text-align: center; display: none">
@@ -269,6 +270,15 @@ seleccionado = "registro";
             <div id="registro-ok" style="display: none; text-align: center">
                 <br/><br/><br/><br/><strong>Registro completado.</strong><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
+            </div>
+            </div>
+            
+            <div id="recuperarContrasena" style="display:none;">
+            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
+            <span style="color:#023e44"><strong>RECUPERAR CONTRASE&Ntilde;A</strong><br/><br/></span>
+            Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
+            <input type="text" id="correoRecuperarContrasena" onclick="clearSearch('Correo Electr&oacute;nico',this);" value="Correo Electr&oacute;nico" style="border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px; margin-left: 300px; margin-top:30px;" />
+            <img src="img/boton-recuperar.png" width="99" height="30" alt="recuperar" style="margin-left: 340px; margin-top:15px" />
             </div>
             </div>
             
