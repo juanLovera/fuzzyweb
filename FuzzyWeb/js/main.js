@@ -101,6 +101,7 @@ function validarCampos()
             if (!re.test(document.getElementById('mail').value)) {
 		alert("Ingrese un e-mail válido.");
                 document.getElementById(arreglo[i]).style.borderColor = "red";
+                return false;
             }
         }
     }    
@@ -110,13 +111,15 @@ function validarCampos()
             if (document.getElementById(arreglo[i]).value != document.getElementById(arreglo[i+1]).value) { 
                         alert("Su contraseña y confirmación de contraseña no coinciden.");
                         document.getElementById('contrasena').style.borderColor = "red";
-                        document.getElementById('confirmar').style.borderColor = "red";   
+                        document.getElementById('confirmar').style.borderColor = "red";
+                        return false;
                         
             }
             if ((document.getElementById(arreglo[i]).value.length < 8) || (document.getElementById(arreglo[i]).value.length > 12)) {
                 alert("La contraseña debe ser de mínimo 8 caracteres y máximo 12 caracteres.");
                 document.getElementById('contrasena').style.borderColor = "red";
-                document.getElementById('confirmar').style.borderColor = "red";  
+                document.getElementById('confirmar').style.borderColor = "red";
+                return false;
             }    
         }    
     }
