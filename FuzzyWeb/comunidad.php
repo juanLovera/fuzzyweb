@@ -45,7 +45,7 @@ else
                     <tr><td>Nombre: </td><td><input type="text" id="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Apellido: </td><td><input type="text" id="apellido" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td></tr>
                     <tr><td>Institución: </td><td><input type="text" id="institucion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td>Ocupación: </td><td><input type="text"  id="ocupacion" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                     <tr><td>País de residencia: </td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;">
-                                <option value="seleccione">Seleccione...</option>
+                                <option value="">Seleccione...</option>
 <option value="AF">Afganistán</option>
 <option value="AL">Albania</option>
 <option value="DE">Alemania</option>

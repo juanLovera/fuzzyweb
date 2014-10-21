@@ -38,6 +38,96 @@ function cambiarPagina(l,o)
 	
 }
 
+function validarModificarPerfil()
+{
+    arreglo = ['nombre','apellido','ocupacion','institucion','pais']
+    
+    for(i=0; i < arreglo.length; i++){
+        document.getElementById(arreglo[i]).style.borderColor = "#045d6f";
+    	if (document.getElementById(arreglo[i]).value == "") {
+            if (arreglo[i] == "nombre"){
+               alert("El campo 'Nombre' no puede estar vacío.");
+               document.getElementById(arreglo[i]).style.borderColor = "red"; 
+                return false;
+            }
+            if (arreglo[i] == "apellido"){
+               alert("El campo 'Apellido' no puede estar vacío.");
+               document.getElementById(arreglo[i]).style.borderColor = "red"; 
+                return false;
+            }
+            if (arreglo[i] == "institucion"){
+               alert("El campo 'Institución' no puede estar vacío.");
+               document.getElementById(arreglo[i]).style.borderColor = "red"; 
+                return false;
+            }
+            if (arreglo[i] == "ocupacion"){
+               alert("El campo 'Ocupación' no puede estar vacío.");
+               document.getElementById(arreglo[i]).style.borderColor = "red"; 
+                return false;
+            }
+            if (arreglo[i] == "pais"){
+               alert("Debe seleccionar un 'País de residencia'.");
+               document.getElementById(arreglo[i]).style.borderColor = "red"; 
+                return false;
+            }   
+        }
+    }
+    
+    return true;
+}
+
+function validarModificarCorreo()
+{
+    var re = /\S+@\S+\.\S+/;
+    
+    document.getElementById('mail').style.borderColor = "#045d6f";
+    if (document.getElementById('mail').value == "") {
+        alert("El campo 'Correo' no puede estar vacío.");
+            document.getElementById('mail').style.borderColor = "red"; 
+            return false;
+    }
+    
+    if (!re.test(document.getElementById('mail').value)) {
+        alert("Ingrese un e-mail válido.");
+        document.getElementById('mail').style.borderColor = "red";
+        return false;
+    }
+    
+    return true;
+}
+
+function validarModificarContrasena()
+{
+    document.getElementById('contrasena').style.borderColor = "#045d6f";
+    document.getElementById('confirmar').style.borderColor = "#045d6f";
+    if (document.getElementById('contrasena').value == "") {
+        alert("El campo 'Contraseña' no puede estar vacío.");
+            document.getElementById('contrasena').style.borderColor = "red"; 
+            return false;
+    }
+    
+    if (document.getElementById('confirmar').value == "") {
+        alert("El campo 'Confirmar Contraseña' no puede estar vacío.");
+            document.getElementById('confirmar').style.borderColor = "red"; 
+            return false;
+    }
+    
+    if (document.getElementById('contrasena').value != document.getElementById('confirmar').value) { 
+        alert("Su contraseña y confirmación de contraseña no coinciden.");
+        document.getElementById('contrasena').style.borderColor = "red";
+        document.getElementById('confirmar').style.borderColor = "red";
+        return false;
+    }
+    
+    if ((document.getElementById('contrasena').value.length < 8) || (document.getElementById('confirmar').value.length > 12)) {
+        alert("La contraseña debe ser de mínimo 8 caracteres y máximo 12 caracteres.");
+        document.getElementById('contrasena').style.borderColor = "red";
+        document.getElementById('confirmar').style.borderColor = "red";
+        return false;
+    }
+    
+    return true;
+}
 
 function validarCampos()
 {
