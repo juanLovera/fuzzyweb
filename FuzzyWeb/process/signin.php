@@ -32,6 +32,11 @@ if ($cursor == NULL)
 $_SESSION['ss_key'] = $G_SKEY;
 $_SESSION['email'] = $cursor['correo'];
 $_SESSION['nombre'] = $cursor['nombre'];
+$_SESSION['apellido'] = $cursor['apellido'];
+$_SESSION['institucion'] = $cursor['institucion'];
+$_SESSION['ocupacion'] = $cursor['ocupacion'];
+$_SESSION['ubicacion'] = $cursor['ubicacion'];
+
 
 echo "OK";
 ?>

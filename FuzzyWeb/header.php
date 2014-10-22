@@ -42,7 +42,7 @@
            else
            {
         ?>
-        <div id="signedinuser" style="position:absolute; left:680px; top:25px; width: 200px; font-size: 13px; text-align: right"><?php echo $_SESSION['nombre']; ?></div>
+        <div id="signedinuser" style="position:absolute; left:680px; top:25px; width: 200px; font-size: 13px; text-align: right"><a href="perfil.php"><?php echo $_SESSION['nombre']; ?></a></div>
         <a href="process/signout.php"><img id="botoncerrarsesion" src="img/boton-cerrar.png" width="99" height="30" alt="Cerrar sesión" style="position:absolute; left:895px; top:20px;" /></a>
         <?php
            }

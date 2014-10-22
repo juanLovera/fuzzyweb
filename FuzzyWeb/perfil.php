@@ -19,17 +19,17 @@ seleccionado = "verPerfil";
             <div id="verPerfil">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>PERFIL</strong><br/><br/></span>
-            <table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td>Fulanito</td><td style="padding-left:50px"><strong>Apellido: </strong></td><td>De Tal</td></tr>
-                   <tr><td><strong>Correo: </strong></td><td>fulanitodetal@gmail.com</td><td style="padding-left:50px"><strong>Institución: </strong></td><td>Universidad Simón Bolívar</td></tr>
-                   <tr><td><strong>Ocupación: </strong></td><td>Estudiante</td><td style="padding-left:50px"><strong>País: </strong></td><td>Venezuela</td></tr>
+            <table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION['nombre']; ?></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><?php echo $_SESSION['apellido']; ?></td></tr>
+                   <tr><td><strong>Correo: </strong></td><td><?php echo $_SESSION['email']; ?></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><?php echo $_SESSION['institucion']; ?></td></tr>
+                   <tr><td><strong>Ocupación: </strong></td><td><?php echo $_SESSION['ocupacion']; ?></td><td style="padding-left:50px"><strong>País de residencia: </strong></td><td><?php echo $_SESSION['ubicacion']; ?></td></tr>
                    </table>
             </div>
             </div>
             <div id="modificarPerfil" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>MODIFICAR PERFIL</strong><br/><br/></span>
-            <form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value="Fulanito" id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value="De Tal" id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                   <tr><td><strong>Ocupación: </strong></td><td><input type="text" value="Estudiante" id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value="Universidad Simón Bolívar" id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+            <form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value=<?php echo $_SESSION['nombre']; ?> id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value=<?php echo $_SESSION['apellido']; ?> id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                   <tr><td><strong>Ocupación: </strong></td><td><input type="text" value=<?php echo $_SESSION['ocupacion']; ?> id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value=<?php echo $_SESSION['institucion']; ?> id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    <tr><td><strong>País: </strong></td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/>
                                 <option value="">Seleccione...</option>
 <option value="AF">Afganistán</option>
@@ -260,7 +260,7 @@ seleccionado = "verPerfil";
 <option value="UY">Uruguay</option>
 <option value="UZ">Uzbekistán</option>
 <option value="VU">Vanuatu</option>
-<option value="VE" selected="selected">Venezuela</option>
+<option value="VE">Venezuela</option>
 <option value="VN">Vietnam</option>
 <option value="YE">Yemen</option>
 <option value="YU">Yugoslavia</option>
@@ -274,7 +274,7 @@ seleccionado = "verPerfil";
              <div id="modificarCorreo" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>MODIFICAR CORREO</strong><br/><br/></span>
-            <form><table cellpadding="10"><tr><td><strong>Correo: </strong></td><td><input type="text" value="fulanitodetal@gmail.com" id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+            <form><table cellpadding="10"><tr><td><strong>Correo: </strong></td><td><input type="text" value=<?php echo $_SESSION['email']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    
                    </table>
             <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left:300px; margin-top: -42px;"></form>
