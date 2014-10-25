@@ -267,6 +267,11 @@ function iniciarSesion()
             })
 }
 
+function cambiarTextoDescarga()
+{
+    document.getElementById("textodescarga").innerText = "Para acceder a las descargas debes iniciar sesión o registrarte.";
+}
+
 function recuperarClave()
 {
      $("#recuperar-form").hide();
