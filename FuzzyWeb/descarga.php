@@ -22,13 +22,22 @@ seleccionado = "descarga";
                     <span style="color:#023e44"><strong>DESCARGA</strong></span><br/><br/>
                     <div style="background-color:#F7F7F7; width:750px; padding:16px; text-align:justify">
                         <strong>Descarga 1</strong> - <span style="color:#828282">10 de Octubre de 2014</span><br/><br/>
-                        Descripción de la descarga 1.<br/><br/>
-                        <div style="padding-left:500px; text-align:right;"><img src="img/descarga_icono.png" width="16" height="16" alt="Descargar" /> Descargar<br/></div>
-                    </div>
-                    <div style="background-color:#F7F7F7; width:750px; padding:16px; text-align:justify; margin-top:10px;">
-                        <strong>Descarga 2</strong> - <span style="color:#828282">02 de Octubre de 2014</span><br/><br/>
-                        Descripción de la descarga 2.<br/><br/>
-                        <div style="padding-left:500px; text-align:right;"><img src="img/descarga_icono.png" width="16" height="16" alt="Descargar" /> Descargar<br/></div>
+                        <?php
+                        if ($_SESSION["ss_key"] == $G_SKEY)
+                        {
+                        ?>
+                        Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.<br/><br/>
+                        <div style="padding-left:500px; text-align:right;"><a href="downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip"><img src="img/descarga_icono.png" width="16" height="16" alt="Descargar" /> Descargar</a><br/></div>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                        Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.<br/><br/>
+                        <div style="padding-left:100px; text-align:right;"><img onclick="cambiarTextoDescarga();" src="img/descarga_icono.png" width="16" height="16" alt="Descargar" /> <span onclick="cambiarTextoDescarga();" id="textodescarga">Descargar</span><br/></div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
