@@ -9,6 +9,7 @@
 
     ini_set("session.cookie_lifetime","360");
     session_start();
+    $_SESSION['term_auth'] = 'true';
 
     //////////////////////////////////////////////////////////////////
     // Globals
