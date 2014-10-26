@@ -27,14 +27,14 @@ seleccionado = "descarga";
                         {
                         ?>
                         Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.<br/><br/>
-                        <div style="padding-left:500px; text-align:right;"><a href="downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip"><img src="img/descarga_icono.png" width="16" height="16" alt="Descargar" /> Descargar</a><br/></div>
+                        <div style="padding-left:500px; text-align:right;"><a href="downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip"><img src="img/descarga_icono.png" width="16" height="16" alt="Descargar" style="margin-right: 6px" /> Descargar</a><br/></div>
                         <?php
                         }
                         else
                         {
                         ?>
                         Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.<br/><br/>
-                        <div style="padding-left:100px; text-align:right;"><img onclick="cambiarTextoDescarga();" src="img/descarga_icono.png" width="16" height="16" alt="Descargar" /> <span onclick="cambiarTextoDescarga();" id="textodescarga">Descargar</span><br/></div>
+                        <div style="padding-left:100px; text-align:right;"><img onclick="cambiarTextoDescarga();" src="img/descarga_icono.png" width="16" height="16" alt="Descargar" style="margin-right: 6px" /><span onclick="cambiarTextoDescarga();" id="textodescarga"><a href="javascript:void(0)">Descargar</a></span><br/></div>
                         <?php
                         }
                         ?>

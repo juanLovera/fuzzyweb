@@ -5,6 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+session_start();
 include_once("../inc/includes.inc.php");
 $paso = $_GET['paso'];
 
@@ -13,7 +14,7 @@ $db = conectar_db();
 $coleccion = $db->usuario;
 $cursor = $coleccion->findOne(array("correo" => $_SESSION['email']));
 
-if ($paso == 1)
+if ($paso == "1")
 {
     $nombre = (string)htmlentities($_GET['nombre']);
     $apellido = (string)htmlentities($_GET['apellido']);
@@ -57,7 +58,7 @@ if ($paso == 1)
     $_SESSION['ocupacion'] = $ocupacion;
     $_SESSION['ubicacion'] = $pais;
 
-} elseif ($paso == 2)
+} elseif ($paso == "2")
 {
     $mail = (string)htmlentities($_GET['mail']);
     
@@ -91,4 +92,5 @@ if ($paso == 1)
     $cursor = $coleccion->update(array("correo" => $_SESSION['email']), 
                                  $newdata);
 }
+echo "OK";
 ?>
