@@ -273,22 +273,24 @@ seleccionado = "verPerfil";
             </div>
              <div id="modificarCorreo" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>MODIFICAR CORREO</strong><br/><br/></span>
-            <form><table cellpadding="10"><tr><td><strong>Correo: </strong></td><td><input type="text" value=<?php echo $_SESSION['email']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+            <span style="color:#023e44"><strong>MODIFICAR CORREO</strong></span>
+            <br/><br/>Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
+            <form><table cellpadding="10"><tr><td><input type="text" value=<?php echo $_SESSION['email']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
                    
-                   </table>
-            <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left:300px; margin-top: -42px;"></form>
+            </table>       
+            <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left: 340px; margin-top:15px;"></form>
             
             </div>
             </div>
              <div id="modificarContrasena" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>MODIFICAR CONTRASEÑA</strong><br/><br/></span>
-               <form><table cellpadding="10"><tr><td><strong>Contraseña: </strong></td><td><input type="password" value="" id="contrasena" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                       <tr><td><strong>Confirmar Contraseña: </strong></td><td><input type="password" value="" id="confirmar" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+            Ingrese su nueva contraseña.
+            <form><table><tr><td><input type="password" value="" id="contrasena" onfocus="clearSearch(this);" placeholder="Contraseña" style="margin-left: 300px; margin-top:15px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                    <tr><td><input type="password" value="" id="confirmar" placeholder="Confirmar Contraseña" onfocus="clearSearch(this);" style="margin-top:15px; margin-left: 300px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    
                    </table>
-            <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left:225px; margin-top: 40px;"></form>
+            <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left: 340px; margin-top:30px; border: 0"></form>
          
             </div>
             </div>
