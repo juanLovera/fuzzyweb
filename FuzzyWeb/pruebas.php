@@ -12,26 +12,21 @@ seleccionado = "pruebasenlinea";
         <div id="cuadroblanco" style="background-image:url(img/textbox_middle.png); margin-left:auto; margin-right:auto; width:1200px; min-height:500px; position:relative; display:table">
         	<div id="menuizquierdo" style="width:322px; position: absolute; top: -15px; left:0">
             	<div id="selected" class="boton" onClick="cambiarPagina('pruebasenlinea',this)" style="background-image:url(img/boton_seleccionado.png); font-weight:bold">Pruebas en Línea</div>
-                <div class="boton" onClick="cambiarPagina('tipo2',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Pruebas Tipo 2</div>
-                <div class="boton" onClick="cambiarPagina('tipo3',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Pruebas Tipo 3</div>
+                <div class="boton" onClick="cambiarPagina('consola',this); document.getElementById('conso').contentWindow.document.getElementById('consotext').focus()" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Pruebas en consola</div>
+                <div class="boton" onClick="cambiarPagina('demostracion',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Demostración de funcionamiento</div>
             </div>
             <div id="pruebasenlinea">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>PRUEBAS EN LÍNEA</strong><br/><br/></span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque
+            Mini manual de cómo usar las pruebas en línea.
             </div>
             </div>
-            <div id="tipo2" style="display:none;">
-            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>PRUEBAS TIPO 2</strong><br/><br/></span>
-            <div style=" border:1px solid; padding:150px; margin:100px; margin-top:30px; border-color:#000; text-align:center;"><br/><strong>WebApp Tipo 2</strong><br/></div>
+            <div id="consola" style="display:none;">
+            <iframe id="conso" style="margin-left: auto; margin-right: auto; width: 810px; height: 400px; position: absolute; left: 350px" src="http://localhost/terminal/"></iframe>
+
             </div>
-            </div>
-             <div id="tipo3" style="display:none;">
-            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>PRUEBAS TIPO 3</strong><br/><br/></span>
-            <div style=" border:1px solid; padding:150px; margin:100px; margin-top:30px; border-color:#000; text-align:center;"><br/><strong>WebApp Tipo 3</strong><br/></div>
-            </div>
+             <div id="demostracion" style="display:none;">
+           <iframe id="conso" style="margin-left: auto; margin-right: auto; width: 810px; height: 400px; position: absolute; left: 350px" src="http://localhost:8000/agrupar"></iframe>
             </div>
       </div>
         <div style="background-image:url(img/textbox_bottom.png); margin-left:auto; margin-right:auto; width:1200px; height:16px;"></div>

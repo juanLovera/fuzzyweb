@@ -16,4 +16,17 @@ function encriptar_pass($pass)
 {
     return md5("%&/(9".sha1($pass));
 }
+
+function get_subsecciones($seccion)
+{
+    $db = conectar_db();
+    $coleccion = $db->subsecciones;
+    $cursor = $coleccion->find(array("seccion" => $seccion));
+    $i = 0;
+    foreach ($cursor as $doc) {
+        $subs[$i] = $doc;
+        $i++;
+    }
+    return $subs;
+}
 ?>
