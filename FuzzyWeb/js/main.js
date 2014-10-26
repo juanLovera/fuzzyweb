@@ -243,6 +243,95 @@ function registrar()
     
 }
 
+function modificarPerfil()
+{
+    if (!validarModificarPerfil())
+        return;
+    $("#modificarperfil-form").slideUp("fast", function (){
+    $("#modificarperfil-loading").show();
+    rq = "process/modificarPerfil.php?nombre="+$("#nombre").val()+"&apellido="+$("#apellido").val()
+          +"&institucion="+$("#institucion").val()+"&ocupacion="+$("#ocupacion").val()
+          +"&pais="+$("#pais").val()+"&paso=1";
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#modificarperfil-loading").hide();
+                if (res != "OK")
+                {
+                    alert(res);
+                    $("#modificarperfil-form").slideDown("fast");
+                }
+                else
+                {
+                    $("#modificarperfil-ok").fadeIn("fast");
+                }
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al enviar el formulario.");
+                        $("#modificarperfil-form").slideDown("fast");
+                        $("#modificarperfil-loading").hide();
+            })
+    });
+    
+}
+
+function modificarCorreo()
+{
+    if (!validarModificarCorreo())
+        return;
+    $("#modificarcorreo-form").slideUp("fast", function (){
+    $("#modificarcorreo-loading").show();
+    rq = "process/modificarPerfil.php?mail="+$("#mail").val()+"&paso=2";
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#modificarcorreo-loading").hide();
+                if (res != "OK")
+                {
+                    alert(res);
+                    $("#modificarcorreo-form").slideDown("fast");
+                }
+                else
+                {
+                    $("#modificarcorreo-ok").fadeIn("fast");
+                }
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al enviar el formulario.");
+                        $("#modificarcorreo-form").slideDown("fast");
+                        $("#modificarcorreo-loading").hide();
+            })
+    });
+    
+}
+
+function modificarContrasena()
+{
+    if (!validarModificarContrasena())
+        return;
+    $("#modificarcontrasena-form").slideUp("fast", function (){
+    $("#modificarcontrasena-loading").show();
+    rq = "process/modificarPerfil.php?contrasena="+$("#contrasena").val()+"&confirmar="+$("#confirmar").val()+"&paso=3";
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#modificarcontrasena-loading").hide();
+                if (res != "OK")
+                {
+                    alert(res);
+                    $("#modificarcontrasena-form").slideDown("fast");
+                }
+                else
+                {
+                    $("#modificarcontrasena-ok").fadeIn("fast");
+                }
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al enviar el formulario.");
+                        $("#modificarcontrasena-form").slideDown("fast");
+                        $("#modificarcontrasena-loading").hide();
+            })
+    });
+    
+}
+
 function iniciarSesion()
 {
     $("#form-inicio").hide();
@@ -269,7 +358,7 @@ function iniciarSesion()
 
 function cambiarTextoDescarga()
 {
-    document.getElementById("textodescarga").innerText = "Para acceder a las descargas debes iniciar sesión o registrarte.";
+    document.getElementById("textodescarga").innerHTML = "Para acceder a las descargas debes iniciar sesión o <a href=\"comunidad.php\">registrarte</a>.";
 }
 
 function recuperarClave()

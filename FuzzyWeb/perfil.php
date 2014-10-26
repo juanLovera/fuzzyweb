@@ -20,16 +20,17 @@ seleccionado = "verPerfil";
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>PERFIL</strong><br/><br/></span>
             <table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION['nombre']; ?></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><?php echo $_SESSION['apellido']; ?></td></tr>
-                   <tr><td><strong>Correo: </strong></td><td><?php echo $_SESSION['email']; ?></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><?php echo $_SESSION['institucion']; ?></td></tr>
+                <tr><td><strong>Correo: </strong></td><td><a href="mailto:<?php echo $_SESSION['email']; ?>"><?php echo $_SESSION['email']; ?></a></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><?php echo $_SESSION['institucion']; ?></td></tr>
                    <tr><td><strong>Ocupación: </strong></td><td><?php echo $_SESSION['ocupacion']; ?></td><td style="padding-left:50px"><strong>País de residencia: </strong></td><td><?php echo $_SESSION['ubicacion']; ?></td></tr>
                    </table>
             </div>
             </div>
             <div id="modificarPerfil" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>MODIFICAR PERFIL</strong><br/><br/></span>
-            <form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value=<?php echo $_SESSION['nombre']; ?> id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value=<?php echo $_SESSION['apellido']; ?> id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                   <tr><td><strong>Ocupación: </strong></td><td><input type="text" value=<?php echo $_SESSION['ocupacion']; ?> id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value=<?php echo $_SESSION['institucion']; ?> id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+            <div id="modificarperfil-form">
+                <span style="color:#023e44"><strong>MODIFICAR PERFIL</strong><br/><br/></span>
+            <form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value="<?php echo $_SESSION['nombre']; ?>" id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value="<?php echo $_SESSION['apellido']; ?>" id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                   <tr><td><strong>Ocupación: </strong></td><td><input type="text" value="<?php echo $_SESSION['ocupacion']; ?>" id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value="<?php echo $_SESSION['institucion']; ?>" id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    <tr><td><strong>País: </strong></td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/>
                                 <option value="">Seleccione...</option>
 <option value="AF">Afganistán</option>
@@ -268,32 +269,54 @@ seleccionado = "verPerfil";
 <option value="ZW">Zimbabue</option>
 </select></td></tr>
                    </table>
-                <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left:320px; margin-top:50px;">
-                               </form></div>
+                <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarPerfil();" style="margin-left:320px; margin-top:50px;"></a>
+                               </form></div></div>
+                <div id="modificarperfil-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
+                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
+            <div id="modificarperfil-ok" style="padding-left: 220px;display: none; text-align: center; padding-top: 60px;">
+                <strong>Se ha actualizado su perfil exitosamente.</strong>
+            </div>
+            </div>
+            
              <div id="modificarCorreo" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
+                <div id="modificarcorreo-form">
             <span style="color:#023e44"><strong>MODIFICAR CORREO</strong></span>
             <br/><br/>Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
             <form><table cellpadding="10"><tr><td><input type="text" value=<?php echo $_SESSION['email']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
                    
             </table>       
-            <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left: 340px; margin-top:15px;"></form>
-            
+            <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarCorreo();" style="margin-left: 340px; margin-top:15px;"></a></form>
             </div>
+            </div>
+            <div id="modificarcorreo-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
+                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
+            </div>
+            <div id="modificarcorreo-ok" style="padding-left: 220px;display: none; text-align: center; padding-top: 60px;">
+                <strong>Se ha actualizado su correo exitosamente.</strong>
+            </div>     
             </div>
              <div id="modificarContrasena" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>MODIFICAR CONTRASEÑA</strong><br/><br/></span>
+            <div id="modificarcontrasena-form">
+                <span style="color:#023e44"><strong>MODIFICAR CONTRASEÑA</strong><br/><br/></span>
             Ingrese su nueva contraseña.
             <form><table><tr><td><input type="password" value="" id="contrasena" onfocus="clearSearch(this);" placeholder="Contraseña" style="margin-left: 300px; margin-top:15px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                     <tr><td><input type="password" value="" id="confirmar" placeholder="Confirmar Contraseña" onfocus="clearSearch(this);" style="margin-top:15px; margin-left: 300px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    
                    </table>
-            <input type="image" src="img/boton-modificar.png" alt="Modificar" style="margin-left: 340px; margin-top:30px; border: 0"></form>
+            <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarContrasena();" style="margin-left: 340px; margin-top:30px; border: 0"></a></form>
+            </div>
          
             </div>
+            <div id="modificarcontrasena-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
+                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
+            <div id="modificarcontrasena-ok" style="padding-left: 220px;display: none; text-align: center; padding-top: 60px;">
+                <strong>Se ha actualizado su contraseña exitosamente.</strong>
+            </div>
+             </div>
       </div>
         <div style="background-image:url(img/textbox_bottom.png); margin-left:auto; margin-right:auto; width:1200px; height:16px;"></div>
     </div>
