@@ -36,7 +36,7 @@ $_SESSION['apellido'] = $cursor['apellido'];
 $_SESSION['institucion'] = $cursor['institucion'];
 $_SESSION['ocupacion'] = $cursor['ocupacion'];
 $_SESSION['ubicacion'] = $cursor['ubicacion'];
-
+$_SESSION['usertype'] = $cursor['tipo'];
 
 echo "OK";
 ?>

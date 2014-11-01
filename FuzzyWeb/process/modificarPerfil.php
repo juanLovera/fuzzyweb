@@ -66,7 +66,11 @@ if ($paso == "1")
     {
         die("Debe ingresar un Correo válido.");
     }
-    
+    $cursor = $coleccion->findOne(array("correo" => $mail));
+    if ($cursor != NULL)
+    {
+        die("El correo ingresado ya está registrado. Por favor, intente con otro.");
+    }
     $newdata = array('$set' => array("correo" => $mail));
     $cursor = $coleccion->update(array("correo" => $_SESSION['email']), 
                                  $newdata);
