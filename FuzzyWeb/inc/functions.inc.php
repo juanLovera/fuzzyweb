@@ -29,4 +29,29 @@ function get_subsecciones($seccion)
     }
     return $subs;
 }
+/*
+ * Devuelve true si el usuario inicio sesion y false si no ha iniciado. Ademas 
+ * si se pasa $acceso esta verifica que el tipo de usuario sea el correcto y si
+ * no lo es, no deja cargar la pagina.
+ */
+function comprobar_sesion($acceso = "public") // $acceso puede ser: public, not_public, U_Normal, ...
+{ 
+    if ($_SESSION["ss_key"] != $G_SKEY)
+        $ini = true;
+    else
+        $ini = false;
+    
+    if ($acceso == "public")
+        return $ini;
+    elseif ($acceso == "not_public" && $ini)
+        return $ini;
+    
+    elseif ($ini && $acceso == $_SESSION["usertype"])
+        return $ini;
+    else
+    {
+        header("Location: index.php");
+        exit;
+    }
+}
 ?>

@@ -219,7 +219,7 @@ function registrar()
     $("#registro-loading").show();
     rq = "process/signup.php?nombre="+$("#nombre").val()+"&apellido="+$("#apellido").val()
           +"&mail="+$("#mail").val()+"&contrasena="+$("#contrasena").val()
-          +"&confirmar="+$("#confirmar").val()+"&ubicacion="+$("#ubicacion").val()
+          +"&confirmar="+$("#confirmar").val()+"&ubicacion="+$("#pais").val()
           +"&institucion="+$("#institucion").val()+"&ocupacion="+$("#ocupacion").val();
     jqaj = $.ajax(rq)
             .done(function(res){
@@ -231,7 +231,7 @@ function registrar()
                 }
                 else
                 {
-                    $("#registro-ok").fadeIn("fast");
+                     location.href="perfil.php";
                 }
             })
                     .fail(function() {
@@ -346,7 +346,7 @@ function iniciarSesion()
                 }
                 else
                 {
-                    location.href="index.php";
+                    location.href="perfil.php";
                 }
             })
                     .fail(function() {

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("inc/includes.inc.php");
+comprobar_sesion("not_public");
 include ("header.php");
 ?>
 <script>
@@ -13,16 +14,21 @@ seleccionado = "verPerfil";
         	<div id="menuizquierdo" style="width:322px; position: absolute; top: -15px; left:0">
             	<div id="selected" class="boton" onClick="cambiarPagina('verPerfil',this)" style="background-image:url(img/boton_seleccionado.png); font-weight:bold">Ver Perfil</div>
                 <div class="boton" onClick="cambiarPagina('modificarPerfil',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Modificar Perfil</div>
+                <div class="boton" onClick="cambiarPagina('modificarFoto',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Cambiar Foto</div>
                 <div class="boton" onClick="cambiarPagina('modificarCorreo',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Modificar Correo</div>
                 <div class="boton" onClick="cambiarPagina('modificarContrasena',this)" onMouseOver="this.style.fontWeight='bold'" onMouseOut="this.style.fontWeight=''">Modificar Contraseña</div>
             </div>
             <div id="verPerfil">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <span style="color:#023e44"><strong>PERFIL</strong><br/><br/></span>
-            <table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION['nombre']; ?></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><?php echo $_SESSION['apellido']; ?></td></tr>
+            <div style="border: 1px solid #045d6f; border-radius:5px; height:150px; width:150px"></div>
+            <div style="float:right; margin-top: -140px; margin-right: 100px;">
+            <table cellpadding="10">
+                <tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION['nombre']; ?></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><?php echo $_SESSION['apellido']; ?></td></tr>
                 <tr><td><strong>Correo: </strong></td><td><a href="mailto:<?php echo $_SESSION['email']; ?>"><?php echo $_SESSION['email']; ?></a></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><?php echo $_SESSION['institucion']; ?></td></tr>
                    <tr><td><strong>Ocupación: </strong></td><td><?php echo $_SESSION['ocupacion']; ?></td><td style="padding-left:50px"><strong>País de residencia: </strong></td><td><?php echo $_SESSION['ubicacion']; ?></td></tr>
                    </table>
+            </div>    
             </div>
             </div>
             <div id="modificarPerfil" style="display:none;">
@@ -279,7 +285,27 @@ seleccionado = "verPerfil";
             </div>
             </div>
             
-             <div id="modificarCorreo" style="display:none;">
+            <div id="modificarFoto" style="display:none;">
+            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
+                <div id="modificarfoto-form">
+            <span style="color:#023e44"><strong>CAMBIAR FOTO</strong></span>
+            <br/><br/>Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
+            <form><table cellpadding="10"><tr><td><input type="file" id="foto" onfocus="clearSearch(this);" style="margin-left: 290px;"/></td></tr>
+                   
+            </table>       
+            <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarCorreo();" style="margin-left: 340px; margin-top:15px;"></a></form>
+            </div>
+            </div>
+            <div id="modificarfoto-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
+                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
+            </div>
+            <div id="modificarfoto-ok" style="padding-left: 220px;display: none; text-align: center; padding-top: 60px;">
+                <strong>Se ha actualizado su foto exitosamente.</strong>
+            </div>     
+            </div>
+ 
+            
+            <div id="modificarCorreo" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
                 <div id="modificarcorreo-form">
             <span style="color:#023e44"><strong>MODIFICAR CORREO</strong></span>
@@ -297,7 +323,8 @@ seleccionado = "verPerfil";
                 <strong>Se ha actualizado su correo exitosamente.</strong>
             </div>     
             </div>
-             <div id="modificarContrasena" style="display:none;">
+ 
+            <div id="modificarContrasena" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <div id="modificarcontrasena-form">
                 <span style="color:#023e44"><strong>MODIFICAR CONTRASEÑA</strong><br/><br/></span>

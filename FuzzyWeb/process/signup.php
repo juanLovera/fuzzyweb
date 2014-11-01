@@ -61,6 +61,6 @@ $user = array(
 );
 
 $coleccion->insert($user);
-echo "OK";
+header("Location: signin.php?mail=".$mail."&contrasena=".$confirmar);
 
 ?>
