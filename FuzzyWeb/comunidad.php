@@ -288,9 +288,6 @@ else
             <div id="registro-loading" style="text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
-            <div id="registro-ok" style="display: none; text-align: center; padding-top: 60px">
-                <strong>Registro completado.</strong>
-            </div>
             </div>
             </div>
             

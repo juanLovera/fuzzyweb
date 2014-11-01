@@ -76,9 +76,6 @@ seleccionado = <?php echo $subsecs[0]['nombre']; ?>;
             </br>Ricardo Monascal</br>
             <i>USB</i></br></br></br>
             
-            </div>
-            
-            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:center; margin-left:335px;">
             <strong>ESTUDIANTES</strong></br></br>
             <table style="display:inline-block; width: 28%; margin-left: 10px; margin-right: 20px;">
                 <tr><td>

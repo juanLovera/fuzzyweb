@@ -180,7 +180,7 @@
         $command = explode("&&", $command);
 
         foreach($command as $c){
-            $Terminal->command = "java -jar /home/juan/Documentos/Taller/fuzzy-client-master/FuzzyDB/dist/FuzzyDB.jar '".$c."'";
+            $Terminal->command = "java -jar /home/rebecca/Desktop/fuzzy-client-master/FuzzyDB/dist/FuzzyDB.jar '".$c."'";
             $output .= $Terminal->Process();
         }
     
