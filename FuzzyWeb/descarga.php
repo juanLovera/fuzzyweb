@@ -19,7 +19,7 @@ seleccionado = "descarga";
             
             <div id="descarga">
                 <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px; ">
-                    <span style="color:#023e44"><strong>DESCARGA</strong></span><br/><br/>
+                    <span style="color:#023e44"><strong>DESCARGA</strong></span><span style="float: right; margin-right: 20px;">[editar]</span><br/><br/>
                     <div style="background-color:#F7F7F7; width:750px; padding:16px; text-align:justify">
                         <strong>Descarga 1</strong> - <span style="color:#828282">10 de Octubre de 2014</span><br/><br/>
                         <?php
@@ -39,6 +39,7 @@ seleccionado = "descarga";
                         }
                         ?>
                     </div>
+                    <p>[+ Agregar descarga]</p>
                 </div>
             </div>
             
