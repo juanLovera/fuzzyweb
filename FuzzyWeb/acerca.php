@@ -31,12 +31,115 @@ seleccionado = "introduccion";
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque
             </div>
             </div>
-             <div id="miembros" style="display:none;">
+            
+            <div id="miembros" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <span style="color:#023e44"><strong>MIEMBROS</strong><br/><br/></span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque
+            <span style="color:#023e44;"><strong>MIEMBROS</strong><br/><br/></span>
+            </div>
+                
+            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:center; margin-left:335px;">
+            <strong>GRUPO INVESTIGADOR</strong></br></br>
+            <strong>Coordinadores</strong></br>
+            Leonid Tineo</br> <i>USB</i> </br></br>
+            Carlos I. Lameda M.</br> <i>UNEXPO</i> </br></br></br>
+            
+            <table style="display:inline-block; margin-right: 50px;">
+                <tr><td>
+                Jesús Araque</br>
+                <i>UNEXPO</i></br></br>
+                Soraya Carrasquel</br>
+                <i>USB</i></br></br>
+                </tr></td>
+            </table>
+            
+            <table style="display:inline-block; margin-right: 50px;">
+                <tr><td>
+                Roberto Uzcátegui</br>
+                <i>UNEXPO</i></br></br>
+                David Coronado</br>
+                <i>USB</i></br></br>
+                </tr></td>
+            </table>
+            
+            <table style="display:inline-block;">
+                <tr><td>
+                Rosseline Rodríguez </br>
+                <i>USB</i></br></br>
+                Belkys López </br>
+                <i>UCLA</i></br></br>
+                </tr></td>
+            </table>
+            
+            </br>Ricardo Monascal</br>
+            <i>USB</i></br></br></br>
+            
+            </div>
+            
+            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:center; margin-left:335px;">
+            <strong>ESTUDIANTES</strong></br></br>
+            <table style="display:inline-block; width: 28%; margin-left: 10px; margin-right: 20px;">
+                <tr><td>
+                <strong>???</strong></br>
+                Andras Gyomrey</br>
+                Bishma Stornelli</br>
+                Carlos Timaury</br>
+                Sergio Moreau</br></br>
+                </tr></td>
+            </table>
+
+            <table style="display:inline-block; width: 28%; margin-right: 20px;">
+                <tr><td>
+                <strong>???</strong></br>
+                Javier Antonini</br>
+                Jonathan Melián</br>
+                José Goncalves</br></br>
+                </tr></td>
+            </table>
+
+            <table style="display:inline-block; width: 28%;">
+                <tr><td>
+                <strong>Análisis de Desempeño de Consultas a Bases de Datos con Atributos Difusos</strong></br>
+                Andreina Marcano</br>
+                Luis Manuel García</br>
+                Patricia Zambrano</br>
+                Vanessa Balleste</br></br>
+                </tr></td>
+            </table>
+            
+            </br></br>
+            
+            <table style="display:inline-block; width: 28%; margin-left: 10px; margin-right: 20px;">
+                <tr><td>
+                <strong>Portal del Proyecto de Consultas a Bases de Datos con Atributos Difusos</strong></br>
+                Carla Nardone</br>
+                Juan Lovera</br>
+                Luis Esparragoza</br>
+                Rebecca Porras</br></br>
+                </tr></td>
+            </table>
+
+            <table style="display:inline-block; width: 28%; margin-right: 20px;">
+                <tr><td>
+                <strong>Implementación de Consultas a Bases de Datos con Atributos Difusos – Tipo 4</strong></br>
+                José Delgado</br>
+                José Figueredo</br>
+                Stephanie Alibrandi</br></br>
+                </tr></td>
+            </table>
+
+            <table style="display:inline-block; width: 28%;">
+                <tr><td>
+                <strong>Implementación de Consultas a Bases de Datos con Atributos Difusos – Tipo 5</strong></br>
+                Héctor Domínguez</br>
+                José Piñero</br>
+                José Sanchez</br>
+                Valeria Pestana</br></br>
+                </tr></td>
+            </table>
+ 
             </div>
             </div>
+            
              <div id="tipos" style="display:none;">
              <div id="menusuperior" style="position: absolute; top: -5; left: 335px; width:850px;font-size:14px; color:#023e44">
             TIPO 1&nbsp;&nbsp; |&nbsp;&nbsp; TIPO 2 &nbsp;&nbsp;|&nbsp;&nbsp; TIPO 3 &nbsp;&nbsp;|&nbsp;&nbsp; TIPO 4 &nbsp;&nbsp;|&nbsp;&nbsp; TIPO 5
