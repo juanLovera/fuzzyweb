@@ -2,9 +2,12 @@
 session_start();
 include_once("inc/includes.inc.php");
 include ("header.php");
+comprobar_sesion("public");
+$seccion = "Acerca";
+$subsecs = get_subsecciones($seccion);
 ?>
 <script>
-seleccionado = "introduccion";
+seleccionado = <?php echo $subsecs[0]['nombre']; ?>;
 </script>
 <div id="barra_azul" style="background-image:url(img/bg_azul.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
 	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1210px; padding-top:30px; display:table">
