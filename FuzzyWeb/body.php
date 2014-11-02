@@ -76,7 +76,7 @@ include ("header.php");
                     if ($_SESSION["ss_key"] == $G_SKEY)
                         echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
                     else
-                        echo "<img onclick=\"cambiarTextoDescarga();\" src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga();\" id=\"textodescarga\"><a href=\"javascript:void(0)\">Descargar</a></span>";
+                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga(this);\"><a href=\"javascript:void(0)\">Descargar</a></span>";
                     echo "<br/></div></div>";
 
                 }

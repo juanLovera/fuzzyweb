@@ -24,7 +24,7 @@
             <input id="barra_signin_contrasena" placeholder="Contrase&ntilde;a" onfocus="clearSearch(this);" type="password" style="font-size:12px; color:#B1B1B1; background-image:url(img/signin_input.png); width:233px; height:38px; border-width:0; padding-left:8px; padding-right:4px; margin-left: 25px; margin-top:17px; font-size:12px;"/>
             <div style="font-size:12px; margin-top:5px; margin-left:25px;">
                     <a href="comunidad.php" style="color:#1B1B1B;" >Registrarse</a> 
-                &nbsp; -&nbsp;  ¿Olvid&oacute; su contrase&ntilde;a?
+                &nbsp; -&nbsp;  <a href="comunidad_p.php?sec=1" style="color:#1B1B1B;" >¿Olvid&oacute; su contrase&ntilde;a?</a>
                 </div>
             <a href="javascript:void(0)"><input type="image" src="img/boton-ingresar.png" width="99" height="30" alt="ingresar" style="margin-left: 205px; margin-top:15px; border:0" /></a>
             </form>

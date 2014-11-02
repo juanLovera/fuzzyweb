@@ -368,9 +368,9 @@ function iniciarSesion()
             })
 }
 
-function cambiarTextoDescarga()
+function cambiarTextoDescarga(o)
 {
-    document.getElementById("textodescarga").innerHTML = "Para acceder a las descargas debes iniciar sesión o <a href=\"comunidad.php\">registrarte</a>.";
+    o.innerHTML = "Para acceder a las descargas debes iniciar sesión o <a href=\"comunidad.php\">registrarte</a>.";
 }
 
 function recuperarClave()
