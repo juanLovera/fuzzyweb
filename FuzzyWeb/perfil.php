@@ -296,6 +296,7 @@ seleccionado = "verPerfil";
             <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarCorreo();" style="margin-left: 340px; margin-top:15px;"></a></form>
             </div>
             </div>
+                
             <div id="modificarfoto-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
@@ -303,7 +304,7 @@ seleccionado = "verPerfil";
                 <strong>Se ha actualizado su foto exitosamente.</strong>
             </div>     
             </div>
- 
+            
             
             <div id="modificarCorreo" style="display:none;">
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
