@@ -6,7 +6,7 @@
 
 // Configuracion del sitio y variables globales
 $G_SKEY = "45&/()=2#sesionCOR";
-error_reporting(0);
+//error_reporting(0);
 
 // Lista de archivos a incluir
 include_once("functions.inc.php");

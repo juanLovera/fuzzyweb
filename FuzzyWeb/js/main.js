@@ -19,7 +19,7 @@ function cerrarSignIn()
     
 }
 
-function cambiarPagina(l,o)
+function cambiarPagina(l,o,p)
 {
 	
 	o.onmouseover='';
@@ -29,13 +29,25 @@ function cambiarPagina(l,o)
 	document.getElementById('selected').onmouseover=function () {this.style.fontWeight='bold'}; 
 	document.getElementById('selected').onmouseout=function () {this.style.fontWeight=''}; 
 	document.getElementById('selected').id='';
-	document.getElementById(seleccionado).style.display='none';
-	seleccionado=l;
-	$("#"+seleccionado).fadeIn("slow");
+	$("#texto-html").slideUp("fast", function (){
+        $("#texto-html-loading").show();
+    rq = p+"?AJAX=active&sec="+l;
+    jqaj = $.ajax(rq)
+            .done(function(res){
+                 $("#texto-html-loading").hide();
+                document.getElementById('texto-html').innerHTML = res;
+                $("#texto-html").fadeIn("fast");
+                
+            })
+                    .fail(function() {
+                        alert("Ha ocurrido un error al intentar cargar página.");
+                        $("#texto-html").slideDown("fast");
+                        $("#texto-html-loading").hide();
+            });
 	o.style.backgroundImage="url(img/boton_seleccionado.png)";
 	o.style.fontWeight='bold';
 	o.id='selected';
-	
+});
 }
 
 function validarModificarPerfil()
@@ -413,7 +425,3 @@ function cambiarClaveRec()
                         $("#recuperar-loading").hide();
             })
 }
-
-
-
-	

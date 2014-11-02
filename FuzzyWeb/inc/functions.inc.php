@@ -20,7 +20,7 @@ function encriptar_pass($pass)
 function get_subsecciones($seccion)
 {
     $db = conectar_db();
-    $coleccion = $db->subsecciones;
+    $coleccion = $db->subseccion;
     $cursor = $coleccion->find(array("seccion" => $seccion));
     $i = 0;
     foreach ($cursor as $doc) {
