@@ -38,9 +38,7 @@ $subs = array("nombre" => "Historia",
                         <li>Diseñar estructuras de almacenamiento físico y de recuperación de los manejadores relacionales, adecuadas al modelo relacional GEFRED.</li>
                         <li>Definir operadores de consulta para GEFRED, así como los algoritmos que los implementen en forma eficiente.</li>
                         <li>Obtener estructuras almacenamiento y operadores que ayuden a optimizar las consultas en bases de datos difusas.</li>
-                    </ul>
-            
-                 </div>",                  
+                    </ul>",                  
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => NULL,
@@ -1029,18 +1027,19 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Cambiar foto",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Cambiar foto",
-                            "informacion" => "Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
-            <form><table cellpadding=\"10\"><tr><td><input type=\"file\" id=\"foto\" onfocus=\"clearSearch(this);\" style=\"margin-left: 290px;\"/></td></tr>
-                   
+                            "informacion" => '
+            <form action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\"><table cellpadding=\"10\"><tr><td><input type=\"file\" id=\"foto\" onfocus=\"clearSearch(this);\" style=\"margin-left: 290px;\"/></td></tr>
+            Ingrese la nueva foto que desea tener asociada a su cuenta.
             </table>       
-            <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"cambiarFoto();\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
+            <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"subirAvatar.php;\" style=\"margin-left: 340px; margin-top:15px;\"></a>
+            </form>
             </div>
             <div id=\"modificarfoto-loading\" style=\"padding-right: 90px;text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
             </div>
             <div id=\"modificarfoto-ok\" style=\"padding-right: 90px;display: none; text-align: center; padding-top: 60px;\">
                 <strong>Se ha actualizado su foto exitosamente.</strong>
-            </div>",
+            </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => NULL,
