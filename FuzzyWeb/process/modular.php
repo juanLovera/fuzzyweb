@@ -754,7 +754,7 @@ $subs = array("nombre" => "Ver perfil",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Ver perfil",
                             "informacion" => '<div style=\"border: 1px solid #045d6f; border-radius:5px; height:150px; width:150px\"></div>
-            <div style=\"float:right; margin-top: -140px; margin-right: 100px;\">
+            <div style=\"float:right; margin-top: -140px; margin-right: 20px; width:10px;\">
             <table cellpadding=\"10\">
                 <tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION[\'nombre\']; ?></td><td style=\"padding-left:50px\"><strong>Apellido: </strong></td><td><?php echo $_SESSION[\'apellido\']; ?></td></tr>
                 <tr><td><strong>Correo: </strong></td><td><a href=\"mailto:<?php echo $_SESSION[\'email\']; ?>\"><?php echo $_SESSION[\'email\']; ?></a></td><td style=\"padding-left:50px\"><strong>Institución: </strong></td><td><?php echo $_SESSION[\'institucion\']; ?></td></tr>
@@ -771,7 +771,7 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Modificar perfil",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Modificar perfil",
-                            "informacion" => '<form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'nombre\']; ?>" id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'apellido\']; ?>" id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
+                            "informacion" => '<div id="modificarperfil-form"><form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'nombre\']; ?>" id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'apellido\']; ?>" id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    <tr><td><strong>Ocupación: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'ocupacion\']; ?>" id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'institucion\']; ?>" id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    <tr><td><strong>País: </strong></td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/>
                                 <option value="">Seleccione...</option>
@@ -1013,10 +1013,10 @@ $subs = array("nombre" => "Modificar perfil",
                    </table>
                 <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarPerfil();" style="margin-left:320px; margin-top:50px;"></a>
                                </form></div>
-                <div id="modificarperfil-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
+                <div id="modificarperfil-loading" style="padding-right: 90px;text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
-            <div id="modificarperfil-ok" style="padding-left: 220px;display: none; text-align: center; padding-top: 60px;">
+            <div id="modificarperfil-ok" style="padding-right: 90px;display: none; text-align: center; padding-top: 60px;">
                 <strong>Se ha actualizado su perfil exitosamente.</strong>
             </div>',
                             "fecha_ultima_mod" => date(),
@@ -1029,16 +1029,16 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Cambiar foto",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Cambiar foto",
-                            "informacion" => "<br/><br/>Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
+                            "informacion" => "Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
             <form><table cellpadding=\"10\"><tr><td><input type=\"file\" id=\"foto\" onfocus=\"clearSearch(this);\" style=\"margin-left: 290px;\"/></td></tr>
                    
             </table>       
             <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"modificarCorreo();\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
             </div>
-            <div id=\"modificarfoto-loading\" style=\"padding-left: 220px;text-align: center; display: none; padding-top: 60px;\">
+            <div id=\"modificarfoto-loading\" style=\"padding-right: 90px;text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
             </div>
-            <div id=\"modificarfoto-ok\" style=\"padding-left: 220px;display: none; text-align: center; padding-top: 60px;\">
+            <div id=\"modificarfoto-ok\" style=\"padding-right: 90px;display: none; text-align: center; padding-top: 60px;\">
                 <strong>Se ha actualizado su foto exitosamente.</strong>
             </div>",
                             "fecha_ultima_mod" => date(),
@@ -1052,16 +1052,16 @@ $subs = array("nombre" => "Modificar correo",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Modificar correo",
                             "informacion" => '<div id="modificarcorreo-form">
-            <br/><br/>Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
+            Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
             <form><table cellpadding="10"><tr><td><input type="text" value=<?php echo $_SESSION[\'email\']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
                    
             </table>       
             <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarCorreo();" style="margin-left: 340px; margin-top:15px;"></a></form>
             </div>
-            <div id="modificarcorreo-loading" style="padding-left: 220px;text-align: center; display: none; padding-top: 60px;">
+            <div id="modificarcorreo-loading" style="padding-right: 90px;text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
             </div>
-            <div id="modificarcorreo-ok" style="padding-left: 220px;display: none; text-align: center; padding-top: 60px;">
+            <div id="modificarcorreo-ok" style="padding-right: 90px;display: none; text-align: center; padding-top: 60px;">
                 <strong>Se ha actualizado su correo exitosamente.</strong>
             </div>',
                             "fecha_ultima_mod" => date(),
@@ -1074,19 +1074,19 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Modificar contraseña",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Modificar contraseña",
-                            "informacion" => "Ingrese su nueva contraseña.
+                            "informacion" => '<div id="modificarcontrasena-form">Ingrese su nueva contraseña.
             <form><table><tr><td><input type=\"password\" value=\"\" id=\"contrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Contraseña\" style=\"margin-left: 300px; margin-top:15px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
                     <tr><td><input type=\"password\" value=\"\" id=\"confirmar\" placeholder=\"Confirmar Contraseña\" onfocus=\"clearSearch(this);\" style=\"margin-top:15px; margin-left: 300px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
                    
                    </table>
             <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"modificarContrasena();\" style=\"margin-left: 340px; margin-top:30px; border: 0\"></a></form>
             </div>
-            <div id=\"modificarcontrasena-loading\" style=\"padding-left: 220px;text-align: center; display: none; padding-top: 60px;\">
+            <div id=\"modificarcontrasena-loading\" style=\"padding-right: 90px;text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
             </div>
-            <div id=\"modificarcontrasena-ok\" style=\"padding-left: 220px;display: none; text-align: center; padding-top: 60px;\">
+            <div id=\"modificarcontrasena-ok\" style=\"padding-right: 90px;display: none; text-align: center; padding-top: 60px;\">
                 <strong>Se ha actualizado su contraseña exitosamente.</strong>
-            </div>",
+            </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => NULL,
