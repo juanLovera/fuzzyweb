@@ -48,7 +48,7 @@ if ($paso == "1")
     }   
     
     $newdata = array('$set' => array("nombre" => $nombre, "apellido" => $apellido, "ocupacion" => $ocupacion,
-        "institucion" => $institucion, "pais" => $pais));
+        "institucion" => $institucion, "ubicacion" => $pais));
     $cursor = $coleccion->update(array("correo" => $_SESSION['email']), 
                                  $newdata);
     
