@@ -88,6 +88,11 @@ function validarModificarPerfil()
     return true;
 }
 
+function validarCambiarFoto()
+{
+    
+}
+
 function validarModificarCorreo()
 {
     var re = /\S+@\S+\.\S+/;
@@ -284,6 +289,17 @@ function modificarPerfil()
             })
     });
     
+}
+
+function cambiarFoto()
+{
+    if (!validarCambiarFoto())
+        return;
+    alert("Big booty bitches");
+    $("#cambiarfoto-form").slideUp("fast", function (){
+    $("#cambiarfoto-loading").show();
+    
+    }
 }
 
 function modificarCorreo()

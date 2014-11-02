@@ -11,7 +11,6 @@ $db = conectar_db();
 
 $coleccion = $db->subseccion;
 $coleccion->drop();
-$coleccion = $db->subseccion;
 
 $subs = array("nombre" => "Introducción",
               "seccion" => "Acerca",
@@ -235,17 +234,29 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Descarga",
               "seccion" => "Descarga",
               "bloque" => array(array("nombre" => "DESCARGA",
-                            "informacion" => '',
+                            "informacion" => '<div style=\"background-color:#F7F7F7; width:750px; padding:16px; text-align:justify\">
+                        <strong>Descarga 1</strong> - <span style=\"color:#828282\">10 de Octubre de 2014</span><br/><br/>
+                        <?php
+                        if ($_SESSION[\"ss_key\"] == $G_SKEY)
+                        {
+                        ?>
+                        Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.<br/><br/>
+                        <div style=\"padding-left:500px; text-align:right;\"><a href=\"downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip\"><img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> Descargar</a><br/></div>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                        Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.<br/><br/>
+                        <div style=\"padding-left:100px; text-align:right;\"><img onclick=\"cambiarTextoDescarga();\" src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga();\" id=\"textodescarga\"><a href=\"javascript:void(0)\">Descargar</a></span><br/></div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <p>[+ Agregar descarga]</p>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => array(array("nombre" => "Descarga 1",
-                            "fecha" => "1 de noviembre de 2014",
-                            "descripcion" => "Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.",
-                            "path" => "downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip"),
-                             array("nombre" => "Descarga 2",
-                            "fecha" => "2 de noviembre de 2014",
-                            "descripcion" => "Descarga de proyecto de Bases de Datos prueba",
-                            "path" => "downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip")),
+                            "descarga" => NULL,
                             "webapp" => NULL)
                   ));
 $coleccion->insert($subs);
@@ -428,7 +439,7 @@ $subs = array("nombre" => "Desempeño",
 $coleccion->insert($subs);
 
 $subs = array("nombre" => "Registro",
-              "seccion" => "Comunidad_p",
+              "seccion" => "Comunidad",
               "bloque" => array(array("nombre" => "REGISTRO",
                             "informacion" => "<div id=\"registro-form\">
             <form><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
@@ -686,7 +697,7 @@ $subs = array("nombre" => "Registro",
 $coleccion->insert($subs);
 
 $subs = array("nombre" => "Recuperar contraseña",
-              "seccion" => "Comunidad_p",
+              "seccion" => "Comunidad",
               "bloque" => array(array("nombre" => "RECUPERAR CONTRASEÑA",
                             "informacion" => "<div id=\"recuperar-form\">
             <br/><br/>Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
@@ -1022,7 +1033,7 @@ $subs = array("nombre" => "Cambiar foto",
             <form><table cellpadding=\"10\"><tr><td><input type=\"file\" id=\"foto\" onfocus=\"clearSearch(this);\" style=\"margin-left: 290px;\"/></td></tr>
                    
             </table>       
-            <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"modificarCorreo();\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
+            <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"cambiarFoto();\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
             </div>
             <div id=\"modificarfoto-loading\" style=\"padding-right: 90px;text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
