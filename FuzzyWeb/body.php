@@ -1,5 +1,7 @@
 <?php
-$subsecs = get_subsecciones($seccion);
+if (!isset($coleccion2))
+    $coleccion2 = NULL;
+$subsecs = get_subsecciones($seccion, $seccion2);
 if (isset($_GET['sec']))
     $subs_select = $_GET['sec'];
 else
@@ -66,7 +68,20 @@ include ("header.php");
                     echo "<br/><br/><hr/><br/>";
                 echo "</div>";
                 unlink($filename);
+                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$i]['descarga']); $j++)
+                {
+                    echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
+                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['fecha']."</span><br/><br/>";
+                    echo $subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
+                    if ($_SESSION["ss_key"] == $G_SKEY)
+                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
+                    else
+                        echo "<img onclick=\"cambiarTextoDescarga();\" src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga();\" id=\"textodescarga\"><a href=\"javascript:void(0)\">Descargar</a></span>";
+                    echo "<br/></div></div>";
+
+                }
             }
+            
             if ($_GET['AJAX'] != "active")
             {
             ?>
