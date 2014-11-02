@@ -1029,7 +1029,7 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Cambiar foto",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Cambiar foto",
-                            "informacion" => "<br/><br/>Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
+                            "informacion" => "Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
             <form><table cellpadding=\"10\"><tr><td><input type=\"file\" id=\"foto\" onfocus=\"clearSearch(this);\" style=\"margin-left: 290px;\"/></td></tr>
                    
             </table>       
@@ -1052,7 +1052,7 @@ $subs = array("nombre" => "Modificar correo",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Modificar correo",
                             "informacion" => '<div id="modificarcorreo-form">
-            <br/><br/>Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
+            Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
             <form><table cellpadding="10"><tr><td><input type="text" value=<?php echo $_SESSION[\'email\']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
                    
             </table>       
