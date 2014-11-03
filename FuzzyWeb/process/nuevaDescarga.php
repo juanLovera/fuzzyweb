@@ -11,7 +11,6 @@ $nombre = (string)htmlentities($_POST['nombre']);
 $descripcion = (string)htmlentities($_POST['descripcion']);
 $link_back = (string)htmlentities($_POST['linkback']);
 $subsec = (string)htmlentities($_POST['subsec']);
-$sec = (string)htmlentities($_POST['sec']);
 $bloque = (string)htmlentities($_POST['bloque']);
 
 if (empty($nombre) || empty($descripcion))
@@ -60,7 +59,7 @@ if (copy($file_temp_name, $destino))
                       "descripcion" => $descripcion,
                       "path" => $destino,
                       "autor" => $_SESSION['email']);
-   $filter = array('nombre'=>$subsec, 'seccion' => $sec);
+   $filter = array('_id'=> new MongoId($subsec));
    $update = array('$push'=>array('bloque.'.$bloque.'.descarga' =>$nuevaDesc));
    $coleccion->update($filter,$update);
    header("Location: ../".$link_back."&e=ok");

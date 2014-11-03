@@ -22,8 +22,8 @@ modelo relacional difuso [5, 9]. Estas fueron luego generalizadas en GEFRED [19]
 extendido para bases de datos relacionales difusas. A partir de este se extendió el modelo Entidad Relación y el lenguaje SQL, surgiendo FuzzyEER  y FSQL.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -47,8 +47,8 @@ $subs = array("nombre" => "Historia",
                  </div>",                  
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -155,8 +155,8 @@ $subs = array("nombre" => "Miembros",
             </div>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 
 $coleccion->insert($subs);
@@ -167,38 +167,38 @@ $subs = array("nombre" => "Tipos de datos difusos",
                             "informacion" => "Para representar datos difusos, se definieron 5 tipos de atributos difusos, basados en la representación de FuzzyEER.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                           array("nombre" => "TIPO 1",
                             "informacion" => "Atributos con valores de datos precisos provistos con etiquetas linguísticas, interpretadas como números difusos, con el propósito de ser usadas en condiciones difusas.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                           array("nombre" => "TIPO 2",
                             "informacion" => "Incluye distribuciones de posibilidad en un dominio ordenado. Los conjuntos difusos se caracterizan por una función de membresía cuyo rango está en el intervalo real [0, 1], cuánto más se acerca a 1 el grado de membresía de un elemento, éste está más posiblemente (o certeramente) incluido en el conjunto. Así, 0 es la medida de completa de exclusión y 1 la de completa inclusión.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                           array("nombre" => "TIPO 3",
                             "informacion" => "Su dominio es un conjunto de etiquetas dotado de una relación difusa de similitud. Un ejemplo de este tipo de dato es los colores,  identificados por sus nombres, ellos tienen una relación de similitud, en el sentido de ser parecidos entre sí.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                           array("nombre" => "TIPO 4",
                             "informacion" => "Es similar al tipo 3 pero sin las relaciones de similitud.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                           array("nombre" => "TIPO 5",
                             "informacion" => "-",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)    
+                            "descarga" => array(),
+                            "webapp" => array())    
                   ));
 $coleccion->insert($subs);
 
@@ -208,8 +208,8 @@ $subs = array("nombre" => "Comparación con otros proyectos",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -219,8 +219,8 @@ $subs = array("nombre" => "Ventajas",
                             "informacion" => "El lenguaje estándar para bases de datos SQL provee constructores que permiten hacer consultas basadas en el ordenamiento y/o en el particionamiento de las relaciones según los valores de atributos específicos. Si se permiten atributos difusos como los propuestos en el modelo GEFRED, tales constructores de consulta deben extenderse de forma que provean una semántica adecuada en presencia de datos difusos. Sin embargo, la definición de FSQL lo que hace es prohibir que se usen estos atributos en el criterio de ordenamiento o particionamiento en una consulta, lo cual resulta poco satisfactorio. Otras propuestas conocidas de extensión a SQL con conjuntos difusos ni siquiera consideran estos tipos de atributos.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -230,8 +230,8 @@ $subs = array("nombre" => "Proyectos anteriores",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -241,15 +241,12 @@ $subs = array("nombre" => "Descarga",
                             "informacion" => '',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
+                            "descarga_des" => "activated",
                             "descarga" => array(array("nombre" => "Descarga 1",
-                            "fecha" => "1 de noviembre de 2014",
+                            "fecha" => "1/11/2014",
                             "descripcion" => "Descarga de proyecto de Bases de Datos con Atributos Difusos de Tipo 2 y Tipo 3.",
-                            "path" => "downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip"),
-                             array("nombre" => "Descarga 2",
-                            "fecha" => "2 de noviembre de 2014",
-                            "descripcion" => "Descarga de proyecto de Bases de Datos prueba",
                             "path" => "downloads/FuzzyDB_MPDS_Ene_Mar_14_FINAL.zip")),
-                            "webapp" => NULL)
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -259,8 +256,8 @@ $subs = array("nombre" => "Requerimientos",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -270,8 +267,8 @@ $subs = array("nombre" => "Manual de instalación",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -281,8 +278,8 @@ $subs = array("nombre" => "Versiones anteriores",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -292,8 +289,8 @@ $subs = array("nombre" => "API",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -303,8 +300,8 @@ $subs = array("nombre" => "Tipo 2",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -314,8 +311,8 @@ $subs = array("nombre" => "Tipo 3",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -325,8 +322,8 @@ $subs = array("nombre" => "Tipo 4",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -336,8 +333,8 @@ $subs = array("nombre" => "Tipo 5",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -347,20 +344,20 @@ $subs = array("nombre" => "Publicaciones asociadas",
                             "informacion" => "En esta sección se encuentran todas las publicaciones asociadas al proyecto.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                   array("nombre" => "PAPERS",
                             "informacion" => "Consultas con agrupamiento basado en similitud    -    <a href=http://www.scielo.cl/pdf/ingeniare/v22n4/art07.pdf>artículo</a>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL),
+                            "descarga" => array(),
+                            "webapp" => array()),
                   array("nombre" => "INVESTIGACIONES",
                             "informacion" => "-",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -370,8 +367,8 @@ $subs = array("nombre" => "Conferencias",
                             "informacion" => "-",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -381,8 +378,8 @@ $subs = array("nombre" => "Entrevistas",
                             "informacion" => "-",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -392,8 +389,8 @@ $subs = array("nombre" => "Pruebas en línea",
                             "informacion" => "Mini manual de cómo usar las pruebas en línea.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -403,19 +400,23 @@ $subs = array("nombre" => "Pruebas en consola",
                             "informacion" => "<iframe id=\"conso\" style=\"margin-left: auto; margin-right: auto; width: 810px; height: 400px; position: absolute; left: 350px\" src=\"http://localhost/terminal/\"></iframe>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
 $subs = array("nombre" => "Demostración de funcionamiento",
               "seccion" => "Pruebas en línea",
               "bloque" => array(array("nombre" => "DEMOSTRACIÓN DE FUNCIONAMIENTO",
-                            "informacion" => "<iframe id=\"conso\" style=\"margin-left: auto; margin-right: auto; width: 810px; height: 400px; position: absolute; left: 350px\" src=\"http://localhost:8000/agrupar\"></iframe><div style=\"background-color:#F0F0F0; width:782px; padding:16px; text-align:justify; margin-bottom: 10px; margin-top:420px; margin-left:14px;\"><strong>Agregar demostración de funcionamiento</strong><form method=\"post\"><table cellspacing=\"6\" style=\"margin-top:25px;\"><tr><td>Nombre</td><td><input type=\"text\" name=\"nombre\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; width:560px; padding-left:8px;\" /></td></tr><tr><td>Descripción</td><td><textarea name=\"descripcion\" style=\"border: 1px solid #045d6f; border-radius:5px; height:50px; width:560px; padding-left:8px;\"></textarea></td></tr><tr><td>URL *</td><td><input type=\"text\" name=\"archivo\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; width:560px; padding-left:8px;\" /></td></tr></table><br/><span style=\"font-size:12px;\">* Este URL debe contener un sitio web que actualmente este usando FuzzydoDB para su funcionamiento interno.</span><br/><img src=\"img/subir_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-left: 710px; margin-right: 6px;\" />Subir</form><br/></div>",
+                            "informacion" => "",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp_des" => "activated",
+                            "webapp" => array(array("nombre" => "Aplicación en Django",
+                            "fecha" => "2/11/2014",
+                            "descripcion" => "Aplicación desarrollada en la Universidad Simón Bolívar para demostrar funcionamiento de ordenamiento y agrupamiento de datos tipo 2.",
+                            "path" => "http://localhost:8000/agrupar")))
                   ));
 $coleccion->insert($subs);
 
@@ -425,8 +426,9 @@ $subs = array("nombre" => "Desempeño",
                             "informacion" => "ESPACIO PARA LA INFORMACIÓN QUE ENVIARÁ EL EQUIPO DE PRUEBAS DE DESEMPEÑO",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga_des" => "activated",
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -683,8 +685,8 @@ $subs = array("nombre" => "Registro",
             </div>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -704,8 +706,8 @@ $subs = array("nombre" => "Recuperar contraseña",
             </div>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -715,8 +717,8 @@ $subs = array("nombre" => "Contáctanos",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -726,8 +728,8 @@ $subs = array("nombre" => "Donar",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -737,8 +739,8 @@ $subs = array("nombre" => "Compartir",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -755,8 +757,8 @@ $subs = array("nombre" => "Ver perfil",
             </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -1013,8 +1015,8 @@ $subs = array("nombre" => "Modificar perfil",
             </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -1035,8 +1037,8 @@ $subs = array("nombre" => "Cambiar foto",
             </div>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -1058,8 +1060,8 @@ $subs = array("nombre" => "Modificar correo",
             </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 
@@ -1081,8 +1083,8 @@ $subs = array("nombre" => "Modificar contraseña",
             </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
-                            "descarga" => NULL,
-                            "webapp" => NULL)
+                            "descarga" => array(),
+                            "webapp" => array())
                   ));
 $coleccion->insert($subs);
 

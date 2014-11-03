@@ -23,6 +23,7 @@ function get_subsecciones($seccion, $seccion2 = NULL)
     $coleccion = $db->subseccion;
     $cursor = $coleccion->find(array("seccion" => $seccion));
     $i = 0;
+    $cursor->sort(array('_id' => 1));
     foreach ($cursor as $doc)
     {
         $subs[$i] = $doc;
