@@ -34,7 +34,6 @@ $_SESSION['email'] = $cursor['correo'];
 $_SESSION['nombre'] = $cursor['nombre'];
 $_SESSION['apellido'] = $cursor['apellido'];
 $_SESSION['institucion'] = $cursor['institucion'];
-$_SESSION['foto'] = $cursor['foto'];
 $_SESSION['ocupacion'] = $cursor['ocupacion'];
 $_SESSION['ubicacion'] = $cursor['ubicacion'];
 $_SESSION['usertype'] = $cursor['tipo'];

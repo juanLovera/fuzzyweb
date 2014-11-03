@@ -1,4 +1,32 @@
 <?php
+/*
+ * Se muestran error si existen
+ */
+if (isset($_GET['e']))
+{
+    switch($_GET['e'])
+    {
+        case 5:
+        $mens = "El nombre de la descarga debe contener menos de 40 caracteres y la descripcion menos de 270. Además, estos no pueden estár vacíos. Por favor intente de nuevo.";  
+        break;
+        case 1:
+        $mens = "Debe seleccionar un archivo para subir. Por favor intente de nuevo.";  
+        break;
+        case 2:
+        $mens = "El archivo de debe pesar más de 5MB. Por favor intente de nuevo.";  
+        break;
+        case 3:
+        $mens = "El archivo de debe ser de formato ZIP, RAR o PDF. Por favor intente de nuevo.";  
+        break;
+        case "ok":
+        $mens = "Su descarga ha sido agregada con éxito.";  
+        break;
+        default:
+        $mens = "Error desconocido. Por favor intente de nuevo.";  
+        break;
+    }
+    echo "<script>alert('".$mens."');</script>";
+}
 if (!isset($coleccion2))
     $coleccion2 = NULL;
 $subsecs = get_subsecciones($seccion, $seccion2);
@@ -80,6 +108,23 @@ include ("header.php");
                     echo "<br/></div></div>";
 
                 }
+                
+                // Modo desarrollador: Agregar descarga
+                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$i]['descarga_des'] == "activated") 
+                {
+                ?>
+                <a href="javascript:void(0)" onclick="$('#agregar-descarga<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar descarga nueva]</a>
+                <div id="agregar-descarga<?php echo $subs_select ?>" style="display:none">
+                    <div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><form id="nueva_desc" method="post" enctype='multipart/form-data' action="process/nuevaDescarga.php"><table><tr><td style="padding-bottom:25px;"><strong>Agregar Descarga</strong><td></tr><tr><td>Nombre</td><td><input type="text" name="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:540px; padding-left:8px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" style="border: 1px solid #045d6f; border-radius:5px; height:50px; width:540px; padding-left:8px;"></textarea></td></tr><tr><td>Archivo</td><td><input type="file" name="archivo" /></td></tr></table><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 690px; margin-right: 6px;" /><a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea subir y publicar este archivo?')) document.getElementById('nueva_desc').submit();">Subir</a>
+                            <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
+                            <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['nombre'] ?>" />
+                            <input type="hidden" name="sec" value="<?php echo $subsecs[$subs_select]['seccion'] ?>" />
+                            <input type="hidden" name="bloque" value="<?php echo $i ?>" />
+                            
+                        </form></div>
+                </div>
+                <?php
+                }
             }
             
             if ($_GET['AJAX'] != "active")
@@ -89,7 +134,8 @@ include ("header.php");
       </div>
           <div id="text-form-loading" style="text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
-           </div>   
+           </div>
+                
            
     </div>
     </div>

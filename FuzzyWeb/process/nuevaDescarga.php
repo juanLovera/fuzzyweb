@@ -2,83 +2,69 @@
 /* 
  * nuevaDescarga.php
  * Recibe campos y procesa una nueva descarga.
+ * MODO DESARROLLADOR
  */
+session_start();
 include_once("../inc/includes.inc.php");
-
+comprobar_sesion("U_Desarrollador");
 $nombre = (string)htmlentities($_POST['nombre']);
 $descripcion = (string)htmlentities($_POST['descripcion']);
-$linkback = (string)htmlentities($_POST['linkback']);
+$link_back = (string)htmlentities($_POST['linkback']);
+$subsec = (string)htmlentities($_POST['subsec']);
+$sec = (string)htmlentities($_POST['sec']);
+$bloque = (string)htmlentities($_POST['bloque']);
 
-if (empty($nombre) || empty($descripcion) || empty($archivo))
+if (empty($nombre) || empty($descripcion))
 {
-    die("Debe llenar todos los campos para agregar una descarga.");
+    header("Location: ../".$link_back."&e=5");
+    exit;
 }
 if (strlen($nombre) > 40)
 {
-    die("El nombre no debe contener mas de 40 digitos.");
+    header("Location: ../".$link_back."&e=5");
+    exit;
 }
 if (strlen($descripcion) > 270)
 {
-    die("La descripcion no debe contener mas de 270 caracteres.");
+    header("Location: ../".$link_back."&e=5");
+    exit;
 }
-
 $file_name = $_FILES['archivo']['name'];
-$file_temp_name = $_FILES['archivo']['temp_name'];
+$file_temp_name = $_FILES['archivo']['tmp_name'];
 $file_size = $_FILES['archivo']['size'];
 $file_type = $_FILES['archivo']['type'];
-
 if (empty($file_name)) {
-header("Location: ../".$link_back."?e=1");
+header("Location: ../".$link_back."&e=1");
 exit;
 }
-
-if ($file_size > 2097152) {
-header("Location: ../".$link_back."?e=2");
+if ($file_size > 5097152) {
+header("Location: ../".$link_back."&e=2");
 exit;
 }
-
 $prefijo = md5(uniqid(rand()));
 $extension = explode(".",$file_name); 
 $ext = count($extension)-1;
-
-if($ext != "zip" && $ext != "rar" && $ext != "pdf") {
-header("Location: ../".$link_back."?e=3");
+if($extension[$ext] != "zip" && $extension[$ext] != "rar" && $extension[$ext] != "pdf"
+    && $extension[$ext] != "ZIP" && $extension[$ext] != "RAR" && $extension[$ext] != "PDF") {
+header("Location: ../".$link_back."&e=3");
 exit;
 }
 $img= $prefijo.".".strtolower($extension[$ext]);
-$destino =  "/downloads/".$img; // Temporal
-if (copy($_FILES['up_avatar']['tmp_name'],$destino))
+$destino =  "../downloads/".$img; // Temporal
+if (copy($file_temp_name, $destino))
 {
-    
+   $db = conectar_db();
+   $coleccion = $db->subseccion; 
+   $nuevaDesc = array("nombre" => $nombre,
+                      "fecha" => date("d/m/Y"),
+                      "descripcion" => $descripcion,
+                      "path" => $destino,
+                      "autor" => $_SESSION['email']);
+   $filter = array('nombre'=>$subsec, 'seccion' => $sec);
+   $update = array('$push'=>array('bloque.'.$bloque.'.descarga' =>$nuevaDesc));
+   $coleccion->update($filter,$update);
+   header("Location: ../".$link_back."&e=ok");
+   exit;
 }
-header("Location: ../".$link_back."?e=4");
-// Conexion a DB
-$db = conectar_db();
-$coleccion = $db->usuario;
-
-// Se verifica si el email ya existe
-$cursor = $coleccion->find(array("correo" => $mail));
-$cursor = iterator_to_array($cursor);
-if (count($cursor) != 0)
-{
-    die("El email ingresado ya se encuentra registrado.");
-}
-// Se encripta clave
-$contrasena = encriptar_pass($contrasena);
-
-// Todo OK. Se procede a realizar el registro
-$user = array(
-    "nombre" => $nombre,
-    "apellido" => $apellido,
-    "correo" => $mail,
-    "tipo" => "U_Normal",
-    "ubicacion" => $ubicacion,
-    "ocupacion" => $ocupacion,
-    "institucion" => $institucion,
-    "contrasena" => $contrasena
-);
-
-$coleccion->insert($user);
-header("Location: signin.php?mail=".$mail."&contrasena=".$confirmar);
-
+header("Location: ../".$link_back."&e=10");
 ?>

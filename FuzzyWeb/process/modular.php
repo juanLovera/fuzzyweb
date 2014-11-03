@@ -235,7 +235,7 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Descarga",
               "seccion" => "Descarga",
               "bloque" => array(array("nombre" => "DESCARGA",
-                            "informacion" => '<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\"><form method="post"><table><tr><td style="padding-bottom:25px;"><strong>Agregar Descarga</strong><td></tr><tr><td>Nombre</td><td><input type="text" name="nombre" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; width:540px; padding-left:8px;\" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" style=\"border: 1px solid #045d6f; border-radius:5px; height:50px; width:540px; padding-left:8px;\"></textarea></td></tr><tr><td>Archivo</td><td><input type="file" name="archivo" /></td></tr></table><img src=\"img/subir_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-left: 690px; margin-right: 6px;\" />Subir</form></div>',
+                            "informacion" => '',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(array("nombre" => "Descarga 1",
