@@ -36,8 +36,8 @@ if (isset($_GET['e']))
     }
     echo "<script>alert('".$mens."');</script>";
 }
-if (!isset($seccion2))
-    $seccion2 = NULL;
+if (!isset($coleccion2))
+    $coleccion2 = NULL;
 $subsecs = get_subsecciones($seccion, $seccion2);
 if (isset($_GET['sec']))
     $subs_select = $_GET['sec'];
@@ -94,15 +94,12 @@ include ("header.php");
                 if ($i != 0)
                     echo "<a href='#texto-html'><img src='img/up2.png' width='10' heigth='10' alt='Ir al cielo' style='border:0; margin-right: 5px;'/></a>";
                 echo "<span style=\"color:#023e44\"><strong>".$subsecs[$subs_select]['bloque'][$i]['nombre']."</strong><br/><br/></span>";
-                $filename = (string)time().".php";
-                $file = fopen($filename, "w") or die("Error cargando la pagina");
+                
+                
                 $text = $subsecs[$subs_select]['bloque'][$i]['informacion'];
                 $text = str_replace("\\\"", "\"", $text);
-                fwrite($file, $text);
-                fclose($file);
-                include ($filename);
-                if (($i+1) != count($subsecs[$subs_select]['bloque']))
-                    echo "<br/><br/><hr/><br/>";
+                
+                
                 echo "</div>";
                 unlink($filename);
                 
