@@ -68,13 +68,13 @@ else{
     $uheight = $h;
     $uwidth = $w;
     if (!is_numeric($x) || !is_numeric($w) || !is_numeric($y) || !is_numeric($h)) // Comprobamos que sean cordenadas validas
-        die("Coordenadas invalidas");
+        header("Location: ../perfil.php?sec=2&er=5");
     if ($uheight == 0 || $uwidth == 0) // Comprobamos que haya seleccionado algo
-        die("No hay area seleccionada");
+        header("Location: ../perfil.php?sec=2&er=6");
     if ($uwidth / $uheight != 1)
-        die("Dimensiones inapriopiadas");
+        header("Location: ../perfil.php?sec=2&er=7");
     if ($uwidth <= 50 || $uheight <= 50)
-        die("Imagen muy pequena");
+        header("Location: ../perfil.php?sec=2&er=8");
 
     $img_r = imagecreatefromjpeg("../".$pic_id);
     $dst_r = ImageCreateTrueColor(150, 150);
@@ -86,11 +86,6 @@ else{
 //    $ok3 = imagejpeg($dst_r2, GC_PATH_USER_SMALL_AVATAR_PATH.$pic_id.".jpg", 100);
     imagedestroy($img_r);
     @unlink("../".$pic_name);
-    
-//    if (!$ok)
-//        die("OK");
-    if(!$ok1)
-        die("OK1");
     
     if ($ok && $ok1)
     {
@@ -114,18 +109,13 @@ else{
                                  $newdata);
         
         
-//        unset($_SESSION['upload_temp_name']);//?
-//        unset($_SESSION['upload_w']);//?
-//        unset($_SESSION['upload_h']);//?
-//        $_SESSION['user_avatar_type'] = 1;//?
         
-        echo "we cool";
         header("Location: ../perfil.php"); // Todo salio bien//?
         exit;//?
     }
     else
     {
-        die("no lo logre");
+        die("ERROR.");
 //        header("Location: ../perfil.php"); // Error//?
         exit;	
     }
