@@ -765,7 +765,6 @@ legend small {
   color: #999999;
 }
 label,
-input,
 button,
 select,
 textarea {
@@ -773,7 +772,6 @@ textarea {
   font-weight: normal;
   line-height: 20px;
 }
-input,
 button,
 select,
 textarea {
@@ -785,7 +783,6 @@ label {
 }
 select,
 textarea,
-input[type="text"],
 input[type="password"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -812,7 +809,6 @@ input[type="color"],
   border-radius: 4px;
   vertical-align: middle;
 }
-input,
 textarea,
 .uneditable-input {
   width: 206px;
@@ -821,7 +817,6 @@ textarea {
   height: auto;
 }
 textarea,
-input[type="text"],
 input[type="password"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -847,7 +842,6 @@ input[type="color"],
   transition: border linear .2s, box-shadow linear .2s;
 }
 textarea:focus,
-input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
@@ -1015,7 +1009,6 @@ textarea[class*="span"],
 .row-fluid .input-append [class*="span"] {
   display: inline-block;
 }
-input,
 textarea,
 .uneditable-input {
   margin-left: 0;
