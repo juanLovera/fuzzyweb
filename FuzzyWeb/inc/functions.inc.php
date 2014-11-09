@@ -66,6 +66,23 @@ function comprobar_sesion($acceso = "public", $link = "index.php") // $acceso pu
     }
 }
 
+
+//Hola, esta funcion si esta documentada
+//Permite encontrar el nombre del usuario
+function get_nombreUsuario($id)
+{
+    //Se conecta a la BD
+    $db = conectar_db();
+    $coleccion = $db->usuario;
+
+
+    // Se verifica si el usuario existe
+    $cursor = $coleccion->findOne(array("_id" => $id));
+    
+    // Se retorna el nombre
+    return $cursor['nombre']." ".$cursor['apellido'];
+}
+
 function image_gd($file,$max_w) 
 { 
 	//Separamos las extenciones de archivos para definir el tipo de ext. 

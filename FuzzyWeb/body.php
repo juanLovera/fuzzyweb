@@ -140,8 +140,9 @@ include ("header.php");
                 for($j=0; $j < count($subsecs[$subs_select]['bloque'][$i]['descarga']); $j++)
                 {
                     echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
-                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['fecha']."</span><br/><br/>";
-                    echo $subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
+                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['fecha']."</span>"."</br><span style=\"font-size:13px\"> Publicado por ".get_nombreUsuario($subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['autor'])."</span>"."<br/><br/>";
+                    //echo "Publicado por ".get_nombreUsuario($subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['autor'])."<br/><br/><div style=\"padding-left:100px; text-align:right;\">"; 
+                    echo $subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";             
                     if ($_SESSION["ss_key"] == $G_SKEY)
                         echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
                     else
