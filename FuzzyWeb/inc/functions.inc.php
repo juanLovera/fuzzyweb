@@ -83,6 +83,23 @@ function get_nombreUsuario($id)
     return $cursor['nombre']." ".$cursor['apellido'];
 }
 
+
+//Hola, esta funcion si esta documentada
+//Permite encontrar el nombre del usuario
+function get_usuario($id_Usuario)
+{
+    //Se conecta a la BD
+    $db = conectar_db();
+    $coleccion = $db->usuario;
+
+
+    // Se verifica si el usuario existe
+    $cursor = $coleccion->findOne(array("_id" => new MongoId($id_Usuario)));
+    
+    // Se retorna el nombre
+    return $cursor;
+}
+
 function image_gd($file,$max_w) 
 { 
 	//Separamos las extenciones de archivos para definir el tipo de ext. 
