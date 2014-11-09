@@ -315,6 +315,16 @@ function modificarCorreo()
     
 }
 
+function readURL(input) {
+    if (document.getElementById(input).files && document.getElementById(input).files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('preview').src=e.target.result;
+        }
+        reader.readAsDataURL(document.getElementById(input).files[0]);
+    }
+}
+
 function modificarContrasena()
 {
     if (!validarModificarContrasena())

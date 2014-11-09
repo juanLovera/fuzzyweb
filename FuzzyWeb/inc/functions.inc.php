@@ -65,4 +65,57 @@ function comprobar_sesion($acceso = "public", $link = "index.php") // $acceso pu
         exit;
     }
 }
+
+function image_gd($file,$max_w) 
+{ 
+	//Separamos las extenciones de archivos para definir el tipo de ext. 
+	$extension = explode(".",$file); 
+	$ext = count($extension)-1; 
+	
+	//Determinamos las extenciones permitidas. 
+	if($extension[$ext] == "jpg" || $extension[$ext] == "jpeg" || $extension[$ext] == "JPG" || $extension[$ext] == "JPEG") 
+	{ 
+		$image = imagecreatefromjpeg($file); 
+	} 
+	else if($extension[$ext] == "gif" || $extension[$ext] == "GIF" )
+	{ 
+		$image = imagecreatefromgif($file); 
+	}	 
+	else if($extension[$ext] == "png" || $extension[$ext] == "PNG")
+	{ 
+		$image = imagecreatefrompng($file); 
+	} 
+	else 
+	{ 
+		return false;
+	} 
+
+	$thumb_name = substr($file,0,-4);
+	$width = imagesx($image);
+	$height = imagesy($image);
+
+	if ($width > $max_w) 
+	{
+		$nueva_anchura = $max_w; 
+		$nueva_altura = ($nueva_anchura * $height) / $width ;
+	}
+	else
+	{
+		$nueva_anchura = $width; 
+		$nueva_altura = $height;
+	}
+
+	if (function_exists("imagecreatetruecolor")) 
+	{ 
+		$thumb = ImageCreateTrueColor($nueva_anchura, $nueva_altura);
+	} 
+
+	if (!$thumb) $thumb = ImageCreate($nueva_anchura, $nueva_altura); 
+
+	imagecopyresampled($thumb, $image, 0, 0, 0, 0, $nueva_anchura, $nueva_altura, $width, $height);
+	imagejpeg($thumb, $thumb_name.".jpg", 100); 
+	imagedestroy($image); 
+
+	return $image; 
+} 
 ?>
