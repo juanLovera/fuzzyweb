@@ -699,7 +699,7 @@ $subs = array("nombre" => "Recuperar contraseña",
               "seccion" => "Comunidad_p",
               "bloque" => array(array("nombre" => "RECUPERAR CONTRASEÑA",
                             "informacion" => "<div id=\"recuperar-form\">
-            <br/><br/>Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
+            Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
             <input type=\"text\" id=\"correoRecuperarContrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Correo Electr&oacute;nico\" style=\"border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px; margin-left: 300px; margin-top:30px;\" />
             <a href=\"javascript:void(0)\" onclick=\"recuperarClave()\"><img src=\"img/boton-recuperar.png\" width=\"99\" height=\"30\" alt=\"recuperar\" style=\"margin-left: 340px; margin-top:15px; border:0\" /></a>
             </div>
@@ -1028,18 +1028,52 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Cambiar foto",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Cambiar foto",
-                            "informacion" => "Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
-            <form><table cellpadding=\"10\"><tr><td><input type=\"file\" id=\"foto\" onfocus=\"clearSearch(this);\" style=\"margin-left: 290px;\"/></td></tr>
-                   
+                            "informacion" => '<?php 
+                                if (isset($_GET[\'er\']))
+{
+    switch($_GET[\'er\'])
+    {
+        case 1:
+        $mens = "El campo de la foto no puede estar en blanco.";  
+        break;
+        case 2:
+        $mens = "El formato de la foto tiene que ser \'.png\', \'.jpeg\', \'.gif\'.";  
+        break;
+        case 3:
+        $mens = "Su foto no puede pesar más de 2MB.";  
+        break;
+        case 4:
+        $mens = "Su foto debe medir al menos 124 x 116 pixeles.";  
+        break;
+        default:
+        $mens = "Error desconocido. Por favor intente de nuevo.";  
+        break;
+    }
+    echo "<script>alert(\'".$mens."\');</script>";
+}
+if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
+            <form  method="post" enctype="multipart/form-data" action="process/crop.php"><table cellpadding=\"10\"><tr><td><input type=\"file\" name=\"preview\" style=\"margin-left: 290px;\"/></td></tr>       
+            <input type=\"hidden\" name=\"paso\" value=\"1\">
             </table>       
-            <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"modificarCorreo();\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
+            <a href=\"javascript:void(0)\"><input type=\"image\" src=\"img/boton-modificar.png\" alt=\"Modificar\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
+            <?php } else {?>		
+                        <img id=\"preview\" src=\"<?php echo $_SESSION[\'upload_temp_name\']?>\" alt=\"your image\" style=\"max-width:800px; max-height:700px; display:block; margin-left:auto; margin-right:auto;\" />
+                        <form action="process/crop.php" method="post" onsubmit="return checkCoords();">
+			<input type="hidden" name="paso" value="2">
+                        <input type="hidden" id="x" name="x" />
+			<input type="hidden" id="y" name="y" />
+			<input type="hidden" id="w" name="w" />
+			<input type="hidden" id="h" name="h" />
+			<input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+		</form> <?php }?>
+                
             </div>
             <div id=\"modificarfoto-loading\" style=\"padding-right: 90px;text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
             </div>
             <div id=\"modificarfoto-ok\" style=\"padding-right: 90px;display: none; text-align: center; padding-top: 60px;\">
                 <strong>Se ha actualizado su foto exitosamente.</strong>
-            </div>",
+            </div><br/><br/><br/>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),

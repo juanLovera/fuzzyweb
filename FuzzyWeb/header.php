@@ -8,7 +8,19 @@
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-</head>
+<?php
+if (isset($localjs))
+for($i=0; $i< count($localjs); $i++)
+{
+    echo "<script type=\"text/javascript\" src=\"".$localjs[$i]."\"></script>";
+}
+
+if (isset($localcss))
+for($i=0; $i< count($localcss); $i++)
+{
+    echo "<link href=\"".$localcss[$i]."\" rel='stylesheet' type='text/css'>";
+}
+?></head>
 
 <body>
 <div id="top_banner" style="background-image:url(img/bg_banner.jpg); height:148px; width:100%">
