@@ -9,16 +9,16 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <?php
-if (isset($localjs))
-for($i=0; $i< count($localjs); $i++)
-{
-    echo "<script type=\"text/javascript\" src=\"".$localjs[$i]."\"></script>";
-}
-
 if (isset($localcss))
 for($i=0; $i< count($localcss); $i++)
 {
     echo "<link href=\"".$localcss[$i]."\" rel='stylesheet' type='text/css'>";
+}
+
+if (isset($localjs))
+for($i=0; $i< count($localjs); $i++)
+{
+    echo "<script type=\"text/javascript\" src=\"".$localjs[$i]."\"></script>";
 }
 ?></head>
 
