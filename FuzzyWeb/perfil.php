@@ -7,6 +7,6 @@ $localjs = array('js/jquery.Jcrop.js', 'js/crop.js');
 $localcss = array('css/jquery.Jcrop.css', 'css/mainJcrop.css', 'css/demos.css');
 $seccion = "Perfil";
 $link = "perfil.php";
-include_once ('body.php');
+include_once ('inc/body.inc.php');
 
 ?>

@@ -6,6 +6,6 @@ comprobar_sesion("public");
 
 $seccion = "API";
 $link = "api.php";
-include_once ('body.php');
+include_once ('inc/body.inc.php');
 
 ?>

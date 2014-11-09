@@ -58,7 +58,7 @@ if (copy($file_temp_name, $destino))
                       "fecha" => date("d/m/Y"),
                       "descripcion" => $descripcion,
                       "path" => $destino,
-                      "autor" => $_SESSION['email']);
+                      "autor" => $_SESSION['id']);
    $filter = array('_id'=> new MongoId($subsec));
    $update = array('$push'=>array('bloque.'.$bloque.'.descarga' =>$nuevaDesc));
    $coleccion->update($filter,$update);
