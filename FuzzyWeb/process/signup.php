@@ -13,6 +13,7 @@ $confirmar = (string)htmlentities($_GET['confirmar']);
 $ubicacion = (string)htmlentities($_GET['ubicacion']);
 $institucion = (string)htmlentities($_GET['institucion']);
 $ocupacion = (string)htmlentities($_GET['ocupacion']);
+$foto = NULL;
 
 if (empty($mail) || empty($nombre) || empty($apellido) || empty($contrasena)
     || empty($confirmar) || empty($ubicacion) ||empty($institucion) || 
@@ -57,7 +58,8 @@ $user = array(
     "ubicacion" => $ubicacion,
     "ocupacion" => $ocupacion,
     "institucion" => $institucion,
-    "contrasena" => $contrasena
+    "contrasena" => $contrasena,
+    "foto" => $foto
 );
 
 $coleccion->insert($user);

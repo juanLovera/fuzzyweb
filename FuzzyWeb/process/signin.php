@@ -37,6 +37,10 @@ $_SESSION['institucion'] = $cursor['institucion'];
 $_SESSION['ocupacion'] = $cursor['ocupacion'];
 $_SESSION['ubicacion'] = $cursor['ubicacion'];
 $_SESSION['usertype'] = $cursor['tipo'];
+if ($cursor['foto'] == NULL)
+{
+    $_SESSION['pic_id'] = "fotoPerfil.png";
+}
 
 echo "OK";
 ?>

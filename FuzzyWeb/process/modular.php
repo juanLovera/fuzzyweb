@@ -752,7 +752,7 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Ver perfil",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Ver perfil",
-                            "informacion" => '<div style=\"border: 1px solid #045d6f; border-radius:5px; height:150px; width:150px\"></div>
+                            "informacion" => '<div style=\"border: 1px solid #045d6f; border-radius:5px; height:150px; width:150px\"><img src="img/avatar/<?php echo $_SESSION[\'pic_id\']?>" alt="foto" width="150" height="150" /></div>
             <div style=\"float:right; margin-top: -140px; margin-right: -30px; width:700px;\">
             <table cellpadding=\"10\">
                 <tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION[\'nombre\']; ?></td><td style=\"padding-left:50px\"><strong>Apellido: </strong></td><td><?php echo $_SESSION[\'apellido\']; ?></td></tr>
