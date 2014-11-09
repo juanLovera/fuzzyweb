@@ -41,7 +41,7 @@ if (!(@file_get_contents($archivo)))
                       "fecha" => date("d/m/Y"),
                       "descripcion" => $descripcion,
                       "path" => $archivo,
-                      "autor" => $_SESSION['email']);
+                      "autor" => $_SESSION['id']);
    $filter = array('_id'=> new MongoId($subsec));
    $update = array('$push'=>array('bloque.'.$bloque.'.webapp' =>$nuevaDesc));
    $coleccion->update($filter,$update);
