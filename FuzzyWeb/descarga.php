@@ -6,6 +6,6 @@ comprobar_sesion("public");
 
 $seccion = "Descarga";
 $link = "descarga.php";
-include_once ('body.php');
+include_once ('inc/body.inc.php');
 
 ?>

@@ -6,6 +6,6 @@ comprobar_sesion();
 
 $seccion = "Pruebas en línea";
 $link = "pruebas.php";
-include_once ('body.php');
+include_once ('inc/body.inc.php');
 
 ?>

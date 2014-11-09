@@ -1,4 +1,7 @@
 <?php
+
+if ($_SESSION['usertype'] != "U_Administrador")
+    die("Debe ser un admin para acceder.");
 /*
  * Se muestran error si existen
  */
@@ -49,6 +52,16 @@ if (!is_numeric($subs_select))
 if ($subs_select < 0 || $subs_select >= count($subsecs))
     die ("Error catastrofico.");
 
+if (isset($_GET['bloque']))
+    $bloque_select = $_GET['bloque'];
+else
+    $bloque_select = 0;
+
+if (!is_numeric($bloque_select))
+    die ("Error catastrofico.");
+if ($bloque_select < 0 || $bloque_select >= count($subsecs[$subs_select]['bloque']))
+    die ("Error catastrofico.");
+
 if ($_GET['AJAX'] != "active")
 {
 include ("header.php");
@@ -74,37 +87,33 @@ include ("header.php");
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
             <div id="texto-html">    
             <?php
-            }
-            if (count($subsecs[$subs_select]['bloque']) > 1)
-            {
-               echo "<div id=\"menusuperior\" style=\"position: absolute; top: -5; left: 335px; width:850px;font-size:14px; color:#023e44\">";
-               for($i=1; $i < count($subsecs[$subs_select]['bloque']); $i++)
-               {
-                   echo "<a href='#text".$i."'>".$subsecs[$subs_select]['bloque'][$i]['nombre']."</a>&nbsp;&nbsp; |&nbsp;&nbsp; ";
-               }
-               echo "</div><div style='padding-top:30px; height:1px;'></div>"; 
-               
-            }
+            }        
+            
+                //echo "<span style=\"color:#023e44\"><strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."</strong><br/><br/></span>";
 
-                
-            for($i=0; $i < count($subsecs[$subs_select]['bloque']); $i++)
-            {
-                
-                echo "<div id='text".$i."' style='margin-bottom: 7px;'>";
-                if ($i != 0)
-                    echo "<a href='#texto-html'><img src='img/up2.png' width='10' heigth='10' alt='Ir al cielo' style='border:0; margin-right: 5px;'/></a>";
-                echo "<span style=\"color:#023e44\"><strong>".$subsecs[$subs_select]['bloque'][$i]['nombre']."</strong><br/><br/></span>";
+                echo "<div id='summernote' style='margin-bottom: 7px;'>";
                 
                 
-                $text = $subsecs[$subs_select]['bloque'][$i]['informacion'];
+                $text = $subsecs[$subs_select]['bloque'][$bloque_select]['informacion'];
                 $text = str_replace("\\\"", "\"", $text);
-                
+                echo $text; 
                 
                 echo "</div>";
-                unlink($filename);
+                ?>
+                
+                <script>
+                $('#summernote').summernote({
+  width: 840,
+  height: 500,
+  codemirror: { // codemirror options
+    theme: 'monokai'
+  }
+});
+                </script>
+                <?php
                 
                 // Modo desarrollador: Agregar descarga
-                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$i]['descarga_des'] == "activated") 
+                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$bloque_select]['descarga_des'] == "activated") 
                 {
                 ?>
                 <a href="javascript:void(0)" onclick="$('#agregar-descarga<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar descarga nueva]<br/><br/></a>
@@ -119,7 +128,7 @@ include ("header.php");
                 <?php
                 }
                 // Modo desarrollador: Agregar webapp
-                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$i]['webapp_des'] == "activated") 
+                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$bloque_select]['webapp_des'] == "activated") 
                 {
                 ?>
                 <a href="javascript:void(0)" onclick="$('#agregar-webapp<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar aplicación web nueva]<br/><br/></a>
@@ -134,29 +143,28 @@ include ("header.php");
                 <?php
                 }
                 
-                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$i]['descarga']); $j++)
+                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$bloque_select]['descarga']); $j++)
                 {
                     echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
-                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['fecha']."</span><br/><br/>";
-                    echo $subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
+                    echo "<strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['fecha']."</span><br/><br/>";
+                    echo $subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
                     if ($_SESSION["ss_key"] == $G_SKEY)
-                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
+                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['path']."\">Descargar</a>";
                     else
                         echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga(this);\"><a href=\"javascript:void(0)\">Descargar</a></span>";
                     echo "<br/></div></div>";
 
                 }
                 
-                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$i]['webapp']); $j++)
+                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$bloque_select]['webapp']); $j++)
                 {
                     echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
-                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['fecha']."</span><br/><br/>";
-                    echo $subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
-                    echo "<img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
+                    echo "<strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['fecha']."</span><br/><br/>";
+                    echo $subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
+                    echo "<img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
                     echo "<br/></div></div>";
                 }
                
-            }
             
             if ($_GET['AJAX'] != "active")
             {

@@ -7,6 +7,6 @@ comprobar_sesion("public");
 $seccion = "Comunidad_p";
 $seccion2 = "Comunidad";
 $link = "comunidad_p.php";
-include_once ('body.php');
+include_once ('inc/body.inc.php');
 
 ?>
