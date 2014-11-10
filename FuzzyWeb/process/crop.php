@@ -61,13 +61,13 @@ else
 
 else{
     $pic_id = $_SESSION['upload_temp_name'];
-    $x = $_POST['x']; //ux
+    $xx = $_POST['xx']; //ux
     $w = $_POST['w']; //ux2
-    $y = $_POST['y']; //uy
+    $yy = $_POST['yy']; //uy
     $h = $_POST['h']; //uy2
     $uheight = $h;
     $uwidth = $w;
-    if (!is_numeric($x) || !is_numeric($w) || !is_numeric($y) || !is_numeric($h)) // Comprobamos que sean cordenadas validas
+    if (!is_numeric($xx) || !is_numeric($w) || !is_numeric($yy) || !is_numeric($h)) // Comprobamos que sean cordenadas validas
         header("Location: ../perfil.php?sec=2&er=5");
     if ($uheight == 0 || $uwidth == 0) // Comprobamos que haya seleccionado algo
         header("Location: ../perfil.php?sec=2&er=6");
@@ -80,7 +80,7 @@ else{
     $dst_r = ImageCreateTrueColor(150, 150);
 //    $dst_r2 = ImageCreateTrueColor(26, 24);
     
-    $ok = imagecopyresampled($dst_r,$img_r,0,0,$x,$y,150,150,$uwidth,$uheight);
+    $ok = imagecopyresampled($dst_r,$img_r,0,0,$xx,$yy,150,150,$uwidth,$uheight);
     $ok1 = imagejpeg($dst_r, "../img/avatar/".$_SESSION['pic_id'], 100); //?
 //    $ok2 = imagecopyresampled($dst_r2,$img_r,0,0,$ux,$uy,26,24,$uheight,$uheight);
 //    $ok3 = imagejpeg($dst_r2, GC_PATH_USER_SMALL_AVATAR_PATH.$pic_id.".jpg", 100);
