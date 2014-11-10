@@ -75,9 +75,9 @@ include ("header.php");
                 for ($i=0; $i<count($subsecs); $i++)
                 {
                     if ($i ==  $subs_select)
-                        echo "<div id=\"selected\" class=\"boton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" style=\"background-image:url(img/boton_seleccionado.png); font-weight:bold\">".$subsecs[$i]['nombre']."</div>";
+                        echo "<div id=\"selected\" class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" style=\"background-image:url(img/boton_seleccionado.png); font-weight:bold\">".$subsecs[$i]['nombre']."</div>";
                     else   
-                        echo "<div class=\"boton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" onMouseOver=\"this.style.fontWeight='bold'\" onMouseOut=\"this.style.fontWeight=''\">".$subsecs[$i]['nombre']."</div>";
+                        echo "<div class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" onMouseOver=\"this.style.fontWeight='bold'\" onMouseOut=\"this.style.fontWeight=''\">".$subsecs[$i]['nombre']."</div>";
                     
                 }
                 ?>
