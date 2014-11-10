@@ -53,7 +53,7 @@ if ($_GET['AJAX'] != "active")
 {
 include ("header.php");
 ?>
-<div id="barra_azul" style="background-image:url(img/bg_azul.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
+<div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
 	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1210px; padding-top:30px; display:table">
 		<div style="background-image:url(img/textbox_top.png); margin-left:auto; margin-right:auto; width:1200px; height:16px;"></div>
         <div id="cuadroblanco" style="background-image:url(img/textbox_middle.png); margin-left:auto; margin-right:auto; width:1200px; min-height:500px; position:relative; display:table">
