@@ -810,7 +810,7 @@ $subs = array("nombre" => "Contáctanos",
 					<label for=\"email\">Correo</label>
 				</td>
 				<td valign=\"top\">
-					<input  type=\"text\" name=\"email\" required maxlength=\"80\" style=\" width:600px; margin-top:10px; border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px;\">
+					<input  class=\"form-control\" type=\"text\" name=\"email\" required maxlength=\"80\" style=\" width:600px; margin-top:10px; border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px;\">
 				</td>
 			</tr>
 			
@@ -819,7 +819,7 @@ $subs = array("nombre" => "Contáctanos",
 					<label for=\"comentarios\">Comentario</label>
 				</td>
 				<td valign=\"top\">
-					<textarea  name=\"comentarios\" required maxlength=\"1000\" cols=\"25\" rows=\"6\" style=\"margin-top:10px; width:600px;border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:60px; padding-left:8px;\"></textarea>
+					<textarea class=\"form-control\"  name=\"comentarios\" required maxlength=\"1000\" cols=\"25\" rows=\"6\" style=\"margin-top:10px; width:600px;border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:60px; padding-left:8px;\"></textarea>
 				</td>
 			</tr>
 		</table>
@@ -827,7 +827,7 @@ $subs = array("nombre" => "Contáctanos",
 		</br><strong>Todos los campos son obligatorios.</strong>
 		
 		<div style=\"text-align:center\">
-				<input type=\"submit\" name=\"submit\" value=\"Enviar\">
+				<button type=\"submit\" class=\"btn btn-custom\">Enviar</button>
 		</div>
  
 	</form>			
