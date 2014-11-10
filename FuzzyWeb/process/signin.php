@@ -41,6 +41,10 @@ if ($cursor['foto'] == NULL)
 {
     $_SESSION['pic_id'] = "fotoPerfil.png";
 }
+ else 
+{
+    $_SESSION['pic_id'] = $cursor['foto'];
+}
 $_SESSION['id'] = $cursor['_id'];
 
 echo "OK";

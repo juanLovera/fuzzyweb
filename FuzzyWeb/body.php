@@ -62,9 +62,9 @@ include ("header.php");
                 for ($i=0; $i<count($subsecs); $i++)
                 {
                     if ($i ==  $subs_select)
-                        echo "<div id=\"selected\" class=\"boton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" style=\"background-image:url(img/boton_seleccionado.png); font-weight:bold\">".$subsecs[$i]['nombre']."</div>";
+                        echo "<div id=\"selected\" class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" style=\"background-image:url(img/boton_seleccionado.png); font-weight:bold\">".$subsecs[$i]['nombre']."</div>";
                     else   
-                        echo "<div class=\"boton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" onMouseOver=\"this.style.fontWeight='bold'\" onMouseOut=\"this.style.fontWeight=''\">".$subsecs[$i]['nombre']."</div>";
+                        echo "<div class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" onMouseOver=\"this.style.fontWeight='bold'\" onMouseOut=\"this.style.fontWeight=''\">".$subsecs[$i]['nombre']."</div>";
                     
                 }
                 ?>
@@ -153,7 +153,7 @@ include ("header.php");
                 for($j=0; $j < count($subsecs[$subs_select]['bloque'][$i]['webapp']); $j++)
                 {
                     echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
-                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['fecha']."</span>"."</br><span style=\"font-size:13px\"> Publicado por ".get_nombreUsuario($subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['autor'])."</span>"."<br/><br/>";
+                    echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['fecha']."</span>"."</br><span style=\"font-size:13px\"> Publicado por "."<a href=\"javascript:void(0)\" onclick=\"cargarPerfil('".($subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['autor'])."')\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\" style=\"color:#1B1B1B;\" >".get_nombreUsuario($subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['autor'])."</a></span>"."<br/><br/>";
                     echo $subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
                     echo "<img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
                     echo "<br/></div></div>";
