@@ -62,6 +62,26 @@ if (!is_numeric($bloque_select))
 if ($bloque_select < 0 || $bloque_select >= count($subsecs[$subs_select]['bloque']))
     die ("Error catastrofico.");
 
+if (isset($_GET['desc']))
+    $desc_select = $_GET['desc'];
+else
+    $desc_select = 0;
+
+if (!is_numeric($desc_select))
+    die ("Error catastrofico.");
+if ($desc_select < 0)
+    die ("Error catastrofico.");
+
+if (isset($_GET['app']))
+    $app_select = $_GET['app'];
+else
+    $app_select = 0;
+
+if (!is_numeric($app_select))
+    die ("Error catastrofico.");
+if ($app_select < 0)
+    die ("Error catastrofico.");
+
 if ($_GET['AJAX'] != "active")
 {
 include ("header.php");
@@ -89,27 +109,67 @@ include ("header.php");
                 <form action="process/save_admin.php" method="post" enctype="multipart/form-data" onsubmit="return postForm()">
             <?php
             }        
-            
-                echo "<strong>Nombre</strong><br/>";
-                echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."\" />";
-		echo "<br/><strong>Contenido</strong><br/>";	
-                echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\" style=\"margin-top:10px;\">";
-                
-                
-                $text = $subsecs[$subs_select]['bloque'][$bloque_select]['informacion'];
-                $text = get_code($text);
-                echo $text; 
-                
-                echo "</textarea>";
+                if ($_GET['edit'] == 1)
+                {
+                    echo "<strong>Nombre</strong><br/>";
+                    echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."\" />";
+                    echo "<br/><strong>Contenido</strong><br/>";	
+                    echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\" style=\"margin-top:10px;\">";
+
+
+                    $text = $subsecs[$subs_select]['bloque'][$bloque_select]['informacion'];
+                    $text = get_code($text);
+                    echo $text; 
+
+                    echo "</textarea>";
+                }
+                if ($_GET['edit'] == 2)
+                {
+                    echo "<strong>Nombre</strong><br/>";
+                    echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$desc_select]['nombre']."\" />";
+                    echo "<br/><strong>Descripción</strong><br/>";	
+                    echo "<input type=\"text\" class=\"form-control\" name=\"content\" style=\"width:815px; height: 40px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$desc_select]['descripcion']."\" />";
+                ?><br/>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="eliminar" value="1"/> Eliminar esta descarga
+                    </label>
+                </div>
+                <?php
+                }
+                if ($_GET['edit'] == 3)
+                {
+                    echo "<strong>Nombre</strong><br/>";
+                    echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$app_select]['nombre']."\" />";
+                    echo "<br/><strong>Descripción</strong><br/>";	
+                    echo "<input type=\"text\" class=\"form-control\" name=\"content\" style=\"width:815px; height: 40px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$app_select]['descripcion']."\" />";
+                    echo "<br/><strong>URL de aplicación</strong><br/>";	
+                    echo "<input type=\"text\" class=\"form-control\" name=\"urlapp\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$app_select]['path']."\" />";
+ 
+                    ?><br/>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="eliminar" value="1"/> Eliminar esta webapp
+                    </label>
+                </div>
+                <?php
+                }
                 ?>
                 <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
                 <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['_id'] ?>" />
                 <input type="hidden" name="bloque" value="<?php echo $bloque_select ?>" />
+                <input type="hidden" name="edit" value="<?php echo $_GET['edit'] ?>" />
+                <input type="hidden" name="desc" value="<?php echo $desc_select; ?>" />
+                <input type="hidden" name="app" value="<?php echo $app_select; ?>" />
                 <div style="text-align: right; margin-top: 10px; margin-right: 5px;">
                 <a href="<?php echo $link."?sec=".$subs_select ?>"><button type="button" class="btn btn-danger">Descartar</button></a>
                 <button type="submit" class="btn btn-custom" style="margin-left: 7px;">Guardar</button>
                 </div>
-                </form> 
+                </form>
+                <?php
+                 if ($_GET['edit'] == 1)
+                {
+                ?>
                 <script>
                 $('#summernote').summernote({
                     width: 840,
@@ -120,60 +180,8 @@ include ("header.php");
                   });
                 </script>
                 <?php
-                // Modo desarrollador: Agregar descarga
-                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$bloque_select]['descarga_des'] == "activated") 
-                {
-                ?>
-                <a href="javascript:void(0)" onclick="$('#agregar-descarga<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar descarga nueva]<br/><br/></a>
-                <div id="agregar-descarga<?php echo $subs_select ?>" style="display:none">
-                    <div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><form id="nueva_desc" method="post" enctype='multipart/form-data' action="process/nuevaDescarga.php"><table><tr><td style="padding-bottom:25px;"><strong>Agregar Descarga</strong><td></tr><tr><td>Nombre</td><td><input type="text" name="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:540px; padding-left:8px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" style="border: 1px solid #045d6f; border-radius:5px; height:50px; width:540px; padding-left:8px;"></textarea></td></tr><tr><td>* Archivo</td><td><input type="file" name="archivo" /></td></tr></table><br/><span style="font-size:12px;">* El archivo debe ser de formato zip, rar o pdf y debe pesar menos de 5MB.</span><br/><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 690px; margin-right: 6px;" /><a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea subir y publicar este archivo?')) document.getElementById('nueva_desc').submit();">Subir</a>
-                            <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
-                            <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['_id'] ?>" />
-                            <input type="hidden" name="bloque" value="<?php echo $i ?>" />
-                            
-                        </form></div>
-                </div>
-                <?php
                 }
-                // Modo desarrollador: Agregar webapp
-                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$bloque_select]['webapp_des'] == "activated") 
-                {
-                ?>
-                <a href="javascript:void(0)" onclick="$('#agregar-webapp<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar aplicación web nueva]<br/><br/></a>
-                <div id="agregar-webapp<?php echo $subs_select ?>" style="display:none">
-                    <form method="post" action="process/nuevaWebapp.php" id="nueva_app" ><div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><strong>Agregar demostración de funcionamiento</strong><table cellspacing="6" style="margin-top:25px;"><tr><td>Nombre</td><td><input type="text" name="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:560px; padding-left:8px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" style="border: 1px solid #045d6f; border-radius:5px; height:50px; width:560px; padding-left:8px;"></textarea></td></tr><tr><td>URL *</td><td><input type="text" name="archivo" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:560px; padding-left:8px;" /></td></tr></table><br/><span style="font-size:12px;">* Este URL debe contener un sitio web que actualmente este usando FuzzydoDB para su funcionamiento interno.</span><br/><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 660px; margin-right: 6px;" /> <a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea publicar esta aplicación?')) document.getElementById('nueva_app').submit();">Agregar</a><br/></div>
-                            <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
-                            <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['_id'] ?>" />
-                            <input type="hidden" name="bloque" value="<?php echo $i ?>" />
-                            
-                        </form></div>
-                </div>
-                <?php
-                }
-                
-                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$bloque_select]['descarga']); $j++)
-                {
-                    echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
-                    echo "<strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['fecha']."</span><br/><br/>";
-                    echo $subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
-                    if ($_SESSION["ss_key"] == $G_SKEY)
-                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['descarga'][$j]['path']."\">Descargar</a>";
-                    else
-                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga(this);\"><a href=\"javascript:void(0)\">Descargar</a></span>";
-                    echo "<br/></div></div>";
 
-                }
-                
-                for($j=0; $j < count($subsecs[$subs_select]['bloque'][$bloque_select]['webapp']); $j++)
-                {
-                    echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
-                    echo "<strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['fecha']."</span><br/><br/>";
-                    echo $subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
-                    echo "<img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
-                    echo "<br/></div></div>";
-                }
-               
-            
             if ($_GET['AJAX'] != "active")
             {
             ?>

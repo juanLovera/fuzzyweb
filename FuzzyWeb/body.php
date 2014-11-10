@@ -109,7 +109,7 @@ include ("header.php");
                 unlink($filename);
                 
                 // Modo desarrollador: Agregar descarga
-                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$i]['descarga_des'] == "activated") 
+                if (($_SESSION['usertype'] == "U_Desarrollador" || $_SESSION['usertype'] == "U_Administrador") && $subsecs[$subs_select]['bloque'][$i]['descarga_des'] == "activated") 
                 {
                 ?>
                 <a href="javascript:void(0)" onclick="$('#agregar-descarga<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar descarga nueva]<br/><br/></a>
@@ -124,7 +124,7 @@ include ("header.php");
                 <?php
                 }
                 // Modo desarrollador: Agregar webapp
-                if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$i]['webapp_des'] == "activated") 
+                if (($_SESSION['usertype'] == "U_Desarrollador" || $_SESSION['usertype'] == "U_Administrador") && $subsecs[$subs_select]['bloque'][$i]['webapp_des'] == "activated") 
                 {
                 ?>
                 <a href="javascript:void(0)" onclick="$('#agregar-webapp<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar aplicación web nueva]<br/><br/></a>
@@ -145,7 +145,10 @@ include ("header.php");
                     echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['fecha']."</span>"."</br><span style=\"font-size:13px\"> Publicado por "."<a href=\"javascript:void(0)\" onclick=\"cargarPerfil('".($subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['autor'])."')\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\" style=\"color:#1B1B1B;\" >".get_nombreUsuario($subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['autor'])."</a></span>"."<br/><br/>";
                     echo $subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";             
                     if ($_SESSION["ss_key"] == $G_SKEY)
-                        echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
+                        if ($_SESSION["usertype"] == "U_Administrador")
+                            echo "<span class=\"glyphicon glyphicon-pencil\"></span> <a href='?edit=2&sec=".$subs_select."&bloque=".$i."&desc=".$j."''>Editar descarga</a> - <img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
+                        else
+                            echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /> <a href=\"".$subsecs[$subs_select]['bloque'][$i]['descarga'][$j]['path']."\">Descargar</a>";
                     else
                         echo "<img src=\"img/descarga_icono.png\" width=\"16\" height=\"16\" alt=\"Descargar\" style=\"margin-right: 6px\" /><span onclick=\"cambiarTextoDescarga(this);\"><a href=\"javascript:void(0)\">Descargar</a></span>";
                     echo "<br/></div></div>";
@@ -157,7 +160,10 @@ include ("header.php");
                     echo "<div style=\"background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;\">";
                     echo "<strong>".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['nombre']."</strong> - <span style=\"color:#828282\">".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['fecha']."</span>"."</br><span style=\"font-size:13px\"> Publicado por "."<a href=\"javascript:void(0)\" onclick=\"cargarPerfil('".($subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['autor'])."')\" data-toggle=\"modal\" data-target=\".bs-example-modal-lg\" style=\"color:#1B1B1B;\" >".get_nombreUsuario($subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['autor'])."</a></span>"."<br/><br/>";
                     echo $subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['descripcion']."<br/><br/><div style=\"padding-left:100px; text-align:right;\">";       
-                    echo "<img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
+                    if ($_SESSION["usertype"] == "U_Administrador")
+                        echo "<span class=\"glyphicon glyphicon-pencil\"></span> <a href='?edit=3&sec=".$subs_select."&bloque=".$i."&app=".$j."''>Editar webapp</a> - <img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
+                    else
+                        echo "<img src=\"img/ir_icono.png\" width=\"16\" height=\"16\" alt=\"Ir\" style=\"margin-right: 6px\" /><a href=\"".$subsecs[$subs_select]['bloque'][$i]['webapp'][$j]['path']."\" target='_blank'>Ir a la aplicación</a>";
                     echo "<br/></div></div>";
                 }
                

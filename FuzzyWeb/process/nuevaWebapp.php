@@ -6,7 +6,7 @@
  */
 session_start();
 include_once("../inc/includes.inc.php");
-comprobar_sesion("U_Desarrollador");
+comprobar_sesion("U_Desarrollador", "index.php", "U_Administrador");
 $nombre = (string)htmlentities($_POST['nombre']);
 $descripcion = (string)htmlentities($_POST['descripcion']);
 $archivo = (string)htmlentities($_POST['archivo']);
