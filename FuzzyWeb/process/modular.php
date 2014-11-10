@@ -753,12 +753,17 @@ $subs = array("nombre" => "Ver perfil",
               "seccion" => "Perfil",
               "bloque" => array(array("nombre" => "Ver perfil",
                             "informacion" => '<div style=\"border: 1px solid #045d6f; border-radius:5px; height:150px; width:150px\"><img src="img/avatar/<?php echo $_SESSION[\'pic_id\']?>" alt="foto" width="150" height="150" /></div>
-            <div style=\"float:right; margin-top: -140px; margin-right: -30px; width:700px;\">
+            <div style=\"float:right; margin-top: -155px; margin-right: -30px; width:700px;\">
             <table cellpadding=\"10\">
                 <tr><td><strong>Nombre: </strong></td><td><?php echo $_SESSION[\'nombre\']; ?></td><td style=\"padding-left:50px\"><strong>Apellido: </strong></td><td><?php echo $_SESSION[\'apellido\']; ?></td></tr>
                 <tr><td><strong>Correo: </strong></td><td><a href=\"mailto:<?php echo $_SESSION[\'email\']; ?>\"><?php echo $_SESSION[\'email\']; ?></a></td><td style=\"padding-left:50px\"><strong>Institución: </strong></td><td><?php echo $_SESSION[\'institucion\']; ?></td></tr>
                    <tr><td><strong>Ocupación: </strong></td><td><?php echo $_SESSION[\'ocupacion\']; ?></td><td style=\"padding-left:50px\"><strong>País de residencia: </strong></td><td><?php echo $_SESSION[\'ubicacion\']; ?></td></tr>
-                   </table>
+                <tr><td><strong>Tipo de usuario: </strong></td><td><?php if ($_SESSION[\'usertype\']=="U_Normal")
+                                                                        echo "Usuario Participante";
+                                                                        elseif($_SESSION[\'usertype\']=="U_Desarrollador")
+                                                                        echo "Usuario Desarrollador";
+                                                                        else
+                                                                        echo "Usuario Administrador"?></td></tr>   </table>
             </div>',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
