@@ -1072,13 +1072,13 @@ if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su 
                         <div style="width:460px; margin-left:auto; margin-right:auto">
                         <img id=\"preview\" src=\"<?php echo $_SESSION[\'upload_temp_name\']?>\" alt=\"your image\" style=\"max-width:800px; max-height:700px; display:block; margin-left:auto; margin-right:auto;\" />
                         </div>    
-<form action="process/crop.php" method="post">
+<form action="process/crop.php" method="post" onsubmit="return checkCoords();">
 			<input type="hidden" name="paso" value="2">
                         <input type="hidden" id="x" name="x" />
 			<input type="hidden" id="y" name="y" />
 			<input type="hidden" id="w" name="w" />
 			<input type="hidden" id="h" name="h" />
-			<input type="image" src="img/Guardar.png" onclick="return checkCoords();" style="display:block; margin-left:auto; margin-right:auto"/>
+			<input type="submit" src="img/Guardar.png" style="display:block; margin-left:auto; margin-right:auto"/>
 		</form> <?php }?>
                 
             </div>
