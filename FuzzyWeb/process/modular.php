@@ -1037,13 +1037,25 @@ $subs = array("nombre" => "Cambiar foto",
         $mens = "El campo de la foto no puede estar en blanco.";  
         break;
         case 2:
-        $mens = "El formato de la foto tiene que ser \'.png\', \'.jpeg\', \'.gif\'.";  
+        $mens = "El formato de la foto tiene que ser .png, .jpeg, .gif.";  
         break;
         case 3:
         $mens = "Su foto no puede pesar más de 2MB.";  
         break;
         case 4:
         $mens = "Su foto debe medir al menos 124 x 116 pixeles.";  
+        break;
+        case 5:
+        $mens = "Error. Coordenadas inválidas.";  
+        break;
+        case 6:
+        $mens = "Error. No hay área seleccionada.";  
+        break;
+        case 7:
+        $mens = "Error. Dimensiones inapriopiadas.";  
+        break;
+        case 8:
+        $mens = "Error. Imagen muy pequeña.";  
         break;
         default:
         $mens = "Error desconocido. Por favor intente de nuevo.";  
@@ -1055,16 +1067,18 @@ if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su 
             <form  method="post" enctype="multipart/form-data" action="process/crop.php"><table cellpadding=\"10\"><tr><td><input type=\"file\" name=\"preview\" style=\"margin-left: 290px;\"/></td></tr>       
             <input type=\"hidden\" name=\"paso\" value=\"1\">
             </table>       
-            <a href=\"javascript:void(0)\"><input type=\"image\" src=\"img/boton-modificar.png\" alt=\"Modificar\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
-            <?php } else {?>		
+            <a href=\"javascript:void(0)\"><input type=\"image\" src=\"img/Abrir.png\" alt=\"Abrir\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
+            <?php } else {?>	
+                        <div style="width:460px; margin-left:auto; margin-right:auto">
                         <img id=\"preview\" src=\"<?php echo $_SESSION[\'upload_temp_name\']?>\" alt=\"your image\" style=\"max-width:800px; max-height:700px; display:block; margin-left:auto; margin-right:auto;\" />
-                        <form action="process/crop.php" method="post" onsubmit="return checkCoords();">
+                        </div>    
+<form action="process/crop.php" method="post" onsubmit="return checkCoords();">
 			<input type="hidden" name="paso" value="2">
                         <input type="hidden" id="x" name="x" />
 			<input type="hidden" id="y" name="y" />
 			<input type="hidden" id="w" name="w" />
 			<input type="hidden" id="h" name="h" />
-			<input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+			<input type="submit" src="img/Guardar.png" style="display:block; margin-left:auto; margin-right:auto"/>
 		</form> <?php }?>
                 
             </div>
