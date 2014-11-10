@@ -1146,5 +1146,150 @@ $subs = array("nombre" => "Modificar contraseña",
                   ));
 $coleccion->insert($subs);
 
+$subs = array("nombre" => "Cambiar tipo de usuarios",
+              "seccion" => "Usuarios",
+              "bloque" => array(array("nombre" => "Cambiar tipo de usuarios",
+                            "informacion" => '
+<?php
+if ($_GET["res"] == "ok")
+{
+?>
+<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha cambiado el tipo de usuario de forma exitosa.</div>
+<?php
+}
+?>
+<form action="usuarios.php" method="GET">
+<div class="input-group">
+      <input type="text" class="form-control" name="mail" style="height:20px; width: 98%" placeholder="Buscar usuario por correo" />
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-custom" type="button">Buscar</button>
+      </span>
+    </div>
+</form><br/>                           
+<table class=\"table\">
+<tbody><tr>
+<td><strong>#</strong></td>
+<td><strong>Nombre</strong></td>
+<td><strong>Correo</strong></td>
+<td><strong>Tipo de usuario</strong></td>
+</tr>
+<?php
+$db = conectar_db();
+$coleccion = $db->usuario;
+if (isset($_GET[\"mail\"]))
+{
+	$email = (string)htmlentities($_GET[\"mail\"]);
+	$cursor = $coleccion->find(array(\"correo\" => $email));
+}
+else
+	$cursor = $coleccion->find();
+$cursor->sort(array(\'nombre\' => 1));
+$i=0;
+foreach ($cursor as $doc)
+{
+$i++;
+if ($doc[\'tipo\'] == \"U_Normal\")
+$usertype = \"Participante\";
+elseif ($doc[\'tipo\'] == \"U_Desarrollador\")
+$usertype = \"Desarrollador\";
+elseif ($doc[\'tipo\'] == \"U_Administrador\")
+$usertype = \"Administrador\";
+echo \"<tr><td>\".$i.\"</td><td>\".$doc[\'nombre\'].\"
+\".$doc[\'apellido\'].\"</td><td>\".$doc[\'correo\'].\"</td>\";
+?>
+<td>
+<div class=\"btn-group\">
+  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\">
+<?php echo $usertype; ?> <span class=\"caret\"></span>
+  </button>
+  <ul class=\"dropdown-menu\" role=\"menu\">
+<li><a href=\"process/edit_usuario.php?e=1&p=1&user=<?php echo $doc[\'_id\'];?>\">Participante</a></li>
+<li><a href=\"process/edit_usuario.php?e=1&p=2&user=<?php echo $doc[\'_id\'];?>\">Desarrollador</a></li>
+<li><a href=\"process/edit_usuario.php?e=1&p=3&user=<?php echo $doc[\'_id\'];?>\">Administrador</a></li>
+  </ul>
+</div>
+</td>
+<?php
+echo \"</tr>\";
+}
+?>
+</tr>
+</tbody>
+</table>',
+                            "fecha_ultima_mod" => date(),
+                            "autor_ultima_mod" => NULL,
+                            "descarga" => array(),
+                            "webapp" => array())
+                  ));
+$coleccion->insert($subs);
+
+$subs = array("nombre" => "Eliminar usuarios",
+              "seccion" => "Usuarios",
+              "bloque" => array(array("nombre" => "Eliminar usuarios",
+                            "informacion" => '<?php
+if ($_GET["res"] == "ok")
+{
+?>
+<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha eliminado el usuario forma exitosa.</div>
+<?php
+}
+?>
+<form action="usuarios.php" method="GET">
+<div class="input-group">
+      <input type="text" class="form-control" name="mail" style="height:20px; width: 98%" placeholder="Buscar usuario por correo" />
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-custom" type="button">Buscar</button>
+      </span>
+    </div>
+    <input type="hidden" name="sec" value="1">
+</form><br/>                           
+<table class=\"table\">
+<tbody><tr>
+<td><strong>#</strong></td>
+<td><strong>Nombre</strong></td>
+<td><strong>Correo</strong></td>
+<td><strong>Eliminar usuario</strong></td>
+</tr>
+<?php
+$db = conectar_db();
+$coleccion = $db->usuario;
+if (isset($_GET[\"mail\"]))
+{
+	$email = (string)htmlentities($_GET[\"mail\"]);
+	$cursor = $coleccion->find(array(\"correo\" => $email));
+}
+else
+	$cursor = $coleccion->find();
+$cursor->sort(array(\'nombre\' => 1));
+$i=0;
+foreach ($cursor as $doc)
+{
+$i++;
+if ($doc[\'tipo\'] == \"U_Normal\")
+$usertype = \"Participante\";
+elseif ($doc[\'tipo\'] == \"U_Desarrollador\")
+$usertype = \"Desarrollador\";
+elseif ($doc[\'tipo\'] == \"U_Administrador\")
+$usertype = \"Administrador\";
+echo \"<tr><td>\".$i.\"</td><td>\".$doc[\'nombre\'].\"
+\".$doc[\'apellido\'].\"</td><td>\".$doc[\'correo\'].\"</td>\";
+?>
+<td>
+<a href=\"process/edit_usuario.php?e=2&user=<?php echo $doc[\'_id\'];?>\" type="button" class="btn btn-danger" style="color:#FFF">Eliminar</a>
+</td>
+<?php
+echo \"</tr>\";
+}
+?>
+</tr>
+</tbody>
+</table>',
+                            "fecha_ultima_mod" => date(),
+                            "autor_ultima_mod" => NULL,
+                            "descarga" => array(),
+                            "webapp" => array())
+                  ));
+$coleccion->insert($subs);
+
 echo "Ok fino.";
 ?>

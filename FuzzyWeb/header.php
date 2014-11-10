@@ -31,16 +31,16 @@ for($i=0; $i< count($localjs); $i++)
             if ($_SESSION["ss_key"] != $G_SKEY)
             { // Visitante no registrado
             ?>
-        <div id="marco_signin" style="width:329px; height: 212px; background-image: url(img/signin_bg.png); top:50px; left:674px; position:absolute; z-index: 100; display: none">
+        <div id="marco_signin" style="width:329px; height: 212px; background-image: url(img/signin_bg.png); top:55px; left:675px; position:absolute; z-index: 100; display: none">
             <div id="form-inicio">
                 <form onsubmit="iniciarSesion();return false;">
-            <input id="barra_signin_correo" onfocus="clearSearch(this);" type="text" placeholder="Correo Electr&oacute;nico" style="font-size:12px; color:#B1B1B1; background-image:url(img/signin_input.png); width:233px; height:38px; border-width:0; padding-left:8px; padding-right:4px; margin-left: 25px; margin-top:25px; font-size:12px;"/>
-            <input id="barra_signin_contrasena" placeholder="Contrase&ntilde;a" onfocus="clearSearch(this);" type="password" style="font-size:12px; color:#B1B1B1; background-image:url(img/signin_input.png); width:233px; height:38px; border-width:0; padding-left:8px; padding-right:4px; margin-left: 25px; margin-top:17px; font-size:12px;"/>
+            <input class="form-control" id="barra_signin_correo" type="text" placeholder="Correo Electr&oacute;nico" style="width:233px; height:25px; margin-left: 25px; margin-top:25px;"/>
+            <input class="form-control" id="barra_signin_contrasena" placeholder="Contrase&ntilde;a" type="password" style="width:233px; height:25px; margin-left: 25px; margin-top:17px;"/>
             <div style="font-size:12px; margin-top:5px; margin-left:25px;">
                     <a href="comunidad.php" style="color:#1B1B1B;" >Registrarse</a> 
                 &nbsp; -&nbsp;  <a href="comunidad_p.php?sec=1" style="color:#1B1B1B;" >¿Olvid&oacute; su contrase&ntilde;a?</a>
                 </div>
-            <a href="javascript:void(0)"><input type="image" src="img/boton-ingresar.png" width="99" height="30" alt="ingresar" style="margin-left: 205px; margin-top:15px; border:0" /></a>
+            <button type="submit" class="btn btn-custom" style="margin-left: 200px; margin-top:15px;">Iniciar Sesión</button>
             </form>
             </div>
             <div id="signin-loading" style="text-align: center; display: none; padding-top: 60px; font-size: 13px">
@@ -50,21 +50,34 @@ for($i=0; $i< count($localjs); $i++)
                 <span style="color: #a10000"><strong>Los datos ingresados son incorrectos.</strong></span><br/><br/><a href="javascript:void(0)" onclick="$('#signin-error').hide();$('#form-inicio').show();">Volver a intentar</a>
             </div>
         </div>
-        <img id="botoniniciarsesion" onclick="abrirSignIn()" src="img/boton-iniciarS.png" width="121" height="30" alt="iniciar sesión" style="position:absolute; left:880px; top:20px; cursor: pointer" />
+        <button id="botoniniciarsesion" onclick="abrirSignIn()" class="btn btn-custom" style="position:absolute; left:870px; top:20px;">Iniciar Sesión <span id="iniciarsesionflecha" class="glyphicon glyphicon-chevron-down" style="font-size: 10px; margin-left: 5px;"></span></button>
+       
         <?php
            } // Usuario registrado
            else
            {
         ?>
-        <div id="signedinuser" style="position:absolute; left:680px; top:25px; width: 200px; font-size: 13px; text-align: right"> <a href="perfil.php"><?php echo $_SESSION['nombre']; ?><img id="usuarioPequeno" src="img/imagenUsuario.png" width="22" height="15" alt="User" /></a> </div>
-        
-       
-        <a href="process/signout.php"><img id="botoncerrarsesion" src="img/boton-cerrar.png" width="99" height="30" alt="Cerrar sesión" style="position:absolute; left:895px; top:20px;" /></a>
+        <div id="signedinuser" style="position:absolute; left:195px; top:20px; width: 800px; font-size: 14px; text-align: right"> <a href="perfil.php" ><?php echo $_SESSION['nombre']; ?></a> <span class="glyphicon glyphicon-user"></span> 
+        <?php
+        if ($_SESSION['usertype'] == "U_Administrador")
+        {
+        ?>
+        <a class="btn btn-custom" href="usuarios.php" style="margin-left: 11px; color:#FFF;">Gestionar Usuarios</a>
+        <?php
+        }
+        ?>
+        <a class="btn btn-custom" href="process/signout.php" style="margin-left: 11px; color:#FFF;" id="botoncerrarsesion">Cerrar Sesión</a></div>
         <?php
            }
         ?>
         <div id="logo" style="background-image:url(img/logo.png); width:231px; height:51px; position:absolute; top: 45px;"></div>
-      <input id="barra_busqueda" onfocus="clearSearch(this);" type="text" placeholder="Buscar" style="position:absolute; font-size:12px; color:#B1B1B1; left:1020px; top:20px; background-image:url(img/barra_busqueda.png); width:138px; height:27px; border-width:0; padding-left:4px; padding-right:36px;" />
+        <div class="input-group" style="position:absolute; left:1010px; top:20px; width:160px;">
+        <input id="barra_busqueda" type="text" class="form-control" placeholder="Buscar" style="height: 21px; width: 120px;" />
+        <span class="input-group-btn">
+          <button class="btn btn-custom" type="button" style="height: 21px"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+    </div>
+      
         <div id="menu" style="position: absolute; left: 263px; top: 84px;"><a href="index.php"><img src="img/menu_03.png" width="71" height="27" alt="Inicio" style="border:0" /></a><a href="acerca.php"><img src="img/menu_04.png" width="97" height="27" alt="Acerca" style="border:0" /></a><a href="descarga.php"><img src="img/menu_05.png" width="114" height="26" alt="Descarga" style="border:0" /></a><a href="api.php"><img src="img/menu_06.png" width="60" height="26" alt="API" style="border:0" /></a><a href="documentacion.php"><img src="img/menu_07.png" width="176" height="26" alt="Documentacion" style="border:0"/></a><a href="pruebas.php"><img src="img/menu_08.png" width="170" height="26" alt="Pruebas en linea" style="border:0"/></a><a href="desempeno.php"><img src="img/menu_09.png" width="127" height="26" alt="Desempeno" style="border:0"/></a><a href="comunidad.php"><img src="img/menu_10.png" width="121" height="26" alt="Contribuye" style="border:0" /></a></div>
   </div>
 </div>

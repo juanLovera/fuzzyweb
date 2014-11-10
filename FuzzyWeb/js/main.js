@@ -8,7 +8,9 @@ function abrirSignIn()
     document.getElementById('botoniniciarsesion').src = "img/boton-iniciarS2.png";
     $("#marco_signin").slideDown("fast");
     document.getElementById('botoniniciarsesion').onclick = cerrarSignIn;
-
+    document.getElementById('barra_signin_correo').focus();
+    document.getElementById('iniciarsesionflecha').className="glyphicon glyphicon-chevron-up";
+    
 }
 
 function cerrarSignIn()
@@ -16,6 +18,7 @@ function cerrarSignIn()
     document.getElementById('botoniniciarsesion').src = "img/boton-iniciarS.png";
     $("#marco_signin").slideUp("fast");
     document.getElementById('botoniniciarsesion').onclick = abrirSignIn;
+    document.getElementById('iniciarsesionflecha').className="glyphicon glyphicon-chevron-down";
 
 }
 

@@ -155,10 +155,11 @@ function image_gd($file,$max_w)
     function get_code($code)
     {
        $code = stripcslashes($code);
-       $code = str_replace("<?php", "_!PHP_", $code);
-       $code = str_replace("?>", "_PHP!_", $code);
-       $code = str_replace("<script>", "_!JS_", $code);
-       $code = str_replace("</script>", "_JS!_", $code);
+       $code = str_replace("<?php", "<!--PHP", $code);
+       $code = str_replace("?>", "PHP-->", $code);
+       $code = str_replace("<script>", "<!--JS", $code);
+       $code = str_replace("</script>", "JS-->", $code);
+       $code = str_replace("\n<", "<", $code);
        return $code;
                
     }
@@ -166,10 +167,10 @@ function image_gd($file,$max_w)
     function set_code($code)
     {
        $code = addslashes($code);
-       $code = str_replace("_!PHP_", "<?php", $code);
-       $code = str_replace("_PHP!_", "?>", $code);
-       $code = str_replace("_!JS_","<script>", $code);
-       $code = str_replace("_JS!_", "</script>", $code);
+       $code = str_replace("<!--PHP", "<?php", $code);
+       $code = str_replace("PHP-->", "?>", $code);
+       $code = str_replace("<!--JS","<script>", $code);
+       $code = str_replace("JS-->", "</script>", $code);
        return $code;   
     }
 ?>
