@@ -1,5 +1,8 @@
-<div id="footer" style="margin-left:auto; margin-right:auto; width:1200px; margin-top:14px; margin-bottom:14px; color: #525252; text-align:right; font-size:12px;">
+<div id="footer" style="margin-left:auto; margin-right:auto; width:1200px; margin-top:8px; margin-bottom:14px; color: #525252; text-align:left; font-size:12px;">
+<img src="img/logouni.png" alt="USB" width="70" height="48">
+<div id="minifooter" style="text-align:right; font-size:12px; margin-top:-30px">
 Información legal - Información de contacto
+</div>
 </div>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
