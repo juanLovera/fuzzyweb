@@ -28,7 +28,7 @@ body {
 :focus {
 outline: 0;
 }
-.boton {
+.subseccionboton {
 	background-image: url(../img/botonm.png);
 	width: 301px;
 	height: 32px;
