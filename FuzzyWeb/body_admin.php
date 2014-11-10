@@ -90,27 +90,15 @@ include ("header.php");
             }        
             
                 //echo "<span style=\"color:#023e44\"><strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."</strong><br/><br/></span>";
-
-                echo "<div id='summernote' style='margin-bottom: 7px;'>";
+			
+                echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\">";
                 
                 
                 $text = $subsecs[$subs_select]['bloque'][$bloque_select]['informacion'];
                 $text = str_replace("\\\"", "\"", $text);
                 echo $text; 
                 
-                echo "</div>";
-                ?>
-                
-                <script>
-                $('#summernote').summernote({
-  width: 840,
-  height: 500,
-  codemirror: { // codemirror options
-    theme: 'monokai'
-  }
-});
-                </script>
-                <?php
+                echo "</textarea>";
                 
                 // Modo desarrollador: Agregar descarga
                 if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$bloque_select]['descarga_des'] == "activated") 
