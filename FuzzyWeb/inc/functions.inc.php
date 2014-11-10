@@ -45,7 +45,7 @@ function get_subsecciones($seccion, $seccion2 = NULL)
  * si se pasa $acceso esta verifica que el tipo de usuario sea el correcto y si
  * no lo es, no deja cargar la pagina.
  */
-function comprobar_sesion($acceso = "public", $link = "index.php") // $acceso puede ser: public, not_public, U_Normal, ...
+function comprobar_sesion($acceso = "public", $link = "index.php", $acceso2 = "public") // $acceso puede ser: public, not_public, U_Normal, ...
 { 
     if ($_SESSION["ss_key"] != $G_SKEY)
         $ini = true;
@@ -57,7 +57,7 @@ function comprobar_sesion($acceso = "public", $link = "index.php") // $acceso pu
     elseif ($acceso == "not_public" && $ini)
         return $ini;
     
-    elseif ($ini && $acceso == $_SESSION["usertype"])
+    elseif ($ini && ($acceso == $_SESSION["usertype"] || $acceso2 == $_SESSION["usertype"]))
         return $ini;
     else
     {
@@ -152,4 +152,24 @@ function image_gd($file,$max_w)
 
 	return $image; 
 } 
+    function get_code($code)
+    {
+       $code = stripcslashes($code);
+       $code = str_replace("<?php", "_!PHP_", $code);
+       $code = str_replace("?>", "_PHP!_", $code);
+       $code = str_replace("<script>", "_!JS_", $code);
+       $code = str_replace("</script>", "_JS!_", $code);
+       return $code;
+               
+    }
+    
+    function set_code($code)
+    {
+       $code = addslashes($code);
+       $code = str_replace("_!PHP_", "<?php", $code);
+       $code = str_replace("_PHP!_", "?>", $code);
+       $code = str_replace("_!JS_","<script>", $code);
+       $code = str_replace("_JS!_", "</script>", $code);
+       return $code;   
+    }
 ?>

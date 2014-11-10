@@ -1105,7 +1105,7 @@ $subs = array("nombre" => "Modificar correo",
               "bloque" => array(array("nombre" => "Modificar correo",
                             "informacion" => '<div id="modificarcorreo-form">
             Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
-            <form><table cellpadding="10"><tr><td><input type="text" value=<?php echo $_SESSION[\'email\']; ?> id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
+            <form><table cellpadding="10"><tr><td><input type="text" value="<?php echo $_SESSION[\'email\']; ?>" id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
                    
             </table>       
             <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarCorreo();" style="margin-left: 340px; margin-top:15px;"></a></form>

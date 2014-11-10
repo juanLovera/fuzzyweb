@@ -97,7 +97,7 @@ include ("header.php");
                 
                 
                 $text = $subsecs[$subs_select]['bloque'][$bloque_select]['informacion'];
-                $text = stripcslashes($text);
+                $text = get_code($text);
                 echo $text; 
                 
                 echo "</textarea>";
