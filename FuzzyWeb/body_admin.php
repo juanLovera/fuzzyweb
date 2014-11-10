@@ -85,21 +85,41 @@ include ("header.php");
             </div>
 
             <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
-            <div id="texto-html">    
+            <div id="texto-html">
+                <form action="process/save_admin.php" method="post" enctype="multipart/form-data" onsubmit="return postForm()">
             <?php
             }        
             
-                //echo "<span style=\"color:#023e44\"><strong>".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."</strong><br/><br/></span>";
-			
-                echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\">";
+                echo "<strong>Nombre</strong><br/>";
+                echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."\" />";
+		echo "<br/><strong>Contenido</strong><br/>";	
+                echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\" style=\"margin-top:10px;\">";
                 
                 
                 $text = $subsecs[$subs_select]['bloque'][$bloque_select]['informacion'];
-                $text = str_replace("\\\"", "\"", $text);
+                $text = stripcslashes($text);
                 echo $text; 
                 
                 echo "</textarea>";
-                
+                ?>
+                <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
+                <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['_id'] ?>" />
+                <input type="hidden" name="bloque" value="<?php echo $bloque_select ?>" />
+                <div style="text-align: right; margin-top: 10px; margin-right: 5px;">
+                <a href="<?php echo $link."?sec=".$subs_select ?>"><button type="button" class="btn btn-danger">Descartar</button></a>
+                <button type="submit" class="btn btn-custom" style="margin-left: 7px;">Guardar</button>
+                </div>
+                </form> 
+                <script>
+                $('#summernote').summernote({
+                    width: 840,
+                    height: 300,
+                    codemirror: { // codemirror options
+                      theme: 'monokai'
+                    }
+                  });
+                </script>
+                <?php
                 // Modo desarrollador: Agregar descarga
                 if ($_SESSION['usertype'] == "U_Desarrollador" && $subsecs[$subs_select]['bloque'][$bloque_select]['descarga_des'] == "activated") 
                 {

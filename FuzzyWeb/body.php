@@ -71,7 +71,7 @@ include ("header.php");
             	  
             </div>
 
-            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px;">
+            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px; ">
             <div id="texto-html">    
             <?php
             }
@@ -91,13 +91,14 @@ include ("header.php");
             {
                 
                 echo "<div id='text".$i."' style='margin-bottom: 7px;'>";
+                echo "<div style='text-align:right; padding-right:4px;'><a href='?edit=1&sec=".$subs_select."&bloque=".$i."'><button type=\"button\" class=\"btn btn-default\">Editar bloque</button></a></div>";
                 if ($i != 0)
                     echo "<a href='#texto-html'><img src='img/up2.png' width='10' heigth='10' alt='Ir al cielo' style='border:0; margin-right: 5px;'/></a>";
                 echo "<span style=\"color:#023e44\"><strong>".$subsecs[$subs_select]['bloque'][$i]['nombre']."</strong><br/><br/></span>";
                 $filename = (string)time().".php";
                 $file = fopen($filename, "w") or die("Error cargando la pagina");
                 $text = $subsecs[$subs_select]['bloque'][$i]['informacion'];
-                $text = str_replace("\\\"", "\"", $text);
+                $text = stripcslashes($text);
                 fwrite($file, $text);
                 fclose($file);
                 include ($filename);
