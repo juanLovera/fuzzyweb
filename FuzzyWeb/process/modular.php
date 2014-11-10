@@ -1074,11 +1074,11 @@ if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su 
                         </div>    
 <form action="process/crop.php" method="post" onsubmit="return checkCoords();">
 			<input type="hidden" name="paso" value="2">
-                        <input type="hidden" id="x" name="x" />
-			<input type="hidden" id="y" name="y" />
+                        <input type="hidden" id="xx" name="xx" />
+			<input type="hidden" id="yy" name="yy" />
 			<input type="hidden" id="w" name="w" />
 			<input type="hidden" id="h" name="h" />
-			<input type="submit" src="img/Guardar.png" style="display:block; margin-left:auto; margin-right:auto"/>
+			<input type="image" src="img/Guardar.png" width="99" height="30" style="display:block; margin-left:auto; margin-right:auto"/>
 		</form> <?php }?>
                 
             </div>

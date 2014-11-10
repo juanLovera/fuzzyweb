@@ -17,8 +17,8 @@
 
   function updateCoords(c)
   {
-    $('#x').val(c.x);
-    $('#y').val(c.y);
+    $('#xx').val(c.x);
+    $('#yy').val(c.y);
     $('#w').val(c.w);
     $('#h').val(c.h);
   };
