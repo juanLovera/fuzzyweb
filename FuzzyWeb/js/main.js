@@ -1,3 +1,22 @@
+function fb_share() {
+    // facebook share dialog
+    FB.ui( {
+        method: 'feed',
+        name: "fuzzydoDB - Bases de Datos Difusas",
+        link: "http://localhost",
+        picture: "leon.jpg",
+        caption: "Bases de datos con atributos difusos desarrollados por profesores y estudiantes de la Universidad Simón Bolívar"
+    }, function( response ) {
+        // do nothing
+    } );
+
+}
+
+// add click event to link using jQuery
+//$(document).ready(function(){
+//  $('.share-btn').on( 'click', fb_share );
+//});
+
 function clearSearch(o)
 {
     o.style.color = "#1b1b1b";

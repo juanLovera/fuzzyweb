@@ -10,6 +10,7 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+<script src='http://connect.facebook.net/en_US/all.js'></script>
 <?php
 if (isset($localcss))
 for($i=0; $i< count($localcss); $i++)

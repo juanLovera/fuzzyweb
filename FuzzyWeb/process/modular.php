@@ -258,7 +258,28 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Requerimientos",
               "seccion" => "Descarga",
               "bloque" => array(array("nombre" => "REQUERIMIENTOS",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                            "informacion" => "<ul>
+	<li>Sistema operativo Linux</li>
+	<li>Java JDK</li>
+	<li>JavaCC</li>
+	<li>Ant</li>
+	<li>PostgreSQL 9.3 o más reciente, configurado apropiadamente</li>
+	<li>QBossSqlParser (JSqlParser)</li>
+	<li>Los siguientes .jar:</li>
+	<ul>
+		<li>Driver JDBC para Postgres</li>
+		<li>JUnit</li>
+		<li>JCommander</li>
+		<li>QueryingBasedOnSimilarities</li>
+		<li>Ant-junit</li>
+		<li>Commons-lang</li>
+		<li>Hamcrest-core</li>
+		<li>Jansi</li>
+		<li>JLine</li>
+		<li>Mysql-connector-java</li>
+	</ul>
+</ul>
+",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -269,14 +290,67 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Manual de instalación",
               "seccion" => "Descarga",
               "bloque" => array(array("nombre" => "MANUAL DE INSTALACIÓN",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                                       "informacion" => "A continuación las instrucciones para la instalación del proyecto <strong>fuzzydoDB</strong>:
+
+</br></br><strong>Base de Datos</strong>
+
+</br>
+<ol>
+	<li>Instalar PostgreSQL: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo apt-get install postgresql</mark></strong> </li></br>
+	<li>Crear el usuario fuzzy que usará la base de datos: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo adduser fuzzy</mark></strong> </br></br> Llenar todos los campos con 'fuzzy' e indicar que sea superusuario.</li></br>
+	<li>Ingresar a PostgreSQL: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo -u postgres psql</mark></strong> </li></br>
+	<li>Crear el usuario dentro de PostgreSQL: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">create user fuzzy with password 'fuzzy' createdb;</mark></strong> </br></br> <u>Nota:</u> El comando debe terminar con punto y coma.</li></br>
+	<li>Crear la base de datos fuzzy: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">create database fuzzy;</mark></strong> </br></br> <u>Nota:</u> El comando debe terminar con punto y coma.</li></br>
+	<li>Conceder todos los permisos de la base de datos al usuario: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">grant all privileges on database fuzzy to fuzzy;</mark></strong> </br></br> <u>Nota:</u> El comando debe terminar con punto y coma.</li></br>
+	<li>Se convierte usuario fuzzy en superusuario:</br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">alter user fuzzy with superuser;</mark></strong> </br></br> <u>Nota:</u> Este paso puede ser omitido si al comando en el paso 4 se añade <strong>--superuser</strong></li></br>
+	<li>Salir de PostgreSQL:</br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">\q</mark></strong> </br></br> Ahora se puede ingresar a PostgreSQL como usuario fuzzy: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo -u fuzzy psql</mark></strong></li></br>
+	<li>En un terminal ubicarse en el siguiente directorio: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">FuzzyDB/src/sql_scripts/</mark></strong> </br></br> Una vez allí, ejecutar:</br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo -u fuzzy psql</mark></strong></li></br>
+	<li>Ejecutar el script <i>create-schema.sql:</i> </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">\i create-schema.sql</mark></strong> </li></br>
+</ol>
+
+
+</br><strong>Proyecto</strong>
+
+</br>
+<ol>
+	<li>Ejecutar: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">parser.sh</mark></strong> </br></br> El cual se encuentra en el directorio principal fuzzy-client.</li></br>
+	<li>Ubicarse en el directorio FuzzyDB y ejecutar: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">ant clean jar</mark></strong> </li></br>
+	<li>Ejecutar el proyecto con: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">java -jar dist/FuzzyDB.jar</mark></strong> </br></br> <u>Nota:</u> Si le aparece el siguiente error: </br></br>
+	    <div style=\"padding: 25px; width: 687px; height: 320px; background-color: #F0F0F0;\">Exception in thread \"main\" java.lang.NoClassDefFoundError: com/beust/jcommander/ParameterException</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.getDeclaredMethods0(Native Method)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.privateGetDeclaredMethods(Class.java:2570)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.getMethod0(Class.java:2813)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.getMethod(Class.java:1663)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at sun.launcher.LauncherHelper.getMainMethod(LauncherHelper.java:494)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:486)</br>
+		Caused by: java.lang.ClassNotFoundException: com.beust.jcommander.ParameterException</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.net.URLClassLoader$1.run(URLClassLoader.java:366)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.net.URLClassLoader$1.run(URLClassLoader.java:355)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.security.AccessController.doPrivileged(Native Method)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.net.URLClassLoader.findClass(URLClassLoader.java:354)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.ClassLoader.loadClass(ClassLoader.java:425)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.ClassLoader.loadClass(ClassLoader.java:358)</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... 6 more</br>
+		</div></li></br>
+		
+		Entonces siga las siguientes instrucciones:
+		
+		</br></br>
+		<ol>
+			<li>Abrir el proyecto con NetBeans (versión 8.0.1 o más reciente) y realizar un <strong>clean and build</strong>.</li></br>
+			<li>Ejecutar el proyecto con: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">java -jar dist/FuzzyDB.jar</mark></strong> </li>
+		</ol>
+</ol>
+
+</br>Ahora ya puede proceder a ejecutar instrucciones SQL.
+",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array())
                   ));
 $coleccion->insert($subs);
-
 $subs = array("nombre" => "Versiones anteriores",
               "seccion" => "Descarga",
               "bloque" => array(array("nombre" => "VERSIONES ANTERIORES",
@@ -719,7 +793,47 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Contáctanos",
               "seccion" => "Comunidad",
               "bloque" => array(array("nombre" => "CONTÁCTANOS",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                            "informacion" => "<form name=\"contactform\" method=\"post\" action=\"process/send_form_email.php\">
+				<input type=\"hidden\" name=\"formpass\" value=\"wough9348y3**\">
+		<table width=\"850px\">
+			<tr>
+				<td valign=\"top\">
+					<label for=\"nombre\">Nombre</label>
+				</td>
+				<td valign=\"top\">
+					<input  type=\"text\" name=\"nombre\" required maxlength=\"50\" style=\"width:600px; border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px;\">
+				</td>
+			</tr>
+			
+			<tr>
+				<td valign=\"top\">
+					<label for=\"email\">Correo</label>
+				</td>
+				<td valign=\"top\">
+					<input  type=\"text\" name=\"email\" required maxlength=\"80\" style=\" width:600px; margin-top:10px; border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px;\">
+				</td>
+			</tr>
+			
+			<tr>
+				<td valign=\"top\">
+					<label for=\"comentarios\">Comentario</label>
+				</td>
+				<td valign=\"top\">
+					<textarea  name=\"comentarios\" required maxlength=\"1000\" cols=\"25\" rows=\"6\" style=\"margin-top:10px; width:600px;border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:60px; padding-left:8px;\"></textarea>
+				</td>
+			</tr>
+		</table>
+		
+		</br><strong>Todos los campos son obligatorios.</strong>
+		
+		<div style=\"text-align:center\">
+				<input type=\"submit\" name=\"submit\" value=\"Enviar\">
+		</div>
+ 
+	</form>			
+
+</br></br>
+",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -730,7 +844,9 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Donar",
               "seccion" => "Comunidad",
               "bloque" => array(array("nombre" => "DONAR",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                            "informacion" => "En esta sección se colocarán alternativas para donar con el desarrollo del proyecto <strong>fuzzydoDB</strong>.
+</br></br>
+",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -741,13 +857,18 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Compartir",
               "seccion" => "Comunidad",
               "bloque" => array(array("nombre" => "COMPARTIR",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                            "informacion" => "Apóyanos y comparte el proyecto <strong>fuzzydoDB</strong> en tus redes sociales:</br>
+<div style=\"text-align:center\">
+	</br>&nbsp;&nbsp;&nbsp;<a href=\"javascript:void(0)\"><img class=\"share-btn\" src=\"img/facebook.png\" alt=\"Facebook\" height=\"50px\" onclick=\"fb_share();\" width=\"auto\"></a>
+	&nbsp;&nbsp;&nbsp;<a href=\"http://www.twitter.com/share?text=Ingresa%20en%20el%20siguiente%20enlace%20y%20aprende%20acerca%20bases%20de%20datos%20difusas.&url=http://localhost/\" target=\"_blank\"><img src=\"img/twitter.png\" alt=\"Twitter\" height=\"50px\" width=\"auto\">
+</div>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array())
                   ));
 $coleccion->insert($subs);
+
 
 $subs = array("nombre" => "Ver perfil",
               "seccion" => "Perfil",
