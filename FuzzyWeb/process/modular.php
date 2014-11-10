@@ -354,8 +354,8 @@ $coleccion->insert($subs);
 $subs = array("nombre" => "Versiones anteriores",
               "seccion" => "Descarga",
               "bloque" => array(array("nombre" => "VERSIONES ANTERIORES",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
-                            "fecha_ultima_mod" => date(),
+                            "informacion" => "No hay versiones anteriores actualmente.",
+                        "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array())
@@ -801,7 +801,7 @@ $subs = array("nombre" => "Contáctanos",
 					<label for=\"nombre\">Nombre</label>
 				</td>
 				<td valign=\"top\">
-					<input  type=\"text\" name=\"nombre\" required maxlength=\"50\" style=\"width:600px; border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px;\">
+					<input class=\"form-control\" type=\"text\" name=\"nombre\" required maxlength=\"50\" style=\"width: 90%; height:25px;\">
 				</td>
 			</tr>
 			
@@ -810,7 +810,7 @@ $subs = array("nombre" => "Contáctanos",
 					<label for=\"email\">Correo</label>
 				</td>
 				<td valign=\"top\">
-					<input  class=\"form-control\" type=\"text\" name=\"email\" required maxlength=\"80\" style=\" width:600px; margin-top:10px; border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px;\">
+					<input  class=\"form-control\" type=\"text\" name=\"email\" required maxlength=\"80\" style=\"margin-top:10px; height:25px; width: 90%\">
 				</td>
 			</tr>
 			
@@ -819,7 +819,7 @@ $subs = array("nombre" => "Contáctanos",
 					<label for=\"comentarios\">Comentario</label>
 				</td>
 				<td valign=\"top\">
-					<textarea class=\"form-control\"  name=\"comentarios\" required maxlength=\"1000\" cols=\"25\" rows=\"6\" style=\"margin-top:10px; width:600px;border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:60px; padding-left:8px;\"></textarea>
+					<textarea class=\"form-control\"  name=\"comentarios\" required maxlength=\"1000\" cols=\"25\" rows=\"6\" style=\"margin-top:10px; height:60px; width: 90%\"></textarea>
 				</td>
 			</tr>
 		</table>
