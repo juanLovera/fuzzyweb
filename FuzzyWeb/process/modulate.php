@@ -13,14 +13,11 @@ $coleccion = $db->subseccion;
 $coleccion->drop();
 $coleccion = $db->subseccion;
 
-$subs = array("nombre" => "Introducción",
+$subs = array("nombre" => "Introduction",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "INTRODUCCIÓN",
-                            "informacion" => "Las bases de datos tradicionales solo manejan datos y condiciones precisos que en muchas ocasiones no representan las necesidades reales de información de los usuarios. La teoría de conjuntos difusos provee un marco matemático y computacional formal para representar las nociones de naturaleza vaga o imprecisa. La incorporación de algunos de 
-estos conceptos para el modelado y manipulación de bases de datos dio origen a propuestas de 
-modelo relacional difuso [5, 9]. Estas fueron luego generalizadas en GEFRED [19], un modelo 
-extendido para bases de datos relacionales difusas. A partir de este se extendió el modelo Entidad Relación y el lenguaje SQL, surgiendo FuzzyEER  y FSQL.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "INTRODUCTION",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -28,25 +25,11 @@ extendido para bases de datos relacionales difusas. A partir de este se extendi�
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Historia",
+$subs = array("nombre" => "History",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "HISTORIA",
-                            "informacion" => 
-                "El proyecto de <strong>fuzzydoDB</strong> (Fuzzy Domain Ordering Data Base) nació con el objetivo de resolver problemas abiertos del Modelo Relacional Difuso, particularmente vinculados a relaciones de similitud, distribuciones de posibilidad y operaciones con atributos difusos.
-                </br></br>Sabemos que una Base de Datos es una colección de relaciones, las cuales son especificadas por esquemas relacionales, donde los componentes de las tuplas tienen un nombre de atributo asociado. Estos atributos son atómicos y pueden tener valores discretos o valores nulos. 
-                </br></br>Las relaciones son la estructura principal para la representación de datos en el modelo relacional. Este modelo es basado en la lógica de predicados y en la teoría de conjuntos, además, es el más utilizado en la actualidad para representar problemas reales y administrar datos dinámicamente. Sin embargo, cabe destacar que dicho modelo es limitado en cuanto a expresividad se refiere, pues se basa en la lógica tradicional donde las condiciones sólo pueden tomar dos valores: verdadero o falso. Es por ello que se ha incorporado la lógica difusa en los lenguajes de consulta a bases de datos, tales son las propuestas de FSQL y SQLf.
-                </br></br>En una relación difusa, cada tupla está dotada de un grado de membresía. Si en una base de datos relacional aplicamos una consulta con condiciones en lógica difusa, el resultado es una relación difusa.
-                </br></br>Para la representación y tratamiento de información imprecisa en el ámbito de las Bases de Datos Relacionales, se han presentado varios modelos, entre ellos los que emplean lógica difusa, o una combinación que incluya la lógica difusa. Uno de ellos es el Modelo GEFRED.
-                </br></br>Una base de datos GEFRED tiene requerimientos apreciables de espacio en disco. Las estructuras de almacenamiento físico y recuperación de los manejadores relacionales no son adecuadas a GEFRED. Es necesario definir operadores de consulta para GEFRED, así como los algoritmos que los implementen en forma eficiente. Estas estructuras y operadores tendrían impacto en la optimización de consultas.
-                </br></br>Nuestros objetivos:
-                    <ul>
-                        <li>Diseñar estructuras de almacenamiento físico y de recuperación de los manejadores relacionales, adecuadas al modelo relacional GEFRED.</li>
-                        <li>Definir operadores de consulta para GEFRED, así como los algoritmos que los implementen en forma eficiente.</li>
-                        <li>Obtener estructuras almacenamiento y operadores que ayuden a optimizar las consultas en bases de datos difusas.</li>
-                    </ul>
-            
-                 </div>",                  
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "HISTORY",
+                            "informacion" => "Under Construction",                  
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -54,10 +37,10 @@ $subs = array("nombre" => "Historia",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Miembros",
+$subs = array("nombre" => "Members",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "MIEMBROS",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "MEMBERS",
                             "informacion" => "<div style=\"text-align:center;\">
             <strong>GRUPO INVESTIGADOR</strong></br></br>
             <strong>Coordinadores</strong></br>
@@ -164,41 +147,41 @@ $subs = array("nombre" => "Miembros",
 
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipos de datos difusos",
+$subs = array("nombre" => "Fuzzy data types",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPOS DE DATOS DIFUSOS",
-                            "informacion" => "Para representar datos difusos, se definieron 5 tipos de atributos difusos, basados en la representación de FuzzyEER.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "FUZZY DATA TYPES",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array()),
-                          array("nombre" => "TIPO 1",
-                            "informacion" => "Atributos con valores de datos precisos provistos con etiquetas linguísticas, interpretadas como números difusos, con el propósito de ser usadas en condiciones difusas.",
+                          array("nombre" => "TYPE 1",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array()),
-                          array("nombre" => "TIPO 2",
-                            "informacion" => "Incluye distribuciones de posibilidad en un dominio ordenado. Los conjuntos difusos se caracterizan por una función de membresía cuyo rango está en el intervalo real [0, 1], cuánto más se acerca a 1 el grado de membresía de un elemento, éste está más posiblemente (o certeramente) incluido en el conjunto. Así, 0 es la medida de completa de exclusión y 1 la de completa inclusión.",
+                          array("nombre" => "TYPE 2",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array()),
-                          array("nombre" => "TIPO 3",
-                            "informacion" => "Su dominio es un conjunto de etiquetas dotado de una relación difusa de similitud. Un ejemplo de este tipo de dato es los colores,  identificados por sus nombres, ellos tienen una relación de similitud, en el sentido de ser parecidos entre sí.",
+                          array("nombre" => "TYPE 3",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array()),
-                          array("nombre" => "TIPO 4",
-                            "informacion" => "Es similar al tipo 3 pero sin las relaciones de similitud.",
+                          array("nombre" => "TYPE 4",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array()),
-                          array("nombre" => "TIPO 5",
-                            "informacion" => "-",
+                          array("nombre" => "TYPE 5",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -206,15 +189,11 @@ $subs = array("nombre" => "Tipos de datos difusos",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Comparación con otros proyectos",
+$subs = array("nombre" => "Comparison with other proyects",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "COMPARACIÓN CON OTROS PROYECTOS",
-                            "informacion" => "Existen varias propuestas para la incorporación de conceptos provenientes de la teoría de conjuntos difusos en SQL, tales como: OMRON, FQUERY, ISKREOT, PFSQL, SOFTSQL, SQLf y FSQL, entre otras. De ellas las más destacadas por su completitud son SQLf y FSQL.<br/><br/>
-En lo que concierne a este equipo de trabajo, FSQL es la única de estas propuestas que contempla toda la variedad de datos difusos del modelo FuzzyEER, en particular los datos Tipo 3: etiquetas sobre las cuales se define una relación de similitud. Sin embargo, en el trabajo previo “Consultas con Ordenamiento basado en Similitud” se observó que FSQL tiene una deficiencia en el concepto que se maneja para la relación de similitud y en su forma de manipularla. <br/><br/>
-A pesar que FSQL permite la creación de tipos datos difusos y usarlos para definir atributos de las tablas, en definición de este lenguaje no se permite usar un atributo definido como de Tipo 3 en una cláusula GROUP BY. Los autores de FSQL  no indican la razón por la que se impone esta restricción. Puede inferirse del hecho que las operaciones de agrupamiento y ordenamiento en consultas a bases de datos se encuentran estrechamente vinculadas por razones operativas. El hecho de no tener una semántica definida para el ordenamiento de un tipo de datos naturalmente dificultaría no sólo las consultas ordenas, sino también las particionadas. <br/><br/>
-Por otro lado, SQLf ha sido más recientemente extendido con una cláusula GROUP BY difusa. Esta extensión trabaja con dominios de atributos clásicos sobre los cuales se define un conjunto de términos lingüísticos que denotan conjuntos difusos de una partición del dominio de los atributos. No consideran el caso de atributos Tipo 3. 
-",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "COMPARISON WITH OTHER PROYECTS",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -222,11 +201,11 @@ Por otro lado, SQLf ha sido más recientemente extendido con una cláusula GROUP
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Ventajas",
+$subs = array("nombre" => "Advantages",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "VENTAJAS",
-                            "informacion" => "El lenguaje estándar para bases de datos SQL provee constructores que permiten hacer consultas basadas en el ordenamiento y/o en el particionamiento de las relaciones según los valores de atributos específicos. Si se permiten atributos difusos como los propuestos en el modelo GEFRED, tales constructores de consulta deben extenderse de forma que provean una semántica adecuada en presencia de datos difusos. Sin embargo, la definición de FSQL lo que hace es prohibir que se usen estos atributos en el criterio de ordenamiento o particionamiento en una consulta, lo cual resulta poco satisfactorio. Otras propuestas conocidas de extensión a SQL con conjuntos difusos ni siquiera consideran estos tipos de atributos.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "ADVANTAGES",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -234,12 +213,11 @@ $subs = array("nombre" => "Ventajas",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Proyectos anteriores",
+$subs = array("nombre" => "Past proyects",
               "seccion" => "Acerca",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "PROYECTOS ANTERIORES",
-                            "informacion" => "Prototipo para definir, almacenar y consultar una base de datos relacional con atributos difusos. Se implementa como un traductor de SQL extendido con atributos difusos, a SQL entendido por PostgreSQL.<br/><br/>
-                             Implementación de una librería para la ejecución de sentencias que involucran datos difusos, una aplicación cliente que simula la consola de MariaDB y una aplicación web que muestra el potencial de las consultas en un contexto de aplicación real como lo es un directorio telefónico de empresas.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "PAST PROYECTS",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -247,10 +225,10 @@ $subs = array("nombre" => "Proyectos anteriores",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Descarga",
+$subs = array("nombre" => "Downloads",
               "seccion" => "Descarga",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "DESCARGA",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "DOWNLOADS",
                             "informacion" => '',
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -263,18 +241,18 @@ $subs = array("nombre" => "Descarga",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Requerimientos",
+$subs = array("nombre" => "Requirements",
               "seccion" => "Descarga",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "REQUERIMIENTOS",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "REQUIREMENTS",
                             "informacion" => "<ul>
 	<li>Sistema operativo Linux</li>
 	<li>Java JDK</li>
 	<li>JavaCC</li>
 	<li>Ant</li>
-	<li>PostgreSQL 9.3 o más reciente, configurado apropiadamente</li>
+	<li>PostgreSQL 9.3 or newer, properly configured</li>
 	<li>QBossSqlParser (JSqlParser)</li>
-	<li>Los siguientes .jar:</li>
+	<li>The following .jar:</li>
 	<ul>
 		<li>Driver JDBC para Postgres</li>
 		<li>JUnit</li>
@@ -296,76 +274,22 @@ $subs = array("nombre" => "Requerimientos",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Manual de instalación",
+$subs = array("nombre" => "Instalation manual",
               "seccion" => "Descarga",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "MANUAL DE INSTALACIÓN",
-                                       "informacion" => "A continuación las instrucciones para la instalación del proyecto <strong>fuzzydoDB</strong>:
-
-</br></br><strong>Base de Datos</strong>
-
-</br>
-<ol>
-	<li>Instalar PostgreSQL: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo apt-get install postgresql</mark></strong> </li></br>
-	<li>Crear el usuario fuzzy que usará la base de datos: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo adduser fuzzy</mark></strong> </br></br> Llenar todos los campos con 'fuzzy' e indicar que sea superusuario.</li></br>
-	<li>Ingresar a PostgreSQL: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo -u postgres psql</mark></strong> </li></br>
-	<li>Crear el usuario dentro de PostgreSQL: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">create user fuzzy with password 'fuzzy' createdb;</mark></strong> </br></br> <u>Nota:</u> El comando debe terminar con punto y coma.</li></br>
-	<li>Crear la base de datos fuzzy: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">create database fuzzy;</mark></strong> </br></br> <u>Nota:</u> El comando debe terminar con punto y coma.</li></br>
-	<li>Conceder todos los permisos de la base de datos al usuario: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">grant all privileges on database fuzzy to fuzzy;</mark></strong> </br></br> <u>Nota:</u> El comando debe terminar con punto y coma.</li></br>
-	<li>Se convierte usuario fuzzy en superusuario:</br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">alter user fuzzy with superuser;</mark></strong> </br></br> <u>Nota:</u> Este paso puede ser omitido si al comando en el paso 4 se añade <strong>--superuser</strong></li></br>
-	<li>Salir de PostgreSQL:</br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">\q</mark></strong> </br></br> Ahora se puede ingresar a PostgreSQL como usuario fuzzy: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo -u fuzzy psql</mark></strong></li></br>
-	<li>En un terminal ubicarse en el siguiente directorio: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">FuzzyDB/src/sql_scripts/</mark></strong> </br></br> Una vez allí, ejecutar:</br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">sudo -u fuzzy psql</mark></strong></li></br>
-	<li>Ejecutar el script <i>create-schema.sql:</i> </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">\i create-schema.sql</mark></strong> </li></br>
-</ol>
-
-
-</br><strong>Proyecto</strong>
-
-</br>
-<ol>
-	<li>Ejecutar: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">parser.sh</mark></strong> </br></br> El cual se encuentra en el directorio principal fuzzy-client.</li></br>
-	<li>Ubicarse en el directorio FuzzyDB y ejecutar: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">ant clean jar</mark></strong> </li></br>
-	<li>Ejecutar el proyecto con: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">java -jar dist/FuzzyDB.jar</mark></strong> </br></br> <u>Nota:</u> Si le aparece el siguiente error: </br></br>
-	    <div style=\"padding: 25px; width: 687px; height: 320px; background-color: #F0F0F0;\">Exception in thread \"main\" java.lang.NoClassDefFoundError: com/beust/jcommander/ParameterException</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.getDeclaredMethods0(Native Method)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.privateGetDeclaredMethods(Class.java:2570)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.getMethod0(Class.java:2813)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Class.getMethod(Class.java:1663)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at sun.launcher.LauncherHelper.getMainMethod(LauncherHelper.java:494)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:486)</br>
-		Caused by: java.lang.ClassNotFoundException: com.beust.jcommander.ParameterException</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.net.URLClassLoader$1.run(URLClassLoader.java:366)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.net.URLClassLoader$1.run(URLClassLoader.java:355)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.security.AccessController.doPrivileged(Native Method)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.net.URLClassLoader.findClass(URLClassLoader.java:354)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.ClassLoader.loadClass(ClassLoader.java:425)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.ClassLoader.loadClass(ClassLoader.java:358)</br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... 6 more</br>
-		</div></li></br>
-		
-		Entonces siga las siguientes instrucciones:
-		
-		</br></br>
-		<ol>
-			<li>Abrir el proyecto con NetBeans (versión 8.0.1 o más reciente) y realizar un <strong>clean and build</strong>.</li></br>
-			<li>Ejecutar el proyecto con: </br></br> <strong>&nbsp;&nbsp;&nbsp; <mark style=\"background-color: #C0C0C0;\">java -jar dist/FuzzyDB.jar</mark></strong> </li>
-		</ol>
-</ol>
-
-</br>Ahora ya puede proceder a ejecutar instrucciones SQL.
-",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "INSTALATION MANUAL",
+                                       "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
                             "webapp" => array())
                   ));
 $coleccion->insert($subs);
-$subs = array("nombre" => "Versiones anteriores",
+$subs = array("nombre" => "Previous versions",
               "seccion" => "Descarga",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "VERSIONES ANTERIORES",
-                            "informacion" => "No hay versiones anteriores actualmente.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "PREVIOUS VERSIONS",
+                            "informacion" => "Under Construction.",
                         "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -375,9 +299,9 @@ $coleccion->insert($subs);
 
 $subs = array("nombre" => "API",
               "seccion" => "API",
-              "idioma" =>"ESP",
+              "idioma" =>"ENG",
               "bloque" => array(array("nombre" => "API",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -385,11 +309,11 @@ $subs = array("nombre" => "API",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 2",
+$subs = array("nombre" => "Type 2",
               "seccion" => "API",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 2",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "TYPE 2",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -397,11 +321,11 @@ $subs = array("nombre" => "Tipo 2",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 3",
+$subs = array("nombre" => "Type 3",
               "seccion" => "API",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 3",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "TYPE 3",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -409,11 +333,11 @@ $subs = array("nombre" => "Tipo 3",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 4",
+$subs = array("nombre" => "Type 4",
               "seccion" => "API",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 4",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "TYPE 4",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -421,11 +345,11 @@ $subs = array("nombre" => "Tipo 4",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 5",
+$subs = array("nombre" => "Type 5",
               "seccion" => "API",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 5",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "TYPE 5",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -433,11 +357,11 @@ $subs = array("nombre" => "Tipo 5",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Publicaciones asociadas",
+$subs = array("nombre" => "Associated publications",
               "seccion" => "Documentación",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "PUBLICACIONES ASOCIADAS",
-                            "informacion" => "En esta sección se encuentran todas las publicaciones asociadas al proyecto.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "ASSOCIATED PUBLICATIONS",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -449,7 +373,7 @@ $subs = array("nombre" => "Publicaciones asociadas",
                             "descarga" => array(),
                             "webapp" => array()),
                   array("nombre" => "INVESTIGACIONES",
-                            "informacion" => "-",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -457,11 +381,11 @@ $subs = array("nombre" => "Publicaciones asociadas",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Conferencias",
+$subs = array("nombre" => "Conferences",
               "seccion" => "Documentación",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "CONFERENCIAS",
-                            "informacion" => "-",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "CONFERENCES",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -469,11 +393,11 @@ $subs = array("nombre" => "Conferencias",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Entrevistas",
+$subs = array("nombre" => "Interviews",
               "seccion" => "Documentación",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "ENTREVISTAS",
-                            "informacion" => "-",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "Interviews",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -481,11 +405,11 @@ $subs = array("nombre" => "Entrevistas",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Pruebas en línea",
+$subs = array("nombre" => "Online testing",
               "seccion" => "Pruebas en línea",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "PRUEBAS EN LÍNEA",
-                            "informacion" => "Mini manual de cómo usar las pruebas en línea.",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "ONLINE TESTING",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -493,10 +417,10 @@ $subs = array("nombre" => "Pruebas en línea",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Pruebas en consola",
+$subs = array("nombre" => "Console",
               "seccion" => "Pruebas en línea",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "PRUEBAS EN CONSOLA",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "CONSOLE",
                             "informacion" => "<iframe id=\"conso\" style=\"margin-left: auto; margin-right: auto; width: 810px; height: 400px; position: absolute; left: 350px\" src=\"http://localhost/terminal/\"></iframe>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -505,10 +429,10 @@ $subs = array("nombre" => "Pruebas en consola",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Demostración de funcionamiento",
+$subs = array("nombre" => "Operating demonstration",
               "seccion" => "Pruebas en línea",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "DEMOSTRACIÓN DE FUNCIONAMIENTO",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "OPERATING DEMONSTRATION",
                             "informacion" => "",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -521,11 +445,11 @@ $subs = array("nombre" => "Demostración de funcionamiento",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Desempeño",
+$subs = array("nombre" => "Performance",
               "seccion" => "Desempeño",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "DESEMPEÑO",
-                            "informacion" => "ESPACIO PARA LA INFORMACIÓN QUE ENVIARÁ EL EQUIPO DE PRUEBAS DE DESEMPEÑO",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "PERFORMANCE",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga_des" => "activated",
@@ -534,10 +458,10 @@ $subs = array("nombre" => "Desempeño",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Registro",
+$subs = array("nombre" => "Sign up",
               "seccion" => "Comunidad_p",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "REGISTRO",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "SIGN UP",
                             "informacion" => "<div id=\"registro-form\">
             <form><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
                     <tr><td>Nombre: </td><td><input type=\"text\" id=\"nombre\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\" /></td><td>Apellido: </td><td><input type=\"text\" id=\"apellido\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\" /></td></tr>
@@ -793,10 +717,10 @@ $subs = array("nombre" => "Registro",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Recuperar contraseña",
+$subs = array("nombre" => "Forgot your password?",
               "seccion" => "Comunidad_p",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "RECUPERAR CONTRASEÑA",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "FORGOT YOUR PASSWORD?",
                             "informacion" => "<div id=\"recuperar-form\">
             Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
             <input type=\"text\" id=\"correoRecuperarContrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Correo Electr&oacute;nico\" style=\"border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px; margin-left: 300px; margin-top:30px;\" />
@@ -815,10 +739,10 @@ $subs = array("nombre" => "Recuperar contraseña",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Contáctanos",
+$subs = array("nombre" => "Contact us",
               "seccion" => "Comunidad",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "CONTÁCTANOS",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "CONTACT US",
                             "informacion" => "<form name=\"contactform\" method=\"post\" action=\"process/send_form_email.php\">
 				<input type=\"hidden\" name=\"formpass\" value=\"wough9348y3**\">
 		<table width=\"850px\">
@@ -867,13 +791,11 @@ $subs = array("nombre" => "Contáctanos",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Donar",
+$subs = array("nombre" => "DONATE",
               "seccion" => "Comunidad",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "DONAR",
-                            "informacion" => "En esta sección se colocarán alternativas para donar con el desarrollo del proyecto <strong>fuzzydoDB</strong>.
-</br></br>
-",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "DONATE",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -881,15 +803,11 @@ $subs = array("nombre" => "Donar",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Compartir",
+$subs = array("nombre" => "Share",
               "seccion" => "Comunidad",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "COMPARTIR",
-                            "informacion" => "Apóyanos y comparte el proyecto <strong>fuzzydoDB</strong> en tus redes sociales:</br>
-<div style=\"text-align:center\">
-	</br>&nbsp;&nbsp;&nbsp;<a href=\"javascript:void(0)\"><img class=\"share-btn\" src=\"img/facebook.png\" alt=\"Facebook\" height=\"50px\" onclick=\"fb_share();\" width=\"auto\"></a>
-	&nbsp;&nbsp;&nbsp;<a href=\"http://www.twitter.com/share?text=Ingresa%20en%20el%20siguiente%20enlace%20y%20aprende%20acerca%20bases%20de%20datos%20difusas.&url=http://localhost/\" target=\"_blank\"><img src=\"img/twitter.png\" alt=\"Twitter\" height=\"50px\" width=\"auto\">
-</div>",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "SHARE",
+                            "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -898,10 +816,10 @@ $subs = array("nombre" => "Compartir",
 $coleccion->insert($subs);
 
 
-$subs = array("nombre" => "Ver perfil",
+$subs = array("nombre" => "Profile",
               "seccion" => "Perfil",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Ver perfil",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "PROFILE",
                             "informacion" => '<div style=\"border: 1px solid #045d6f; border-radius:5px; height:150px; width:150px\"><img src="img/avatar/<?php echo $_SESSION[\'pic_id\']?>" alt="foto" width="150" height="150" /></div>
             <div style=\"float:right; margin-top: -155px; margin-right: -30px; width:700px;\">
             <table cellpadding=\"10\">
@@ -922,10 +840,10 @@ $subs = array("nombre" => "Ver perfil",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Modificar perfil",
+$subs = array("nombre" => "Edit Profile",
               "seccion" => "Perfil",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Modificar perfil",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "EDIT PROFILE",
                             "informacion" => '<div id="modificarperfil-form"><form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'nombre\']; ?>" id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'apellido\']; ?>" id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    <tr><td><strong>Ocupación: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'ocupacion\']; ?>" id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'institucion\']; ?>" id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
                    <tr><td><strong>País: </strong></td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/>
@@ -1181,10 +1099,10 @@ $subs = array("nombre" => "Modificar perfil",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Cambiar foto",
+$subs = array("nombre" => "Edit picture",
               "seccion" => "Perfil",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Cambiar foto",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "EDIT PICTURE",
                             "informacion" => '<?php 
                                 if (isset($_GET[\'er\']))
 {
@@ -1252,10 +1170,10 @@ if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su 
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Modificar correo",
+$subs = array("nombre" => "Edit e-mail",
               "seccion" => "Perfil",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Modificar correo",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "EDIT E-MAIL",
                             "informacion" => '<div id="modificarcorreo-form">
             Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
             <form><table cellpadding="10"><tr><td><input type="text" value="<?php echo $_SESSION[\'email\']; ?>" id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
@@ -1276,13 +1194,13 @@ $subs = array("nombre" => "Modificar correo",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Modificar contraseña",
+$subs = array("nombre" => "Edit password",
               "seccion" => "Perfil",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Modificar contraseña",
-                            "informacion" => '<div id="modificarcontrasena-form">Ingrese su nueva contraseña.
-            <form><table><tr><td><input type=\"password\" value=\"\" id=\"contrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Contraseña\" style=\"margin-left: 300px; margin-top:15px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
-                    <tr><td><input type=\"password\" value=\"\" id=\"confirmar\" placeholder=\"Confirmar Contraseña\" onfocus=\"clearSearch(this);\" style=\"margin-top:15px; margin-left: 300px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "EDIT PASSWORD",
+                            "informacion" => '<div id="modificarcontrasena-form">Enter your new password.
+            <form><table><tr><td><input type=\"password\" value=\"\" id=\"contrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Password\" style=\"margin-left: 300px; margin-top:15px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
+                    <tr><td><input type=\"password\" value=\"\" id=\"confirmar\" placeholder=\"Confirm Password\" onfocus=\"clearSearch(this);\" style=\"margin-top:15px; margin-left: 300px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
                    
                    </table>
             <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"modificarContrasena();\" style=\"margin-left: 340px; margin-top:30px; border: 0\"></a></form>
@@ -1300,33 +1218,33 @@ $subs = array("nombre" => "Modificar contraseña",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Cambiar tipo de usuarios",
+$subs = array("nombre" => "CHANGE USER TYPE",
               "seccion" => "Usuarios",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Cambiar tipo de usuarios",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "CHANGE USER TYPE",
                             "informacion" => '
 <?php
 if ($_GET["res"] == "ok")
 {
 ?>
-<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha cambiado el tipo de usuario de forma exitosa.</div>
+<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Type of user has been changed successfully.</div>
 <?php
 }
 ?>
 <form action="usuarios.php" method="GET">
 <div class="input-group">
-      <input type="text" class="form-control" name="mail" style="height:20px; width: 98%" placeholder="Buscar usuario por correo" />
+      <input type="text" class="form-control" name="mail" style="height:20px; width: 98%" placeholder="Search for user by e-mail" />
       <span class="input-group-btn">
-        <button type="submit" class="btn btn-custom" type="button">Buscar</button>
+        <button type="submit" class="btn btn-custom" type="button">Search</button>
       </span>
     </div>
 </form><br/>                           
 <table class=\"table\">
 <tbody><tr>
 <td><strong>#</strong></td>
-<td><strong>Nombre</strong></td>
-<td><strong>Correo</strong></td>
-<td><strong>Tipo de usuario</strong></td>
+<td><strong>Name</strong></td>
+<td><strong>E-mail</strong></td>
+<td><strong>User type</strong></td>
 </tr>
 <?php
 $db = conectar_db();
@@ -1358,9 +1276,9 @@ echo \"<tr><td>\".$i.\"</td><td>\".$doc[\'nombre\'].\"
 <?php echo $usertype; ?> <span class=\"caret\"></span>
   </button>
   <ul class=\"dropdown-menu\" role=\"menu\">
-<li><a href=\"process/edit_usuario.php?e=1&p=1&user=<?php echo $doc[\'_id\'];?>\">Participante</a></li>
-<li><a href=\"process/edit_usuario.php?e=1&p=2&user=<?php echo $doc[\'_id\'];?>\">Desarrollador</a></li>
-<li><a href=\"process/edit_usuario.php?e=1&p=3&user=<?php echo $doc[\'_id\'];?>\">Administrador</a></li>
+<li><a href=\"process/edit_usuario.php?e=1&p=1&user=<?php echo $doc[\'_id\'];?>\">Participant</a></li>
+<li><a href=\"process/edit_usuario.php?e=1&p=2&user=<?php echo $doc[\'_id\'];?>\">Developer</a></li>
+<li><a href=\"process/edit_usuario.php?e=1&p=3&user=<?php echo $doc[\'_id\'];?>\">Administrator</a></li>
   </ul>
 </div>
 </td>
@@ -1378,23 +1296,23 @@ echo \"</tr>\";
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Eliminar usuarios",
+$subs = array("nombre" => "DELETE USERS",
               "seccion" => "Usuarios",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "Eliminar usuarios",
+              "idioma" =>"ENG",
+              "bloque" => array(array("nombre" => "DELETE USERS",
                             "informacion" => '<?php
 if ($_GET["res"] == "ok")
 {
 ?>
-<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha eliminado el usuario forma exitosa.</div>
+<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>The user has been successfully removed.</div>
 <?php
 }
 ?>
 <form action="usuarios.php" method="GET">
 <div class="input-group">
-      <input type="text" class="form-control" name="mail" style="height:20px; width: 98%" placeholder="Buscar usuario por correo" />
+      <input type="text" class="form-control" name="mail" style="height:20px; width: 98%" placeholder="Search for user by e-mail" />
       <span class="input-group-btn">
-        <button type="submit" class="btn btn-custom" type="button">Buscar</button>
+        <button type="submit" class="btn btn-custom" type="button">Search</button>
       </span>
     </div>
     <input type="hidden" name="sec" value="1">
@@ -1402,9 +1320,9 @@ if ($_GET["res"] == "ok")
 <table class=\"table\">
 <tbody><tr>
 <td><strong>#</strong></td>
-<td><strong>Nombre</strong></td>
-<td><strong>Correo</strong></td>
-<td><strong>Eliminar usuario</strong></td>
+<td><strong>Name</strong></td>
+<td><strong>E-mail</strong></td>
+<td><strong>Delete user</strong></td>
 </tr>
 <?php
 $db = conectar_db();
@@ -1431,7 +1349,7 @@ echo \"<tr><td>\".$i.\"</td><td>\".$doc[\'nombre\'].\"
 \".$doc[\'apellido\'].\"</td><td>\".$doc[\'correo\'].\"</td>\";
 ?>
 <td>
-<a href=\"process/edit_usuario.php?e=2&user=<?php echo $doc[\'_id\'];?>\" type="button" class="btn btn-danger" style="color:#FFF">Eliminar</a>
+<a href=\"process/edit_usuario.php?e=2&user=<?php echo $doc[\'_id\'];?>\" type="button" class="btn btn-danger" style="color:#FFF">Delete</a>
 </td>
 <?php
 echo \"</tr>\";
@@ -1447,5 +1365,5 @@ echo \"</tr>\";
                   ));
 $coleccion->insert($subs);
 
-echo "Ok fino.";
+echo "Ok fine.";
 ?>
