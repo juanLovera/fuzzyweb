@@ -39,9 +39,9 @@ for($i=0; $i< count($localjs); $i++)
             <input class="form-control" id="barra_signin_contrasena" placeholder="Password" type="password" style="width:233px; height:25px; margin-left: 25px; margin-top:17px;"/>
             <div style="font-size:12px; margin-top:5px; margin-left:25px;">
                     <a href="comunidad.php" style="color:#1B1B1B;" >Sign Up</a> 
-                &nbsp; -&nbsp;  <a href="comunidad_p.php?sec=1" style="color:#1B1B1B;" >Forgot password?</a>
+                &nbsp; -&nbsp;  <a href="comunidad_p.php?sec=1" style="color:#1B1B1B;" >Forgot your password?</a>
                 </div>
-            <button type="submit" class="btn btn-custom" style="margin-left: 200px; margin-top:15px;">Sign In</button>
+            <button type="submit" class="btn btn-custom" style="margin-left: 235px; margin-top:15px;">Sign In</button>
             </form>
             </div>
             <div id="signin-loading" style="text-align: center; display: none; padding-top: 60px; font-size: 13px">
@@ -51,19 +51,19 @@ for($i=0; $i< count($localjs); $i++)
                 <span style="color: #a10000"><strong>The email or password you entered is incorrect..</strong></span><br/><br/><a href="javascript:void(0)" onclick="$('#signin-error').hide();$('#form-inicio').show();">Try again</a>
             </div>
         </div>
-        <button id="botoniniciarsesion" onclick="abrirSignIn()" class="btn btn-custom" style="position:absolute; left:870px; top:35px;">Iniciar Sesión <span id="iniciarsesionflecha" class="glyphicon glyphicon-chevron-down" style="font-size: 10px; margin-left: 5px;"></span></button>
+        <button id="botoniniciarsesion" onclick="abrirSignIn()" class="btn btn-custom" style="position:absolute; left:915px; top:35px;">Sign In <span id="iniciarsesionflecha" class="glyphicon glyphicon-chevron-down" style="font-size: 10px; margin-left: 5px;"></span></button>
        
         <?php
            } // Usuario registrado
            else
            {
         ?>
-        <div id="signedinuser" style="position:absolute; left:195px; top:35px; width: 800px; font-size: 14px; text-align: right"> <a href="perfil.php" ><?php echo $_SESSION['nombre']; ?></a> <span class="glyphicon glyphicon-user"></span> 
+        <div id="signedinuser" style="position:absolute; left:195px; top:35px; width: 800px; font-size: 14px; text-align: right"> <a href="perfil.php" ><?php echo $_SESSION['nombre']; ?></a><span style="margin-left:5px" class="glyphicon glyphicon-user"></span> 
         <?php
         if ($_SESSION['usertype'] == "U_Administrador")
         {
         ?>
-        <a class="btn btn-custom" href="usuarios.php" style="margin-left: 11px; color:#FFF;">Gestionar Usuarios</a>
+        <a class="btn btn-custom" href="usuarios.php" style="margin-left: 11px; color:#FFF;">Manage Users</a>
         <?php
         }
         ?>
@@ -74,13 +74,13 @@ for($i=0; $i< count($localjs); $i++)
         <div id="logo" style="background-image:url(img/logo.png); width:231px; height:51px; position:absolute; top: 45px;"></div>
         <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><a href="process/idioma.php?lang=ESP&linkback=<?php echo $link; ?>">Español</a> - <strong>English</strong> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
         <div class="input-group" style="position:absolute; left:1010px; top:35px; width:160px;">
-        <input id="barra_busqueda" type="text" class="form-control" placeholder="Buscar" style="height: 21px; width: 120px;" />
+        <input id="barra_busqueda" type="text" class="form-control" placeholder="Search" style="height: 21px; width: 120px;" />
         <span class="input-group-btn">
           <button class="btn btn-custom" type="button" style="height: 21px"><span class="glyphicon glyphicon-search"></span></button>
         </span>
     </div>
       
-        <div id="menu" style="position: absolute; left: 263px; top: 84px;"><a href="index.php"><img src="img/menu_03.png" width="71" height="27" alt="Inicio" style="border:0" /></a><a href="acerca.php"><img src="img/menu_04.png" width="97" height="27" alt="Acerca" style="border:0" /></a><a href="descarga.php"><img src="img/menu_05.png" width="114" height="26" alt="Descarga" style="border:0" /></a><a href="api.php"><img src="img/menu_06.png" width="60" height="26" alt="API" style="border:0" /></a><a href="documentacion.php"><img src="img/menu_07.png" width="176" height="26" alt="Documentacion" style="border:0"/></a><a href="pruebas.php"><img src="img/menu_08.png" width="170" height="26" alt="Pruebas en linea" style="border:0"/></a><a href="desempeno.php"><img src="img/menu_09.png" width="127" height="26" alt="Desempeno" style="border:0"/></a><a href="comunidad.php"><img src="img/menu_10.png" width="121" height="26" alt="Contribuye" style="border:0" /></a></div>
+        <div id="menu" style="position: absolute; left: 263px; top: 84px;"><a href="index.php"><img src="img/eng/menu_03.png" width="71" height="27" alt="Inicio" style="border:0" /></a><a href="acerca.php"><img src="img/eng/menu_04.png" width="97" height="27" alt="Acerca" style="border:0" /></a><a href="descarga.php"><img src="img/eng/menu_05.png" width="114" height="26" alt="Descarga" style="border:0" /></a><a href="api.php"><img src="img/eng/menu_06.png" width="60" height="26" alt="API" style="border:0" /></a><a href="documentacion.php"><img src="img/eng/menu_07.png" width="176" height="26" alt="Documentacion" style="border:0"/></a><a href="pruebas.php"><img src="img/eng/menu_08.png" width="170" height="26" alt="Pruebas en linea" style="border:0"/></a><a href="desempeno.php"><img src="img/eng/menu_09.png" width="127" height="26" alt="Desempeno" style="border:0"/></a><a href="comunidad.php"><img src="img/eng/menu_10.png" width="121" height="26" alt="Contribuye" style="border:0" /></a></div>
   </div>
 </div>
 

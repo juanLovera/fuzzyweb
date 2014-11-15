@@ -58,7 +58,7 @@ for($i=0; $i< count($localjs); $i++)
            else
            {
         ?>
-        <div id="signedinuser" style="position:absolute; left:195px; top:35px; width: 800px; font-size: 14px; text-align: right"> <a href="perfil.php" ><?php echo $_SESSION['nombre']; ?></a> <span class="glyphicon glyphicon-user"></span> 
+        <div id="signedinuser" style="position:absolute; left:195px; top:35px; width: 800px; font-size: 14px; text-align: right"> <a href="perfil.php" ><?php echo $_SESSION['nombre']; ?></a><span style="margin-left:5px" class="glyphicon glyphicon-user"></span> 
         <?php
         if ($_SESSION['usertype'] == "U_Administrador")
         {

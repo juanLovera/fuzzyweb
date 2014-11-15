@@ -21,7 +21,11 @@ function get_subsecciones($seccion, $seccion2 = NULL)
 {
     $db = conectar_db();
     $coleccion = $db->subseccion;
-    $cursor = $coleccion->find(array("seccion" => $seccion));
+    if ($_SESSION['idioma'] != "ENG")
+        $idioma = "ESP";
+    else
+        $idioma = "ENG";
+    $cursor = $coleccion->find(array("seccion" => $seccion, "idioma" => $idioma));
     $i = 0;
     $cursor->sort(array('_id' => 1));
     foreach ($cursor as $doc)

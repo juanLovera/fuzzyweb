@@ -3,16 +3,22 @@ session_start();
 include_once("inc/includes.inc.php");
 // Se selecciona el idioma
 if ($_SESSION['idioma'] != "ENG")
+{
     $includeslang = "";
+    $imglang = "";
+}
 else
+{
     $includeslang = "_english";
+    $imglang = "/eng";
+}
 include ("header".$includeslang.".php");
 $subsecs = get_subsecciones("Descarga");
 $subsecsw = get_subsecciones("Pruebas en línea");
 ?>
 <div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%;">
 	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1200px; position:relative;">
-		<div id="titulo" style="background-image: url(img/titulo_banner.png); width: 567px; height: 109px; top: 45px; position: absolute; left: 317px;"></div>
+            <div id="titulo" style="background-image: url(img<?php echo $imglang; ?>/titulo_banner.png); width: 564px; height: 109px; top: 45px; position: absolute; left: 317px;"></div>
         <div id="mascotafuzzy" style="position: absolute; background-image: url(img/mascota_fuzzy.png); width: 451px; height: 310px; left: 376px; top: 177px;"></div>
       <div id="caja_fondo" style="background-image: url(img/home_box.png); width: 285px; height: 190px; position: absolute; left: 919px; top: 85px; z-index:2"></div>
         <div id="caja_titulo1" style="position: absolute; left: 925px; width: 250px; text-align: right; top: 102px; z-index: 3; color: #FFF; font-size: 14px;">Última <strong>Versión</strong></div>
