@@ -1,7 +1,12 @@
 <?php
 session_start();
 include_once("inc/includes.inc.php");
-include ("header.php");
+// Se selecciona el idioma
+if ($_SESSION['idioma'] != "ENG")
+    $includeslang = "";
+else
+    $includeslang = "_english";
+include ("header".$includeslang.".php");
 $subsecs = get_subsecciones("Descarga");
 $subsecsw = get_subsecciones("Pruebas en línea");
 ?>
@@ -31,5 +36,5 @@ $subsecsw = get_subsecciones("Pruebas en línea");
   </div>
 </div>
 <?php
-include ("footer.php");
+include ("footer".$includeslang.".php");
 ?>

@@ -540,9 +540,9 @@ $subs = array("nombre" => "Registro",
               "bloque" => array(array("nombre" => "REGISTRO",
                             "informacion" => "<div id=\"registro-form\">
             <form><table cellpadding='10'><tr><td><strong>Datos Personales</strong></td></tr>
-                    <tr><td>Nombre: </td><td><input type=\"text\" id=\"nombre\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\" /></td><td>Apellido: </td><td><input type=\"text\" id=\"apellido\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\" /></td></tr>
-                    <tr><td>Institución: </td><td><input type=\"text\" id=\"institucion\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\" /></td><td>Ocupación: </td><td><input type=\"text\"  id=\"ocupacion\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
-                    <tr><td>País de residencia: </td><td><select id=\"pais\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\">
+                    <tr><td>Nombre: </td><td><input type=\"text\" id=\"nombre\" class=\"form-control\" style=\"height:25px; width:200px\" /></td><td>Apellido: </td><td><input class=\"form-control\" type=\"text\" id=\"apellido\" style=\"height:25px; width:200px\" /></td></tr>
+                    <tr><td>Institución: </td><td><input type=\"text\" id=\"institucion\" class=\"form-control\" style=\"height:25px; width:200px\" /></td><td>Ocupación: </td><td><input type=\"text\"  id=\"ocupacion\" class=\"form-control\" style=\"height:25px; width:200px\"/></td></tr>
+                    <tr><td>País de residencia: </td><td><select id=\"pais\" class=\"form-control\" style=\"height:25px; width:200px\">
                                 <option value=\"\">Seleccione...</option>
 <option value=\"Afganistán\">Afganistán</option>
 <option value=\"Albania\">Albania</option>
@@ -780,9 +780,9 @@ $subs = array("nombre" => "Registro",
 <option value=\"Zimbabue\">Zimbabue</option>
 </select></td></tr>
                     <tr><td style=\"padding-top:50px;\"><strong>Datos de la Cuenta</strong></td></tr>
-                    <tr><td>E-mail: </td><td><input type=\"text\" id=\"mail\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\" /></td><td>Contraseña: </td><td><input type=\"password\" id=\"contrasena\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
-                    <tr><td>Confirmar contraseña: </td><td><input type=\"password\" id=\"confirmar\" style=\"border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
-                </table><a href=\"javascript:void(0)\"><img src=\"img/boton-registrar.png\" alt=\"Registrar\" style=\"margin-top: 50px; margin-left: 350px; border:0\" onclick=\"registrar()\"></a></form></div>
+                    <tr><td>E-mail: </td><td><input type=\"text\" id=\"mail\" class=\"form-control\" style=\"height:25px; width:200px\" /></td><td>Contraseña: </td><td><input type=\"password\" id=\"contrasena\" class=\"form-control\" style=\"height:25px; width:200px\"/></td></tr>
+                    <tr><td>Confirmar contraseña: </td><td><input type=\"password\" id=\"confirmar\" class=\"form-control\" style=\"height:25px; width:200px\"/></td></tr>
+                </table><button type=\"button\" class=\"btn btn-custom\" onclick=\"registrar();\" style=\"margin-left:370px; margin-top:5px;\">Registrar</button></form></div>
             <div id=\"registro-loading\" style=\"text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
             </div>",
@@ -799,8 +799,8 @@ $subs = array("nombre" => "Recuperar contraseña",
               "bloque" => array(array("nombre" => "RECUPERAR CONTRASEÑA",
                             "informacion" => "<div id=\"recuperar-form\">
             Para recuperar su contraseña por favor ingrese el correo electrónico asociado a su cuenta.<br/>
-            <input type=\"text\" id=\"correoRecuperarContrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Correo Electr&oacute;nico\" style=\"border: 1px solid #045d6f; border-radius:5px; color:#B1B1B1; height:25px; padding-left:8px; margin-left: 300px; margin-top:30px;\" />
-            <a href=\"javascript:void(0)\" onclick=\"recuperarClave()\"><img src=\"img/boton-recuperar.png\" width=\"99\" height=\"30\" alt=\"recuperar\" style=\"margin-left: 340px; margin-top:15px; border:0\" /></a>
+            <input type=\"text\" id=\"correoRecuperarContrasena\" placeholder=\"Correo Electr&oacute;nico\" class=\"form-control\" style=\"height:25px; margin-left: 300px; margin-top:30px; width:200px\" />
+            <button type=\"button\" class=\"btn btn-custom\" onclick=\"recuperarClave();\" style=\"margin-left:370px; margin-top:10px;\">Enviar</button>
             </div>
             <div id=\"recuperar-loading\" style=\"text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>
@@ -926,10 +926,10 @@ $subs = array("nombre" => "Modificar perfil",
               "seccion" => "Perfil",
               "idioma" =>"ESP",
               "bloque" => array(array("nombre" => "Modificar perfil",
-                            "informacion" => '<div id="modificarperfil-form"><form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'nombre\']; ?>" id="nombre" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'apellido\']; ?>" id="apellido" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                   <tr><td><strong>Ocupación: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'ocupacion\']; ?>" id="ocupacion" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input type="text" value="<?php echo $_SESSION[\'institucion\']; ?>" id="institucion"onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/></td></tr>
-                   <tr><td><strong>País: </strong></td><td><select id="pais" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;"/>
-                                <option value="">Seleccione...</option>
+                            "informacion" => '<div id="modificarperfil-form"><form><table cellpadding="10"><tr><td><strong>Nombre: </strong></td><td><input class=\"form-control\" type="text" value="<?php echo $_SESSION[\'nombre\']; ?>" id="nombre" style="height:25px;" /></td><td style="padding-left:50px"><strong>Apellido: </strong></td><td><input class=\"form-control\"  type="text" value="<?php echo $_SESSION[\'apellido\']; ?>" id="apellido" style="height:25px;"/></td></tr>
+                   <tr><td><strong>Ocupación: </strong></td><td><input class=\"form-control\" type="text" value="<?php echo $_SESSION[\'ocupacion\']; ?>" id="ocupacion" style="height:25px; "/></td><td style="padding-left:50px"><strong>Institución: </strong></td><td><input class=\"form-control\"  type="text" value="<?php echo $_SESSION[\'institucion\']; ?>" id="institucion" style="height:25px;"/></td></tr>
+                   <tr><td><strong>País: </strong></td><td><select class=\"form-control\" id="pais" style="height:25px;"/>
+                                <option value="<?php echo $_SESSION[\'ubicacion\']; ?>"><?php echo $_SESSION[\'ubicacion\']; ?></option>
 <option value=\"Afganistán\">Afganistán</option>
 <option value=\"Albania\">Albania</option>
 <option value=\"Alemania\">Alemania</option>
@@ -1165,8 +1165,8 @@ $subs = array("nombre" => "Modificar perfil",
 <option value=\"Zambia\">Zambia</option>
 <option value=\"Zimbabue\">Zimbabue</option>
 </select></td></tr>
-                   </table>
-                <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarPerfil();" style="margin-left:320px; margin-top:50px;"></a>
+                   </table><br/>
+                <button type="button" class=\"btn btn-custom\" onclick="modificarPerfil();" style="margin-left:370px; margin-top:5px;">Enviar</button>
                                </form></div>
                 <div id="modificarperfil-loading" style="padding-right: 90px;text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
@@ -1218,13 +1218,19 @@ $subs = array("nombre" => "Cambiar foto",
         $mens = "Error desconocido. Por favor intente de nuevo.";  
         break;
     }
-    echo "<script>alert(\'".$mens."\');</script>";
+    ?>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <?php echo $mens; ?>
+</div>
+<?php
 }
 if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su cuenta.<br/><br/>
             <form  method="post" enctype="multipart/form-data" action="process/crop.php"><table cellpadding=\"10\"><tr><td><input type=\"file\" name=\"preview\" style=\"margin-left: 290px;\"/></td></tr>       
             <input type=\"hidden\" name=\"paso\" value=\"1\">
-            </table>       
-            <a href=\"javascript:void(0)\"><input type=\"image\" src=\"img/Abrir.png\" alt=\"Abrir\" style=\"margin-left: 340px; margin-top:15px;\"></a></form>
+            </table>
+            <button type="submit" class=\"btn btn-custom\" style="margin-left:370px; margin-top:5px;">Subir</button>
+            </form>
             <?php } else {?>	
                         <div style="width:460px; margin-left:auto; margin-right:auto">
                         <img id=\"preview\" src=\"<?php echo $_SESSION[\'upload_temp_name\']?>\" alt=\"your image\" style=\"max-width:800px; max-height:700px; display:block; margin-left:auto; margin-right:auto;\" />
@@ -1235,7 +1241,7 @@ if ($_GET[\'paso\'] != 1){?>Ingrese la nueva foto que desea tener asociada a su 
 			<input type="hidden" id="yy" name="yy" />
 			<input type="hidden" id="w" name="w" />
 			<input type="hidden" id="h" name="h" />
-			<input type="image" src="img/Guardar.png" width="99" height="30" style="display:block; margin-left:auto; margin-right:auto"/>
+			<button type="submit" class=\"btn btn-custom\" style="margin-left:370px; margin-top:10px;">Cortar</button>
 		</form> <?php }?>
                 
             </div>
@@ -1258,10 +1264,10 @@ $subs = array("nombre" => "Modificar correo",
               "bloque" => array(array("nombre" => "Modificar correo",
                             "informacion" => '<div id="modificarcorreo-form">
             Ingrese el nuevo correo que desea tener asociado a su cuenta.<br/><br/>
-            <form><table cellpadding="10"><tr><td><input type="text" value="<?php echo $_SESSION[\'email\']; ?>" id="mail" onfocus="clearSearch(this);" style="border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px; margin-left: 290px;"/></td></tr>
+            <form><table cellpadding="10"><tr><td><input type="text" class=\"form-control\" value="<?php echo $_SESSION[\'email\']; ?>" id="mail" style="height:25px; margin-left: 290px; width: 200px;"/></td></tr>
                    
             </table>       
-            <a href="javascript:void(0)"><img src="img/boton-modificar.png" alt="Modificar" onclick="modificarCorreo();" style="margin-left: 340px; margin-top:15px;"></a></form>
+             <button type="button" class=\"btn btn-custom\" onclick="modificarCorreo();" style="margin-left:370px; margin-top:10px;">Modificar</button></form>
             </div>
             <div id="modificarcorreo-loading" style="padding-right: 90px;text-align: center; display: none; padding-top: 60px;">
                 <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
@@ -1281,11 +1287,11 @@ $subs = array("nombre" => "Modificar contraseña",
               "idioma" =>"ESP",
               "bloque" => array(array("nombre" => "Modificar contraseña",
                             "informacion" => '<div id="modificarcontrasena-form">Ingrese su nueva contraseña.
-            <form><table><tr><td><input type=\"password\" value=\"\" id=\"contrasena\" onfocus=\"clearSearch(this);\" placeholder=\"Contraseña\" style=\"margin-left: 300px; margin-top:15px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
-                    <tr><td><input type=\"password\" value=\"\" id=\"confirmar\" placeholder=\"Confirmar Contraseña\" onfocus=\"clearSearch(this);\" style=\"margin-top:15px; margin-left: 300px; border: 1px solid #045d6f; border-radius:5px; height:25px; padding-left:8px;\"/></td></tr>
+            <form><table><tr><td><input class=\"form-control\" type=\"password\" value=\"\" id=\"contrasena\" placeholder=\"Contraseña\" style=\"margin-left: 300px; margin-top:15px; height:25px; width: 200px; \"/></td></tr>
+                    <tr><td><input class=\"form-control\" type=\"password\" value=\"\" id=\"confirmar\" placeholder=\"Confirmar Contraseña\" style=\"margin-top:15px; margin-left: 300px; height:25px; width: 200px;\"/></td></tr>
                    
                    </table>
-            <a href=\"javascript:void(0)\"><img src=\"img/boton-modificar.png\" alt=\"Modificar\" onclick=\"modificarContrasena();\" style=\"margin-left: 340px; margin-top:30px; border: 0\"></a></form>
+            <button type="button" class=\"btn btn-custom\" onclick="modificarContrasena();" style="margin-left:370px; margin-top:15px;">Modificar</button></form>
             </div>
             <div id=\"modificarcontrasena-loading\" style=\"padding-right: 90px;text-align: center; display: none; padding-top: 60px;\">
                 <img src=\"img/loader.gif\" width=\"32\" height=\"32\" alt=\"\"/><br/><strong>Cargando</strong>

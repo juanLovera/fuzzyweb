@@ -35,20 +35,20 @@ for($i=0; $i< count($localjs); $i++)
         <div id="marco_signin" style="width:329px; height: 212px; background-image: url(img/signin_bg.png); top:70px; left:675px; position:absolute; z-index: 100; display: none">
             <div id="form-inicio">
                 <form onsubmit="iniciarSesion();return false;">
-            <input class="form-control" id="barra_signin_correo" type="text" placeholder="Correo Electr&oacute;nico" style="width:233px; height:25px; margin-left: 25px; margin-top:25px;"/>
-            <input class="form-control" id="barra_signin_contrasena" placeholder="Contrase&ntilde;a" type="password" style="width:233px; height:25px; margin-left: 25px; margin-top:17px;"/>
+            <input class="form-control" id="barra_signin_correo" type="text" placeholder="E-Mail" style="width:233px; height:25px; margin-left: 25px; margin-top:25px;"/>
+            <input class="form-control" id="barra_signin_contrasena" placeholder="Password" type="password" style="width:233px; height:25px; margin-left: 25px; margin-top:17px;"/>
             <div style="font-size:12px; margin-top:5px; margin-left:25px;">
-                    <a href="comunidad.php" style="color:#1B1B1B;" >Registrarse</a> 
-                &nbsp; -&nbsp;  <a href="comunidad_p.php?sec=1" style="color:#1B1B1B;" >¿Olvid&oacute; su contrase&ntilde;a?</a>
+                    <a href="comunidad.php" style="color:#1B1B1B;" >Sign Up</a> 
+                &nbsp; -&nbsp;  <a href="comunidad_p.php?sec=1" style="color:#1B1B1B;" >Forgot password?</a>
                 </div>
-            <button type="submit" class="btn btn-custom" style="margin-left: 200px; margin-top:15px;">Iniciar Sesión</button>
+            <button type="submit" class="btn btn-custom" style="margin-left: 200px; margin-top:15px;">Sign In</button>
             </form>
             </div>
             <div id="signin-loading" style="text-align: center; display: none; padding-top: 60px; font-size: 13px">
-                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Cargando</strong>
+                <img src="img/loader.gif" width="32" height="32" alt=""/><br/><strong>Loading</strong>
             </div>
             <div id="signin-error" style="text-align: center; display: none; font-size: 13px; padding-top: 80px;">
-                <span style="color: #a10000"><strong>Los datos ingresados son incorrectos.</strong></span><br/><br/><a href="javascript:void(0)" onclick="$('#signin-error').hide();$('#form-inicio').show();">Volver a intentar</a>
+                <span style="color: #a10000"><strong>The email or password you entered is incorrect..</strong></span><br/><br/><a href="javascript:void(0)" onclick="$('#signin-error').hide();$('#form-inicio').show();">Try again</a>
             </div>
         </div>
         <button id="botoniniciarsesion" onclick="abrirSignIn()" class="btn btn-custom" style="position:absolute; left:870px; top:35px;">Iniciar Sesión <span id="iniciarsesionflecha" class="glyphicon glyphicon-chevron-down" style="font-size: 10px; margin-left: 5px;"></span></button>
@@ -67,12 +67,12 @@ for($i=0; $i< count($localjs); $i++)
         <?php
         }
         ?>
-        <a class="btn btn-custom" href="process/signout.php" style="margin-left: 11px; color:#FFF;" id="botoncerrarsesion">Cerrar Sesión</a></div>
+        <a class="btn btn-custom" href="process/signout.php" style="margin-left: 11px; color:#FFF;" id="botoncerrarsesion">Sign out</a></div>
         <?php
            }
         ?>
         <div id="logo" style="background-image:url(img/logo.png); width:231px; height:51px; position:absolute; top: 45px;"></div>
-        <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><strong>Español</strong> - <a href="process/idioma.php?lang=ENG&linkback=<?php echo $link; ?>">English</a> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
+        <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><a href="process/idioma.php?lang=ESP&linkback=<?php echo $link; ?>">Español</a> - <strong>English</strong> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
         <div class="input-group" style="position:absolute; left:1010px; top:35px; width:160px;">
         <input id="barra_busqueda" type="text" class="form-control" placeholder="Buscar" style="height: 21px; width: 120px;" />
         <span class="input-group-btn">

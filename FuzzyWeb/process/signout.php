@@ -1,7 +1,7 @@
 <?php
 /* 
- * signup.php
- * Recibe campos y procesa el registro de un nuevo usuario.
+ * signout.php
+ * Destruye sesion.
  */
 session_start();
 include_once("../inc/includes.inc.php");
