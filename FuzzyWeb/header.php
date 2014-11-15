@@ -72,7 +72,7 @@ for($i=0; $i< count($localjs); $i++)
            }
         ?>
         <div id="logo" style="background-image:url(img/logo.png); width:231px; height:51px; position:absolute; top: 45px;"></div>
-        <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><strong>Español</strong> - English <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
+        <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><strong>Español</strong> - <a href="process/idioma.php?lang=ENG&linkback=<?php echo $link; ?>">English</a> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
         <div class="input-group" style="position:absolute; left:1010px; top:35px; width:160px;">
         <input id="barra_busqueda" type="text" class="form-control" placeholder="Buscar" style="height: 21px; width: 120px;" />
         <span class="input-group-btn">

@@ -72,7 +72,7 @@ for($i=0; $i< count($localjs); $i++)
            }
         ?>
         <div id="logo" style="background-image:url(img/logo.png); width:231px; height:51px; position:absolute; top: 45px;"></div>
-        <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><a href="process/idioma.php?lang=ESP&linkback=<?php echo $?>">Español - <strong>English</strong> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
+        <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><a href="process/idioma.php?lang=ESP&linkback=<?php echo $link; ?>">Español</a> - <strong>English</strong> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
         <div class="input-group" style="position:absolute; left:1010px; top:35px; width:160px;">
         <input id="barra_busqueda" type="text" class="form-control" placeholder="Buscar" style="height: 21px; width: 120px;" />
         <span class="input-group-btn">

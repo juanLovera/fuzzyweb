@@ -19,9 +19,9 @@ if ($_GET['AJAX'] != "active")
 {
 // Se selecciona el idioma
 if ($_SESSION['idioma'] != "ENG")
-    $includeslang = "_english";
-else
     $includeslang = "";
+else
+    $includeslang = "_english";
 include ("header".$includeslang.".php");
 ?>
 <div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
