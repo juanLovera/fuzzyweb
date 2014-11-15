@@ -2,8 +2,54 @@
 /*
  * Se muestran error si existen
  */
-if (isset($_GET['e']))
+if (!isset($seccion2))
+    $seccion2 = NULL;
+$subsecs = get_subsecciones($seccion, $seccion2);
+if (isset($_GET['sec']))
+    $subs_select = $_GET['sec'];
+else
+    $subs_select = 0;
+
+if (!is_numeric($subs_select))
+    die ("Error catastrofico.");
+if ($subs_select < 0 || $subs_select >= count($subsecs))
+    die ("Error catastrofico.");
+
+if ($_GET['AJAX'] != "active")
 {
+// Se selecciona el idioma
+if ($_SESSION['idioma'] != "ENG")
+    $includeslang = "_english";
+else
+    $includeslang = "";
+include ("header".$includeslang.".php");
+?>
+<div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
+	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1210px; padding-top:30px; display:table">
+		<div style="background-image:url(img/textbox_top.png); margin-left:auto; margin-right:auto; width:1200px; height:16px;"></div>
+        <div id="cuadroblanco" style="background-image:url(img/textbox_middle.png); margin-left:auto; margin-right:auto; width:1200px; min-height:500px; position:relative; display:table">
+        	<div id="menuizquierdo" style="width:322px; position: absolute; top: -15px; left:0">
+                <?php
+                for ($i=0; $i<count($subsecs); $i++)
+                {
+                    if ($i ==  $subs_select)
+                        echo "<div id=\"selected\" class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" style=\"background-image:url(img/boton_seleccionado.png); font-weight:bold\">".$subsecs[$i]['nombre']."</div>";
+                    else   
+                        echo "<div class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" onMouseOver=\"this.style.fontWeight='bold'\" onMouseOut=\"this.style.fontWeight=''\">".$subsecs[$i]['nombre']."</div>";
+                    
+                }
+                ?>
+            	  
+            </div>
+
+            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px; ">
+            <div id="texto-html">
+     
+            <?php
+            }
+            if (isset($_GET['e']))
+{
+    $tipo = "danger";
     switch($_GET['e'])
     {
         case 5:
@@ -25,56 +71,24 @@ if (isset($_GET['e']))
         $mens = "El archivo de debe ser de formato ZIP, RAR o PDF. Por favor intente de nuevo.";  
         break;
         case "ok":
-        $mens = "Su descarga ha sido agregada con éxito.";  
+        $mens = "Su descarga ha sido agregada con éxito.";
+        $tipo = "success";
         break;
         case "ok-w":
-        $mens = "Su aplicación ha sido agregada con éxito.";  
+        $mens = "Su aplicación ha sido agregada con éxito.";
+        $tipo = "success";
         break;
         default:
         $mens = "Error desconocido. Por favor intente de nuevo.";  
         break;
     }
-    echo "<script>alert('".$mens."');</script>";
+    ?>
+    <div class="alert alert-<?php echo $tipo; ?> alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <?php echo $mens; ?>
+</div>
+<?php
 }
-if (!isset($seccion2))
-    $seccion2 = NULL;
-$subsecs = get_subsecciones($seccion, $seccion2);
-if (isset($_GET['sec']))
-    $subs_select = $_GET['sec'];
-else
-    $subs_select = 0;
-
-if (!is_numeric($subs_select))
-    die ("Error catastrofico.");
-if ($subs_select < 0 || $subs_select >= count($subsecs))
-    die ("Error catastrofico.");
-
-if ($_GET['AJAX'] != "active")
-{
-include ("header.php");
-?>
-<div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
-	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1210px; padding-top:30px; display:table">
-		<div style="background-image:url(img/textbox_top.png); margin-left:auto; margin-right:auto; width:1200px; height:16px;"></div>
-        <div id="cuadroblanco" style="background-image:url(img/textbox_middle.png); margin-left:auto; margin-right:auto; width:1200px; min-height:500px; position:relative; display:table">
-        	<div id="menuizquierdo" style="width:322px; position: absolute; top: -15px; left:0">
-                <?php
-                for ($i=0; $i<count($subsecs); $i++)
-                {
-                    if ($i ==  $subs_select)
-                        echo "<div id=\"selected\" class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" style=\"background-image:url(img/boton_seleccionado.png); font-weight:bold\">".$subsecs[$i]['nombre']."</div>";
-                    else   
-                        echo "<div class=\"subseccionboton\" onClick=\"cambiarPagina('".$i."',this,'".$link."')\" onMouseOver=\"this.style.fontWeight='bold'\" onMouseOut=\"this.style.fontWeight=''\">".$subsecs[$i]['nombre']."</div>";
-                    
-                }
-                ?>
-            	  
-            </div>
-
-            <div id="texto" style="width:850px; display:table; font-size:14px; text-align:justify; margin-left:335px; ">
-            <div id="texto-html">    
-            <?php
-            }
             if (count($subsecs[$subs_select]['bloque']) > 1)
             {
                echo "<div id=\"menusuperior\" style=\"position: absolute; top: -5; left: 335px; width:850px;font-size:14px; color:#023e44\">";
@@ -114,7 +128,7 @@ include ("header.php");
                 ?>
                 <a href="javascript:void(0)" onclick="$('#agregar-descarga<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar descarga nueva]<br/><br/></a>
                 <div id="agregar-descarga<?php echo $subs_select ?>" style="display:none">
-                    <div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><form id="nueva_desc" method="post" enctype='multipart/form-data' action="process/nuevaDescarga.php"><table><tr><td style="padding-bottom:25px;"><strong>Agregar Descarga</strong><td></tr><tr><td>Nombre</td><td><input type="text" name="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:540px; padding-left:8px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" style="border: 1px solid #045d6f; border-radius:5px; height:50px; width:540px; padding-left:8px;"></textarea></td></tr><tr><td>* Archivo</td><td><input type="file" name="archivo" /></td></tr></table><br/><span style="font-size:12px;">* El archivo debe ser de formato zip, rar o pdf y debe pesar menos de 5MB.</span><br/><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 690px; margin-right: 6px;" /><a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea subir y publicar este archivo?')) document.getElementById('nueva_desc').submit();">Subir</a>
+                    <div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><form id="nueva_desc" method="post" enctype='multipart/form-data' action="process/nuevaDescarga.php"><table><tr><td style="padding-bottom:25px;"><strong>Agregar Descarga</strong><td></tr><tr><td>Nombre</td><td><input type="text" name="nombre" class="form-control" style="height:25px; width:540px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" class="form-control" style="height:50px; width:540px; "></textarea></td></tr><tr><td>* Archivo</td><td><input type="file" name="archivo" /></td></tr></table><br/><span style="font-size:12px;">* El archivo debe ser de formato zip, rar o pdf y debe pesar menos de 5MB.</span><br/><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 690px; margin-right: 6px;" /><a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea subir y publicar este archivo?')) document.getElementById('nueva_desc').submit();">Subir</a>
                             <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
                             <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['_id'] ?>" />
                             <input type="hidden" name="bloque" value="<?php echo $i ?>" />
@@ -129,7 +143,7 @@ include ("header.php");
                 ?>
                 <a href="javascript:void(0)" onclick="$('#agregar-webapp<?php echo $subs_select ?>').slideDown('fast'); this.style.display='none'">[+ Agregar aplicación web nueva]<br/><br/></a>
                 <div id="agregar-webapp<?php echo $subs_select ?>" style="display:none">
-                    <form method="post" action="process/nuevaWebapp.php" id="nueva_app" ><div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><strong>Agregar demostración de funcionamiento</strong><table cellspacing="6" style="margin-top:25px;"><tr><td>Nombre</td><td><input type="text" name="nombre" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:560px; padding-left:8px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" style="border: 1px solid #045d6f; border-radius:5px; height:50px; width:560px; padding-left:8px;"></textarea></td></tr><tr><td>URL *</td><td><input type="text" name="archivo" style="border: 1px solid #045d6f; border-radius:5px; height:25px; width:560px; padding-left:8px;" /></td></tr></table><br/><span style="font-size:12px;">* Este URL debe contener un sitio web que actualmente este usando FuzzydoDB para su funcionamiento interno.</span><br/><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 660px; margin-right: 6px;" /> <a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea publicar esta aplicación?')) document.getElementById('nueva_app').submit();">Agregar</a><br/></div>
+                    <form method="post" action="process/nuevaWebapp.php" id="nueva_app" ><div style="background-color:#F0F0F0; width:750px; padding:16px; text-align:justify; margin-bottom: 10px;"><strong>Agregar demostración de funcionamiento</strong><table cellspacing="6" style="margin-top:25px;"><tr><td>Nombre</td><td><input type="text" name="nombre" class="form-control" style="height:25px; width:560px;" /></td></tr><tr><td>Descripción</td><td><textarea name="descripcion" class="form-control" style="height:50px; width:560px;"></textarea></td></tr><tr><td>URL *</td><td><input type="text" name="archivo" class="form-control" style="height:25px; width:560px;" /></td></tr></table><br/><span style="font-size:12px;">* Este URL debe contener un sitio web que actualmente este usando FuzzydoDB para su funcionamiento interno.</span><br/><img src="img/subir_icono.png" width="16" height="16" alt="Descargar" style="margin-left: 660px; margin-right: 6px;" /> <a href="javascript:void(0)" onclick="if (confirm('¿Está seguro que desea publicar esta aplicación?')) document.getElementById('nueva_app').submit();">Agregar</a><br/></div>
                             <input type="hidden" name="linkback" value="<?php echo $link."?sec=".$subs_select ?>" />
                             <input type="hidden" name="subsec" value="<?php echo $subsecs[$subs_select]['_id'] ?>" />
                             <input type="hidden" name="bloque" value="<?php echo $i ?>" />
@@ -185,6 +199,6 @@ include ("header.php");
 </div>
 </div>
 <?php
-include ("footer.php");
+include ("footer".$includeslang.".php");
 }
 ?>
