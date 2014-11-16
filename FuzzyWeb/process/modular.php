@@ -401,7 +401,97 @@ $subs = array("nombre" => "Tipo 3",
               "seccion" => "API",
               "idioma" =>"ESP",
               "bloque" => array(array("nombre" => "TIPO 3",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
+                            "informacion" => "<strong> GROUP BY y HAVING</strong><br/><br/>La sintaxis y semántica que aquí se le da a las consultas basadas en particionamiento (cláusualas GROUP BY y HAVING de SQL) se limita a cuando el criterio 
+expresado involucra atributos Tipo 3. Se restringe también al caso en que el atributo toma como valor exactamente una etiqueta.<br/><br/>  
+
+<strong>PARTICIONES DIFUSAS</strong><br/><br/>
+<img src=\"img/mascotaAPIInterrogacion.png\" alt=\"Mapache\" height=\"372\" width=\"228\"style=\"float:left; margin-right:10px;\"/>
+En los conjuntos clásicos la pertenencia de un elemento a un conjunto es rígida, definida por una función indicatriz cuyo rango es {0,1}, donde el 0 representa
+la exclusión, mientras que el 1 la inclusión. Este concepto es flexibilizado en los conjuntos difusos, permitiendo no sólo elementos incluidos y excluidos, 
+sino también elementos parcialmente incluidos, con grados en el intervalo (0,1).<br/>
+
+<br/><strong>Definición 1.</strong> Un <strong>conjunto difuso <i>F</i> en un universo X</strong> está definido por una <strong>función de membresía</strong> 
+<i>µF:X &#8594; </i> [0,1], donde los elementos tienen pertenencia gradual. Se dice que <i>x</i> &#8712; <i>X</i> tiene <strong>pertenencia total</strong> o está
+<strong>completamente incluido</strong> cuando µF(x)=1; en formal dual se dice que está <strong>completamente excluido</strong> cuando <i>µF(x)</i>=0; 
+finalmente, está <strong>parcialmente incluido</strong> o <strong>gradualmente incluido</strong> cuando <i>µF(x)</i>&#8712;(0,1).<br/><br/>
+
+Al conjunto formado por los elementos parcialmente incluidos se le conoce como el borde del conjunto difuso, El conjunto de los elementos completamente 
+incluidos se les llama el núcleo, Los elementos que no están completamente excluidos conforman el soporte.<br/>
+
+<br/><strong>Definición 2.</strong> Sea <i>F</i> un conjunto difuso <i>F</i> en un universo <i>X</i> , se definen los conjuntos clásicos: 
+<strong>núcleo(F)</strong> = { <i>x</i> &#8712; <i>X</i> | <i>µF(x)</i>=1 }; <strong>borde(F)</strong> = { <i>x</i> &#8712; <i>X</i> | 0<<i>µF(x)</i><1 }; y 
+<strong>soporte(F)</strong> = { <i>x</i> &#8712; <i>X</i> | <i>µF(x)</i>>0 }.<br/><br/>
+
+Para representar por extensión un conjunto difuso <i>F</i> en el universo <i>X</i>, se usa la notación <i>F</i>={ <i>x<sub>1</sub>/µF(x<sub>1</sub>), 
+x<sub>2</sub>/µF(x<sub>2</sub>),..., x<sub>n</sub>/µF(x<sub>n</sub>) </i>} la cual asocia cada elemento <i>x<sub>n</sub></i> con su grado de membresía 
+<i>µF(x<sub>i</sub>)</i>. Si un elemento de <i>X</i> no aparece en la representación por extensión de <i>F</i> es porque está completamente excluido. 
+Análogamente, para representar por comprensión un conjunto difuso <i>F</i> en el universo <i>X</i>, se usa la notación <i>F</i>={<i> x/µF(x)| x &#8712; X </i>}.
+<br/>
+
+<br/><strong>Definición 3.</strong> Sea <i>X</i> un conjunto de valores, <i>S</i> un subconjunto difuso de <i>X</i> &#215; <i>X</i> caracterizado por 
+<i>µ<sub>s</sub>:X &#215; X &#8594; </i>[0,1], diremos que <i>S</i> es una <strong>relación difusa de similitud</strong> si y sólo si cumple con las propiedades
+de <strong>reflexividad</strong> &#8704;<i>x</i>&#8712;<i>X</i> <i>µ<sub>s</sub>(x,x)</i>=1, <strong>simetría</strong> 
+&#8704;<i>x,y,z</i>&#8712;<i>X</i> <i>µ<sub>s</sub>(x,y)</i>=<i>µ<sub>s</sub>(y,x)</i> y <strong>transitividad</strong> 
+&#8704;<i>x,y,z&#8712;X</i> ((<i>µ<sub>S</sub>(x,y)</i>=1 &#8743; <i>µ<sub>S</sub>(y,z) = &#946;</i> &#8658; <i>µ<sub>S</sub>(x,z) = &#946;</i>) &#8743; 
+(<i>µ<sub>S</sub>(x,y) = &#946;</i> &#8743; <i>µ<sub>S</sub>(y,z) = 1</i> &#8658; <i>µ<sub>S</sub>(x,z) = &#946;</i>)).<br/>
+
+<br/><strong>Definición 4.</strong> Sea <i>X</i> un conjunto de valores, <i>S</i> una relación de similitud difusa en X: <i>S</i> induce una <strong>partición 
+difusa</strong> <i>P<sub>S</sub></i> sobre el conjunto de valores <i>X</i>, <i>P<sub>S</sub></i> = { <i>S</i>[<i>x</i>] | <i>x</i> &#8712; <i>X</i> }; a cada 
+elemento <i>S</i>[<i>x</i>] de esta partición difusa lo llamamos la <strong>clase difusa</strong> de <i>x</i>, éste es el conjunto difuso descrito por la 
+función de membresía <i>µ<sub>S[x]</sub>(y)</i> = <i>µ<sub>S[x]</sub>(x,y)</i>.<br/><br/>
+
+Las cláusulas GROUP BY y HAVING son opcionales y producen una tabla agrupada, que es un conjunto de grupos, derivados durante la evaluación de dichas cláusulas.
+Un grupo es un conjunto de filas en las que todos los valores de la(s) columna(s) pertenecientes a la <grouping columns> son iguales. Si no se especifica una 
+cláusula GROUP BY el grupo es toda la tabla. Una tabla agrupada puede considerarse como una colección de tablas. Las funciones de agregación operan sobre las 
+tablas individuales (o grupos) que están dentro de la tabla agrupada.<br/>
+
+Se dice que una columna referenciada en la cláusula GROUP BY es una columna de agrupamiento. El resultado de la cláusula GROUP BY es una partición de la tabla 
+en un conjunto de grupos. El conjunto está formado por el número mínimo de grupos tales que, para cada columna de agrupamiento de cada grupo de más de una fila,
+no hay dos valores distintos de esa columna de agrupamiento. Cada fila de un grupo dado contiene los mismos valores en todas las columnas de agrupamiento 
+listadas. Cuando una condición de búsqueda es aplicada a un grupo, una referencia a una columna de agrupamiento es una referencia a su valor.<br/>
+
+Cuando se especifica una cláusula HAVING, la tabla agrupada se deriva de la eliminación de los grupos, de la tabla resultante de la cláusula GROUP BY 
+previamente especificada, que no cumplen la <group condition>. La cláusula HAVING sólo tiene sentido cuando se ha especificado previamente una cláusula 
+GROUP BY, por lo que cada columna referenciada en la <group condition> debe ser una columna de agrupamiento o estar especificada en una función de agregación o
+ser una referencia externa.<br/>
+
+Cuando la <group condition> se aplica a un grupo dado, ese grupo es el argumento de la función de agregación contenida en la condición a menos que la columna 
+referenciada en la función de agregación sea una referencia externa. Si en la <group condition> aparece una subconsulta, ésta es ejecutada para cada grupo de 
+la tabla agrupada. El resultado de la subconsulta es utilizado en la evaluación de la <group condition> para cada grupo dado de la tabla agrupada. Si la 
+subconsulta ejecutada contiene una referencia externa a una columna de la tabla agrupada, entonces, la referencia es a los valores de esa columna en el grupo 
+dado de dicha tabla.<br/>
+
+<br/><strong>FORMALIZACIÓN DEL RESULTADO PARA LAS CLÁUSULAS GROUP BY Y HAVING</strong><br/><br/>
+
+<strong>Definición 5.</strong> Sea <i>C</i> la consulta SQL (clásico) SELECT <i>c1,c2, ,cn</i> FROM <i>T</i> GROUP BY <i>k1,,ko</i> HAVING <i>cond(Gi)</i> 
+donde <i>cj</i> &#8712; { <i>k1,,ko</i> } ó <i>c<sub>j</sub></i> es de la forma <i>agg<sub>j</sub>(a<sub>j</sub>)</i> con <i>agg<sub>j</sub></i> una función 
+de agregación. Esta consulta establece la relación de equivalencia <i>&#961;</i> sobre las tuplas de <i>T</i>: <i>&#961;</i>(<i>t<sub>p</sub>,t<sub>q</sub></i>) &#8801; &#8704;<i>r</i>&#8712;{1,,<i>o</i>}(<i>t<sub>p</sub>.k<sub>r</sub> = t<sub>q</sub>.k<sub>r</sub></i>), la relación <i>&#961;</i> induce sobre <i>T</i> una partición clásica <i>P<sub>&#961;</sub></i>. Sea &#915; la proyección de <i>T</i> en los atributos 
+<i>k<sub>1</sub>,,k<sub>o</sub></i>, &#915; = { (<i>t.k<sub>1</sub>, t.k<sub>2</sub>, , t.k<sub>o</sub></i>) | <i>t</i> &#8712; <i>T</i> } ={ <i>&#947;<sub>1</sub>, &#947;<sub>2</sub>, , &#947;<sub>l</sub></i> } para <i>i</i>&#8712;{<i>1l</i>} sea <i>G<sub>i</sub></i>&#8712;<i>P<sub>&#961;</sub></i> la clase tal que &#8707;<i>t</i>&#8712;<i>T</i> (<i>&#947;<sub>i</sub></i>=(<i>t.k<sub>1</sub>, t.k<sub>2</sub>, , t.k<sub>o</sub></i>) &#8743; <i>t</i>&#8712;<i>G<sub>i</sub></i>). Entonces, <strong>el 
+resultado de <i>C</i> es: <i>resultset</i> (<i>C</i>) ={(<i>v<sub>i1</sub>, v<sub>i2</sub>, , v<sub>in</sub></i>) | <i>i</i>&#8712;{1<i>l</i>} &#8743; <i>cond(G<sub>i</sub>)</i> }</strong>, donde <i>v<sub>ij</sub></i> = &#947;<sub>i</sub>.c<sub>j</sub> si <i>c<sub>j</sub></i>&#8712;{<i>k<sub>1</sub>,,k<sub>o</sub></i>} y <i>v<sub>ij</sub></i> = <i>agg<sub>j</sub></i> {<i>t.a<sub>j</sub></i> | <i>t</i>&#8712;<i>G<sub>i</sub></i> } si <i>c<sub>j</sub></i> = <i>agg<sub>j</sub>(a<sub>j</sub>)</i>. 
+Si la cláusula HAVING no se especifica la <i>cond(G<sub>i</sub>)</i>&#8801;true.<br/>
+
+<br/><strong>Definición 6.</strong> Una <strong>consulta de agrupamiento difuso</strong> es una expresión de la forma <strong>SELECT <i>c<sub>1</sub>,c<sub>2</sub>, ,c<sub>n</sub></i> FROM T GROUP BY <i>m<sub>1</sub> k<sub>1</sub>,, m<sub>o</sub></i> ko HC</strong>. 
+Donde: <i>T</i> es una expresión SQL que denota una tabla; <i>k<sub>1</sub>,,k<sub>o</sub></i> son atributos de <i>T</i>; cada <i>c<sub>j</sub></i> es tal que <i>c<sub>j</sub></i>&#8712;{<i>k<sub>1</sub>,,k</i>} ó <i>c<sub>j</sub></i>=<i>agg<sub>j</sub>(a<sub>j</sub>)</i> con <i>agg<sub>j</sub></i> una función de 
+agregación y <i>a<sub>j</sub></i> atributo de <i>T</i>; <i>HC</i> es la cláusula having, <i>HC</i> = <i>&#949;</i> (el string vacío) ó <i>HC</i> es de la forma HAVING <i>cond</i>, siendo <i>cond</i> una expresión lógica llamada la 
+condición de grupo; cada <i>m<sub>i</sub></i>=SIMILAR ó <i>m<sub>i</sub></i>=<i>&#949;</i> (el string vacío), en el caso que <i>m<sub>i</sub></i>=SIMILAR, <i>dom(k<sub>i</sub>)</i> debe ser un dominio difuso <i>&#402;d<sub>i</sub></i> dotado de una relación de 
+similitud <i>S<sub>i</sub></i>.<br/>
+
+<br/><strong>Definición 7.</strong> Sea <i>C</i> una consulta de agrupamiento difuso SELECT <i>c<sub>1</sub>,c<sub>2</sub>, ,c<sub>n</sub></i> FROM <i>T</i> GROUP BY <i>m<sub>1</sub> k<sub>1</sub>,, m<sub>o</sub> k<sub>o</sub> HC</i>. Diremos que la <strong>relación difusa 
+<i>&#963;</i> establecida por <i>C</i></strong> sobre las tuplas de <i>T</i> es una relación definida mediante la función de membresía: <i>µ<sub>&#963;</sub>(t<sub>p</sub>,t<sub>q</sub>)</i> = min<sub><i>r&#8712;{1,,o}</i></sub> <i>µ<sub>r</sub>(t<sub>p</sub>.k<sub>r</sub>,t<sub>q</sub>.k<sub>r</sub>)</i>, donde para cada <i>m<sub>r</sub></i> la relación <i>µ<sub>r</sub></i> sobre <i>dom(k<sub>r</sub>)</i> se define por los casos siguientes. En el caso que <i>m<sub>r</sub></i>=&#949;<strong>:</strong> si <i>t<sub>p</sub>.k<sub>r</sub>=t<sub>q</sub>.k<sub>r</sub></i> entonces 
+<i>µ<sub>r</sub>(t<sub>p</sub>.k<sub>r</sub>,t<sub>q</sub>.k<sub>r</sub>)</i> = 1, si <i>t<sub>p</sub>.k<sub>r</sub></i> &#8800; <i>t<sub>q</sub>.k<sub>r</sub></i> entonces <i>µ<sub>r</sub>(t<sub>p</sub>.k<sub>r</sub>,t<sub>q</sub>.k<sub>r</sub>)</i> = 0. En el caso que <i>m<sub>r</sub></i>=SIMILAR sea <i>dom(k<sub>i</sub>)</i> el dominio difuso <i>&#402;d<sub>i</sub></i> dotado de una relación de 
+similitud <i>S<sub>i</sub></i>, entonces <i>µ<sub>r</sub>(t<sub>p</sub>.k<sub>r</sub>,t<sub>q</sub>.k<sub>r</sub>)</i> = <i>µ<sub>Sr</sub>(t<sub>p</sub>.k<sub>r</sub>,t<sub>q</sub>.k<sub>r</sub>)</i>.<br/>
+
+<br/><strong>Definición 8.</strong> Sea <i>C</i> una consulta de agrupamiento difuso SELECT <i>c<sub>1</sub>,c<sub>2</sub>, ,c<sub>n</sub></i> FROM <i>T</i> GROUP BY <i>m<sub>1</sub> k<sub>1</sub>,, m<sub>o</sub> k<sub>o</sub> HC</i>. Sea <i>&#963;</i> la relación de similitud 
+difusa establecida por <i>C</i>. El <strong>resultado de <i>C</i> es el conjunto difuso de tuplas <i>resultset</i>(<i>C</i>)={(<i>v<sub>i1</sub>,v<sub>i2</sub>,,v<sub>in</sub> </i>)/<i>µ<sub>i</sub></i> |<i>i</i>&#8712;{1<i>l</i>}}</strong>. Donde <i>l</i> es la cardinalidad de la proyección de T en los atributos <i>k<sub>1</sub>,,k<sub>o</sub></i>, &#915; ={ (<i>t.k<sub>1</sub>,t.k<sub>2</sub>,,t.k<sub>o</sub></i>) | <i>t</i>&#8712;<i>T</i> }, cuya extensión es &#915; ={ <i>&#947;<sub>1</sub>, &#947;<sub>2</sub>, , &#947;<sub>l</sub></i>};
+para cada <i>i</i>&#8712;{1<i>l</i>} sea <i>&#964;<sub>i<sub></i>&#8712;<i>T</i> cualquier tupla tal que <i>&#947;<sub>i</sub></i> = (<i>&#947;<sub>i</sub>.k<sub>1</sub>, &#947;<sub>i</sub>.k<sub>2</sub>,,&#947;<sub>i</sub>.k<sub>o</sub></i>), si <i>c<sub>j</sub></i>&#8712;{<i>k<sub>1</sub>,,k<sub>o</sub></i>} entonces <i>v<sub>ij</sub></i> =<i>&#964;<sub>i</sub>.c<sub>j</sub></i> , si <i>c<sub>j</sub></i> es de la forma <i>agg<sub>j</sub>(a<sub>j</sub>)</i> entonces 
+<i>v<sub>ij</sub></i> =<i>agg<sub>j</sub></i>{<i>&#964;.a<sub>j</sub> /µ<sub>&#963;[&#964;i]</sub>(&#964;)| &#964;&#8712;&#963;[&#964;<sub>i</sub>]</i>}, si <i>HC</i>=&#949; entonces <i>µ<sub>i</sub></i>=1, si <i>HC</i> es de la forma HAVING <i>cond</i> entonces <i>µ<sub>i</sub></i> = <i>µ(cond(&#963;[&#964;i]))</i>, esto es el grado en que el grupo &#963;[&#964;<sub>i</sub>] satisface la expresión <i>cond</i>.<br/>
+
+<br/><strong>Definición 9.</strong> Sea COUNT(<i>a<sub>j</sub></i>) en una en una consulta de agrupamiento difuso <i>C</i>, con &#963; la relación de similitud difusa establecida por <i>C</i>, &#964;<sub>i</sub> una 
+tupla en <i>T</i> la tabla base de <i>C</i>, definimos COUNT(<i>a<sub>j</sub></i>) como <strong>COUNT{<i>&#964;.a<sub>j</sub></i> /<i>µ<sub>&#963;[&#964;i]</sub>(&#964;) | &#964;&#8712;&#963;[&#964;<sub>i</sub>] </i>} = <i>&#8721;{&#956;<sub>&#963;[&#964;i]</sub>(&#964;)</i>| &#964;&#8712;&#963;[&#964;<sub>i</sub>]} (cardinalidad <i>&#8721;count</i>)</strong>.<br/>
+
+<br/><strong>Definición 10.</strong> Sea <i>agg<sub>j</sub>(a<sub>j</sub>)</i> una función de agregación distinta de COUNT(<i>a<sub>j</sub></i>) en consulta de agrupamiento difuso <i>C</i>, con &#963; la relación de 
+similitud difusa establecida por <i>C</i>, <i>t<sub>i</sub></i> una tupla en <i>T</i> la tabla base de <i>C</i>, definimos <i>agg<sub>j</sub>(a<sub>j</sub>)</i> como sigue: 
+<strong><i>agg<sub>j</sub>{ t.a<sub>j</sub>/&#956;<sub>&#963;[ti]</sub>(t) | t&#8712;&#963;[t<sub>i</sub>] } = agg<sub>j</sub>{ t.a<sub>j</sub> | t&#8712; soporte&#963;[t<sub>i</sub>] }</i></strong>.<br/>",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
                             "descarga" => array(),
@@ -2009,7 +2099,7 @@ $subs = array("nombre" => "Contact us",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "DONATE",
+$subs = array("nombre" => "Donate",
               "seccion" => "Comunidad",
               "idioma" =>"ENG",
               "bloque" => array(array("nombre" => "DONATE",
