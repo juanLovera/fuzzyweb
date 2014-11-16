@@ -385,23 +385,11 @@ $subs = array("nombre" => "API",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 2",
+$subs = array("nombre" => "GROUP BY - HAVING",
               "seccion" => "API",
               "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 2",
-                            "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
-                            "fecha_ultima_mod" => date(),
-                            "autor_ultima_mod" => NULL,
-                            "descarga" => array(),
-                            "webapp" => array())
-                  ));
-$coleccion->insert($subs);
-
-$subs = array("nombre" => "Tipo 3",
-              "seccion" => "API",
-              "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 3",
-                            "informacion" => "<strong> GROUP BY y HAVING</strong><br/><br/>La sintaxis y semántica que aquí se le da a las consultas basadas en particionamiento (cláusualas GROUP BY y HAVING de SQL) se limita a cuando el criterio 
+              "bloque" => array(array("nombre" => "GROUP BY - HAVING",
+                            "informacion" => "La sintaxis y semántica que aquí se le da a las consultas basadas en particionamiento (cláusualas GROUP BY y HAVING de SQL) se limita a cuando el criterio 
 expresado involucra atributos Tipo 3. Se restringe también al caso en que el atributo toma como valor exactamente una etiqueta.<br/><br/>  
 
 <strong>PARTICIONES DIFUSAS</strong><br/><br/>
@@ -499,10 +487,62 @@ similitud difusa establecida por <i>C</i>, <i>t<sub>i</sub></i> una tupla en <i>
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 4",
+$subs = array("nombre" => "ORDER BY",
               "seccion" => "API",
               "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 4",
+              "bloque" => array(array("nombre" => "ORDER BY",
+                            "informacion" => 
+                "La cláusula ORDER BY es opcional. Si ésta es especificada, entonces el resultado es ordenado. Se dice que un par <column><direction> es una especificación de orden. Cada especificación de orden debe identificar una columna válida en el producto cartesiano resultante de la cláusula FROM.
+                </br></br>Cada especificación de orden puede indicar la dirección de ordenamiento para la clave de orden (columna <i>k<sub>i</sub></i>) correspondiente. Si no se especifica DESC, entonces el sentido del ordenamiento de <i>k<sub>i</sub></i> es ascendente y el operador de cómputo aplicable es el \"menor que\". De lo contrario, la dirección de ordenamiento para <i>k<sub>i</sub></i> es descendente y el operador de cómputo aplicable es \"mayor que\".
+                </br></br>Ahora, sea <i>P</i> una fila de la tabla de resultados y sea <i>Q</i> cualquier otra fila de esa tabla, y sea <i>v<sub>Pi</sub></i> y <i>v<sub>Qi</sub></i> los valores de la columna <i>k<sub>i</sub></i> en estas filas, respectivamente. La posición relativa de las filas <i>P</i> y <i>Q</i> en el resultado se determina mediante la comparación de <i>v<sub>Pi</sub></i> y <i>v<sub>Qi</sub></i> de acuerdo con las reglas del predicado de comparación (\"mayor que\" o \"menor que\"), según sea el operador de cómputo aplicable para <i>k<sub>i</sub></i>. Los valores nulos tienen un tratamiento especial de acuerdo a la implementación, considerándolos menores que cualquier valor no nulo o considerándolos mayores que cualquier valor no nulo. En la tabla de resultados, la posición relativa de la fila <i>P</i> aparece antes que la fila <i>Q</i> si y sólo si el valor <i>v<sub>Pi</sub></i> precede al valor <i>v<sub>Qi</sub></i> para algún <i>r</i> mayor que 0 y menor que el número de especificaciones de orden y <i>v<sub>Pi</sub></i> = <i>v<sub>Qi</sub></i> para todo <i>i </i>&lt;<i> r</i>. El orden relativo de dos filas que no son distintas es dependiente de la implementación.
+                </br></br>La formalización del resultado para la cláusula ORDER BY que es el objeto de este estudio se describe a continuación. Sea <i>C</i> la consulta
+
+                </br></br>SELECT <i>c<sub>1</sub>,c<sub>2</sub>, ,c<sub>n</sub></i> FROM <i>T</i> ORDER BY <i>k<sub>1</sub> d<sub>1</sub>,,k<sub>0</sub> d<sub>0</sub></i>
+                </br></br>donde <i>k<sub>i</sub></i> &isin; {<i>c<sub>1</sub>,c<sub>2</sub>, ...,c<sub>n</sub></i>} y <i>d<sub>i</sub></i> {ASC, DESC}.
+                </br></br>Entonces, el resultado de <i>C</i> es la secuencia:
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>resultset</i>(C) = &lang; <i>t<sub>i</sub>.c<sub>1</sub></i>, <i>t<sub>i</sub>.c<sub>2</sub></i>, ..., <i>t<sub>i</sub>.c<sub>n</sub></i> &#124; <i>t<sub>i</sub></i> &isin; <i>T</i> &rang; <i>i</i> &isin; {1,...,<i>m</i>}
+                </br></br>El orden de las tuplas en la secuencia cumple con la restricción:
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &forall;<i>p,q</i> &isin; {1,...,<i>m</i>} (&exist;<i>r</i> &isin; {1,...,<i>o</i>} ( &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &and; &forall;<i>j</i> &isin; {1,...,<i>r</i>-1} <i>t<sub>p</sub>.k<sub>j</sub></i> = <i>t<sub>q</sub>.k<sub>j</sub></i>) &rArr; (<i>p</i> &le; <i>q</i>) )
+                </br></br>donde
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>d<sub>r</sub></i> = ASC &rArr; &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &equiv; (<i>t<sub>p</sub>.k<sub>r</sub> < t<sub>q</sub>.k<sub>r</sub></i>)) &and; (<i>d<sub>r</sub></i> = DESC &rArr; &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &equiv; (<i>t<sub>p</sub>.k<sub>r</sub> > t<sub>q</sub>.k<sub>r</sub></i>))
+                </br></br><strong>EJEMPLO?</strong>
+                <table><tr>
+                        <td><img src=\"img/mascotaAPIEscribiendo.png\" style=\"height: 300px; width: auto;\"></td>
+                        <td></br></br>Dada la definición clásica del funcionamiento del ORDER BY y la extensión de difusa de los dominios de datos, las relaciones de similitud difusas asociadas a estos dominios, permiten dar una nueva semántica a la cláusula ORDER BY. Como la relación de similitud se caracteriza por ser reflexiva, simétrica y transitiva, esta relación genera una partición difusa sobre el conjunto de valores de un atributo. Cada posible valor tiene asociado una clase difusa de todos los valores similares a éste.</td>
+                </tr></table>
+                </br></br>Las clases difusas, permiten extender la cláusula ORDER BY con una nueva semántica cuyo fin sea ordenar los elementos de acuerdo al grado de membresía, en la relación de similitud, con respecto a un elemento fijado. La sintaxis de la cláusula ORDER BY extendida sería 
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORDER BY <i>criterio<sub>1</sub>,...,criterio<sub>0</sub></i>
+                </br></br>donde cada <i>criterio<sub>1</sub></i> es de alguna de las formas posibles:
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>k<sub>i</sub> d<sub>i</sub></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; siendo <i>k<sub>i</sub></i> un atributo y <i>d<sub>i</sub></i> un especificador de orden ASC o DESC
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>k<sub>i</sub></i> START <i>v<sub>i</sub></i>&nbsp;&nbsp;&nbsp; siendo <i>k<sub>i</sub></i> un atributo difuso tipo 3, vi una etiqueta en el dominio de ese atributo
+                </br></br>puede también usarse simplemente <i>k<sub>i</sub></i> como forma abreviada sinómino de <i>k<sub>i</sub></i> ASC
+                </br></br>para la forma <i>k<sub>i</sub></i> START <i>v<sub>i</sub></i> se proveen adicionalmente las formas verbosas
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>k<sub>i</sub></i> STARTING FROM <i>v<sub>i</sub></i>
+                </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIMILARITY ON <i>k<sub>i</sub></i> START <i>v<sub>i</sub></i>
+                </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIMILARITY ON <i>k<sub>i</sub></i> STARTING FROM <i>v<sub>i</sub></i>
+                </br></br>El uso de un criterio de ordenamiento de la forma <i>k<sub>i</sub></i> START <i>v<sub>i</sub></i> produce que el conjunto de tuplas resultado sean ordenadas descendentemente por el grado de membresía &mu;<sub><i>S</i>[<i>v<sub>i</sub></i>]</sub>, con <i>S</i>[<i>v<sub>i</sub></i>] la clase difusa de <i>v<sub>i</sub></i>.
+                </br></br>La formalización de este resultado para la nueva semántica de la cláusula ORDER BY se describe a continuación. Sea <i>C</i> la consulta
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SELECT <i>c<sub>1</sub>,c<sub>2</sub>, ...,c<sub>n</sub></i> FROM <i>T</i> ORDER BY <i>k<sub>1</sub> d<sub>1</sub>,,k<sub>0</sub> d<sub>0</sub></i>
+                </br></br>donde <i>k<sub>i</sub></i> &isin; { <i>c<sub>1</sub>,c<sub>2</sub>, ...,c<sub>n</sub></i> } y <i>d<sub>i</sub></i> &isin; { ASC, DESC , START <i>v</i> }.
+                </br></br>Entonces, el resultado de <i>C</i> es la secuencia: 
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>resultset</i>(C) = &lang; <i>t<sub>i</sub>.c<sub>1</sub></i>, <i>t<sub>i</sub>.c<sub>2</sub></i>, ..., <i>t<sub>i</sub>.c<sub>n</sub></i> &#124; <i>t<sub>i</sub></i> &isin; <i>T</i> &rang; <i>i</i> &isin; {1,...,<i>m</i>}
+                </br></br>El orden de las tuplas en la secuencia cumple con la restricción:
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &forall;<i>p,q</i> &isin; {1,...,<i>m</i>} (&exist;<i>r</i> &isin; {1,...,<i>o</i>} ( &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &and; &forall;<i>j</i> &isin; {1,...,<i>r</i>-1} <i>t<sub>p</sub>.k<sub>j</sub></i> = <i>t<sub>q</sub>.k<sub>j</sub></i>) &rArr; (<i>p</i> &le; <i>q</i>) )
+                </br></br>donde
+                </br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<i>d<sub>r</sub></i> = ASC &rArr; &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &equiv; (<i>t<sub>p</sub>.k<sub>r</sub> < t<sub>q</sub>.k<sub>r</sub></i>)) &and; (<i>d<sub>r</sub></i> = DESC &rArr; &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &equiv; (<i>t<sub>p</sub>.k<sub>r</sub> > t<sub>q</sub>.k<sub>r</sub></i>)) &and; (<i>d<sub>r</sub></i> = START <i>v</i> &rArr; &rho;(<i>t<sub>p</sub>.k<sub>r</sub>, t<sub>q</sub>.k<sub>r</sub></i>) &equiv; (&mu;<sub><i>S</i></sub>(<i>v, t<sub>p</sub>.k<sub>r</sub></i>) < &mu;<sub><i>S</i></sub>(<i>v, t<sub>q</sub>.k<sub>r</sub></i>))
+                </br></br><strong>EJEMPLO?</strong>
+                </br></br>",
+                            "fecha_ultima_mod" => date(),
+                            "autor_ultima_mod" => NULL,
+                            "descarga" => array(),
+                            "webapp" => array())
+                  ));
+$coleccion->insert($subs);
+
+$subs = array("nombre" => "CREATE",
+              "seccion" => "API",
+              "idioma" =>"ESP",
+              "bloque" => array(array("nombre" => "CREATE",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -511,10 +551,10 @@ $subs = array("nombre" => "Tipo 4",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Tipo 5",
+$subs = array("nombre" => "ALTER - DROP",
               "seccion" => "API",
               "idioma" =>"ESP",
-              "bloque" => array(array("nombre" => "TIPO 5",
+              "bloque" => array(array("nombre" => "ALTER - DROP",
                             "informacion" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tempor mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus odio turpis, porttitor sit amet ante in, hendrerit molestie nibh. Curabitur vitae elit et tellus fringilla commodo. Nulla facilisi. Suspendisse sodales ex elit, in tincidunt urna vulputate nec. Nullam laoreet ligula elit. Nunc et eleifend dui. Praesent leo libero, feugiat eu convallis id, dictum eget orci. Cras semper mi ac suscipit commodo. Vivamus vehicula odio lacus, non tristique ipsum sodales eget.<br/><br/>Suspendisse placerat magna sed commodo efficitur. Ut molestie congue ex, quis porttitor lectus laoreet ut. Integer in lectus diam. In purus justo, tincidunt nec sagittis vitae, venenatis facilisis lorem. Donec imperdiet turpis a eleifend interdum. Etiam mollis malesuada lobortis. Vivamus purus diam, placerat in nisl ac, varius convallis risus. Cras vitae metus vitae eros faucibus eleifend. Cras risus tortor, fringilla nec neque sed, pellentesque tristique dolor. Sed a augue vitae lectus maximus vestibulum. Maecenas consequat nisl lorem, eu porta nisl porttitor et. Aliquam eget ex ac augue finibus volutpat vel in lorem. Aenean metus enim, convallis vel consequat tincidunt, vestibulum quis erat.<br/><br/>Nulla facilisi. Quisque in commodo lorem, non scelerisque elit. Fusce quam sem, porta eu semper eu, pellentesque sit amet nunc. Aliquam id ultrices dui, ac congue lorem. Cras scelerisque a diam ut lobortis. Mauris vulputate nulla magna, sed lacinia lacus pretium vitae. Cras rhoncus eros nulla, et interdum diam ultrices sit amet. Phasellus id orci sed turpis placerat rhoncus ac pharetra lorem. Vivamus lobortis ante consectetur, facilisis diam vel, laoreet libero. Sed tincidunt molestie ex, nec sollicitudin est faucibus eget. Phasellus orci tortor, molestie id justo vel, ultricies hendrerit quam. Nam fringilla orci a neque maximus, vitae efficitur velit condimentum. In condimentum eros purus, imperdiet efficitur arcu efficitur in. Proin elit ante, fringilla et egestas ac, tristique vitae tortor. Sed tincidunt orci vitae diam vestibulum, at molestie lorem pellentesque",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -1851,10 +1891,10 @@ $subs = array("nombre" => "API",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Type 2",
+$subs = array("nombre" => "GROUP BY - HAVING",
               "seccion" => "API",
               "idioma" =>"ENG",
-              "bloque" => array(array("nombre" => "TYPE 2",
+              "bloque" => array(array("nombre" => "GROUP BY - HAVING",
                             "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -1863,10 +1903,10 @@ $subs = array("nombre" => "Type 2",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Type 3",
+$subs = array("nombre" => "ORDER BY",
               "seccion" => "API",
               "idioma" =>"ENG",
-              "bloque" => array(array("nombre" => "TYPE 3",
+              "bloque" => array(array("nombre" => "ORDER BY",
                             "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -1875,10 +1915,10 @@ $subs = array("nombre" => "Type 3",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Type 4",
+$subs = array("nombre" => "CREATE",
               "seccion" => "API",
               "idioma" =>"ENG",
-              "bloque" => array(array("nombre" => "TYPE 4",
+              "bloque" => array(array("nombre" => "CREATE",
                             "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
@@ -1887,10 +1927,10 @@ $subs = array("nombre" => "Type 4",
                   ));
 $coleccion->insert($subs);
 
-$subs = array("nombre" => "Type 5",
+$subs = array("nombre" => "ALTER - DROP",
               "seccion" => "API",
               "idioma" =>"ENG",
-              "bloque" => array(array("nombre" => "TYPE 5",
+              "bloque" => array(array("nombre" => "ALTER-DROP",
                             "informacion" => "Under Construction.",
                             "fecha_ultima_mod" => date(),
                             "autor_ultima_mod" => NULL,
