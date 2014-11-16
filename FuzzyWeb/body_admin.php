@@ -84,9 +84,14 @@ if ($app_select < 0)
 
 if ($_GET['AJAX'] != "active")
 {
-include ("header.php");
+// Se selecciona el idioma
+if ($_SESSION['idioma'] != "ENG")
+    $includeslang = "";
+else
+    $includeslang = "_english";
+include ("header".$includeslang.".php");
 ?>
-<div id="barra_azul" style="background-image:url(img/bg_azul.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
+<div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%; background-repeat:repeat-x; display:table;">
 	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1210px; padding-top:30px; display:table">
 		<div style="background-image:url(img/textbox_top.png); margin-left:auto; margin-right:auto; width:1200px; height:16px;"></div>
         <div id="cuadroblanco" style="background-image:url(img/textbox_middle.png); margin-left:auto; margin-right:auto; width:1200px; min-height:500px; position:relative; display:table">
@@ -113,8 +118,6 @@ include ("header.php");
                 {
                     echo "<strong>Nombre</strong><br/>";
                     echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."\" />";
-                    echo "<br/><strong>Idioma</strong><br/>";
-                    echo "<select class=\"form-control\" name=\"idioma\"><option value=\"ESP\">Español</option><option value=\"ENG\">Inglés</option></select>";
                     echo "<br/><strong>Contenido</strong><br/>";	
                     echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\" style=\"margin-top:10px;\">";
 
@@ -200,6 +203,6 @@ include ("header.php");
 </div>
 </div>
 <?php
-include ("footer.php");
+include ("footer".$includeslang.".php");
 }
 ?>
