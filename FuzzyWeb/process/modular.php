@@ -1318,6 +1318,12 @@ if ($_GET["res"] == "ok")
 <div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha cambiado el tipo de usuario de forma exitosa.</div>
 <?php
 }
+if ($_GET["res"] == "err")
+{
+?>
+<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se debe tener al menos un usuario de tipo Administrador.</div>
+<?php
+}
 ?>
 <form action="usuarios.php" method="GET">
 <div class="input-group">
@@ -1393,6 +1399,12 @@ if ($_GET["res"] == "ok")
 {
 ?>
 <div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha eliminado el usuario forma exitosa.</div>
+<?php
+}
+if ($_GET["res"] == "err")
+{
+?>
+<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>No se puede eliminar a usted mismo.</div>
 <?php
 }
 ?>
@@ -2208,6 +2220,12 @@ if ($_GET["res"] == "ok")
 <div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>The user type has been changed successfully.</div>
 <?php
 }
+if ($_GET["res"] == "err")
+{
+?>
+<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se debe tener al menos un usuario de tipo Administrador.</div>
+<?php
+}
 ?>
 <form action="usuarios.php" method="GET">
 <div class="input-group">
@@ -2282,7 +2300,13 @@ $subs = array("nombre" => "Delete users",
 if ($_GET["res"] == "ok")
 {
 ?>
-<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>The user has been deleted successfully.</div>
+<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Se ha cambiado el tipo de usuario de forma exitosa.</div>
+<?php
+}
+if ($_GET["res"] == "err")
+{
+?>
+<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>No se puede eliminar a usted mismo.</div>
 <?php
 }
 ?>
