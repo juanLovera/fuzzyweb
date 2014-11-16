@@ -113,6 +113,8 @@ include ("header.php");
                 {
                     echo "<strong>Nombre</strong><br/>";
                     echo "<input type=\"text\" class=\"form-control\" name=\"nombrebloque\" style=\"width:815px; height: 20px;\" value=\"".$subsecs[$subs_select]['bloque'][$bloque_select]['nombre']."\" />";
+                    echo "<br/><strong>Idioma</strong><br/>";
+                    echo "<select class=\"form-control\" name=\"idioma\"><option value=\"ESP\">Español</option><option value=\"ENG\">Inglés</option></select>";
                     echo "<br/><strong>Contenido</strong><br/>";	
                     echo "<textarea class=\"input-block-level\" id=\"summernote\" name=\"content\" rows=\"18\" style=\"margin-top:10px;\">";
 
