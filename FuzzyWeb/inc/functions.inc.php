@@ -35,7 +35,7 @@ function get_subsecciones($seccion, $seccion2 = NULL)
     }
     if ($seccion2 != NULL)
     {
-        $cursor = $coleccion->find(array("seccion" => $seccion2));
+        $cursor = $coleccion->find(array("seccion" => $seccion2, "idioma" => $idioma));
         foreach ($cursor as $doc)
         {
             $subs[$i] = $doc;
