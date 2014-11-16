@@ -59,9 +59,8 @@ $subsecsw = get_subsecciones("Pruebas en línea");
       ?>
      </div>
 </div>
-<div id="barra_gris" style="background-color:#f2f2f2; height:272px; width:100%">
+<div id="barra_gris" style="background-color:#f2f2f2; height:200px; width:100%">
 	<div id="marco_centrado3" style="margin-left:auto; margin-right:auto; width:1200px; position:relative;">
-            <!--<div style="position: absolute; font-size: 21px; color: #525252; top: 160px; left: 0; width:100%; text-align:center;">Universidad Simón Bolívar<br/><strong>Venezuela</strong></div>-->
   </div>
 </div>
 <?php
