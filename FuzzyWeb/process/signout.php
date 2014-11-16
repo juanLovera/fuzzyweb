@@ -3,8 +3,8 @@
  * signout.php
  * Destruye sesion.
  */
+session_start();
 include_once("../inc/includes.inc.php");
-$idioma = $_SESSION['idioma'];
 session_destroy();
 header("Location: ../");
 ?>

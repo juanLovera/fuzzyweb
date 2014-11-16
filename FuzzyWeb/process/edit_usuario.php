@@ -32,14 +32,25 @@ if ($e == "1")
         $newdata = array('$set' => array("tipo" => $usertype));
         $cursor = $coleccion->update($filtro, 
                                  $newdata);
-        header("Location: ../usuarios.php?sec=0&res=ok");
+        if (($_SESSION['id'] == new MongoId($user)) && ($p ==2 || $p == 1)){
+            header("Location: ../process/signout.php");
+        } else {
+            header("Location: ../usuarios.php?sec=0&res=ok");
+            exit;
+        }
+    }  else {
+        header("Location: ../usuarios.php?sec=0&res=err");
+        exit;
     }
 
 } elseif ($e == "2")
-{
-   $cursor = $coleccion->remove($filtro, 
+{  if (new MongoId($user) != $_SESSION['id']){ 
+        $cursor = $coleccion->remove($filtro, 
                                   array("justOne" => true));
-   header("Location: ../usuarios.php?sec=1&res=ok");
+        header("Location: ../usuarios.php?sec=1&res=ok");
+    } else {
+        header("Location: ../usuarios.php?sec=1&res=err");
+    }
 
 } 
 ?>
