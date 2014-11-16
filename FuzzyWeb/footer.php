@@ -1,7 +1,12 @@
 <div id="footer" style="margin-left:auto; margin-right:auto; width:1200px; margin-top:8px; margin-bottom:14px; color: #525252; text-align:left; font-size:12px;">
 <img src="img/logouni.png" alt="USB" width="70" height="48">
-<div id="minifooter" style="text-align:right; font-size:12px; margin-top:-30px">
-Información legal - Información de contacto
+<div id="minifooter" style="margin-left:80px; font-size:12px; margin-top:-30px">
+<div id="minifooter1" style="text-align:left; float: left">
+    Universidad Simón Bolívar - Venezuela
+   </div>
+<div id="minifooter2" style="text-align:right; float: right">
+    Información legal - Información de contacto    
+</div>
 </div>
 </div>
 
