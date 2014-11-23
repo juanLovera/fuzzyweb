@@ -175,19 +175,32 @@
         //////////////////////////////////////////////////////////////
         
         // Split &&
-        $Terminal = new Terminal();
-        $output = '';
+$Terminal = new Terminal();
+$primera = false;
+$output = '';
+	if (!isset($_SESSION['seid']))
+{
+$_SESSION['seid'] = (string)time();
+          $Terminal->command = "java -jar /home/fuzzy-client-master/FuzzyDB/dist/FuzzyDB.jar 'CREAR123' 's".$_SESSION['seid']."'";
+          $Terminal->Process();
+           $output1 = "Bienvenido a la prueba en consola de fuzzydoDB. Consulta nuestro API para conocer la sintaxis.";
+	   $output1 .= "\nIntenta crear un dominio difuso escribiendo: \nCREATE FUZZY DOMAIN nombre AS POSSIBILITY DISTRIBUTION ON INTEGER\n";
+	  $primera = true;
+}
+//        $output = '';
         $command = explode("&&", $command);
 
         foreach($command as $c){
-            $Terminal->command = "java -jar /home/juan/Documentos/Taller/fuzzy-client-master/FuzzyDB/dist/FuzzyDB.jar '".$c."'";
+            $Terminal->command = "java -jar /home/fuzzy-client-master/FuzzyDB/dist/FuzzyDB.jar '".$c."' 's".$_SESSION['seid']."'";
             $output .= $Terminal->Process();
         }
     
     }
 
-    
-    echo(htmlentities($output));
+    if ($primera)
+	echo $output1;
+    else
+   	echo(htmlentities($output));
 
 
 

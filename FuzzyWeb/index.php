@@ -13,8 +13,7 @@ else
     $imglang = "/eng";
 }
 include ("header".$includeslang.".php");
-$subsecs = get_subsecciones("Descarga");
-$subsecsw = get_subsecciones("Pruebas en línea");
+
 ?>
 <div id="barra_azul" style="background-image:url(img/barradifuminada.jpg); height:343px; width:100%;">
 	<div id="marco_centrado2" style="margin-left:auto; margin-right:auto; width:1200px; position:relative;">
@@ -24,6 +23,9 @@ $subsecsw = get_subsecciones("Pruebas en línea");
       <?php
       if ($_SESSION['idioma'] != "ENG")
       {
+	$subsecs = get_subsecciones("Descarga");
+        $subsecsw = get_subsecciones("Pruebas en línea");
+
       ?>
       <div id="caja_titulo1" style="position: absolute; left: 925px; width: 250px; text-align: right; top: 102px; z-index: 3; color: #FFF; font-size: 14px;">Última <strong>Versión</strong></div>
         <div id="caja_texto1" style="position: absolute; left: 950px; width: 235px; text-align: left; top: 133px; z-index: 3; color: #000; font-size: 13px;">
@@ -40,19 +42,22 @@ $subsecsw = get_subsecciones("Pruebas en línea");
         <div id="box_selectors" style="position: absolute; left: 1140px; top: 279px;"><a href="javascript:void(0)" onclick="cambiarCaja('1');"><img id="selector1" src="img/box_selector_c.png" width="12" height="12" alt="Seleccionado" style="border:0" /></a><a href="javascript:void(0)" onclick="cambiarCaja('2');"><img id="selector2"src="img/box_selector.png" width="12" height="12" alt="Seleccionar" style="margin-left:10px; border:0" /></a><a href="javascript:void(0)" onclick="cambiarCaja('3');"><img id="selector3" src="img/box_selector.png" width="12" height="12" alt="Seleccionar" style="margin-left:10px; border:0" /></a></div>
       <?php
       }else{
+	$subsecs = get_subsecciones("Descarga", NULL, true);
+        $subsecsw = get_subsecciones("Pruebas en línea", NULL, true);
+
       ?>
         <div id="caja_titulo1" style="position: absolute; left: 925px; width: 250px; text-align: right; top: 102px; z-index: 3; color: #FFF; font-size: 14px;">Latest <strong>Version</strong></div>
         <div id="caja_texto1" style="position: absolute; left: 950px; width: 235px; text-align: left; top: 133px; z-index: 3; color: #000; font-size: 13px;">
-        <div id="caja_texto12" style="height: 110px"><strong><?php $numeroDescarga = count($subsecs[0]['bloque'][0]['descarga'])-1; echo $subsecs[0]['bloque'][0]['descarga'][$numeroDescarga]['nombre'] ?></strong> - <?php echo $subsecs[0]['bloque'][0]['descarga'][$numeroDescarga]['fecha']?><br/><?php echo $subsecs[0]['bloque'][0]['descarga'][$numeroDescarga]['descripcion']?><br/></div>
+        <div id="caja_texto12" style="height: 110px"><strong><?php $numeroDescarga = count($subsecs[-1][0]['bloque'][0]['descarga'])-1; echo $subsecs[-1][0]['bloque'][0]['descarga'][$numeroDescarga]['nombre'] ?></strong> - <?php echo $subsecs[-1][0]['bloque'][0]['descarga'][$numeroDescarga]['fecha']?><br/><?php echo $subsecs[-1][0]['bloque'][0]['descarga'][$numeroDescarga]['descripcion']?><br/></div>
         <div id="caja_texto13"><span style=" margin-left:119px;"><a href="descarga.php" style="color:#1B1B1B;">Go to Downloads ></a></span></div>
         </div>
         <div id="caja_titulo2" style="position: absolute; left: 925px; width: 250px; text-align: right; top: 102px; z-index: 3; color: #FFF; font-size: 14px; display:none;">Latest <strong>Projects</strong></div>
         <div id="caja_texto2" style="position: absolute; left: 950px; width: 235px; text-align: left; top: 133px; z-index: 3; color: #000; font-size: 13px; display:none">
-        <div id="caja_texto22" style="height: 110px"><strong><?php $numeroWebapp = count($subsecsw[2]['bloque'][0]['webapp'])-1; echo $subsecsw[2]['bloque'][0]['webapp'][$numeroWebapp]['nombre'] ?></strong> - <?php echo $subsecsw[2]['bloque'][0]['webapp'][$numeroWebapp]['fecha']?><br/><?php echo $subsecsw[2]['bloque'][0]['webapp'][$numeroWebapp]['descripcion']?><br/></div>
+        <div id="caja_texto22" style="height: 110px"><strong><?php $numeroWebapp = count($subsecsw[-1][2]['bloque'][0]['webapp'])-1; echo $subsecsw[-1][2]['bloque'][0]['webapp'][$numeroWebapp]['nombre'] ?></strong> - <?php echo $subsecsw[-1][2]['bloque'][0]['webapp'][$numeroWebapp]['fecha']?><br/><?php echo $subsecsw[-1][2]['bloque'][0]['webapp'][$numeroWebapp]['descripcion']?><br/></div>
         <div id="caja_texto23"><span style=" margin-left:100px;"><a href="pruebas.php?sec=2" style="color:#1B1B1B;">Go to Online Testing ></a></span></div>
         </div>
         <div id="caja_titulo3" style="position: absolute; left: 925px; width: 250px; text-align: right; top: 102px; z-index: 3; color: #FFF; font-size: 14px; display:none;"><strong>Contact Us</strong></div>
-        <div id="caja_texto3" style="position: absolute; left: 950px; width: 235px; text-align: left; top: 133px; z-index: 3; color: #000; font-size: 13px; display:none;"><strong>fuzzydoDB is a comunity</strong><br/>Do you have any questions about the project or its members?<br/>Do you want to cotribute and be part of our team?<br/><br/><span style=" margin-left:165px;"><a href="comunidad_p.php?sec=2" style="color:#1B1B1B;">Click here ></a></span></div>
+        <div id="caja_texto3" style="position: absolute; left: 950px; width: 235px; text-align: left; top: 133px; z-index: 3; color: #000; font-size: 13px; display:none;"><strong>fuzzydoDB is a comunity</strong><br/>Do you have any questions about the project or its members?<br/>Do you want to contribute and be part of our team?<br/><br/><span style=" margin-left:165px;"><a href="comunidad_p.php?sec=2" style="color:#1B1B1B;">Click here ></a></span></div>
         <div id="box_selectors" style="position: absolute; left: 1140px; top: 279px;"><a href="javascript:void(0)" onclick="cambiarCaja('1');"><img id="selector1" src="img/box_selector_c.png" width="12" height="12" alt="Seleccionado" style="border:0" /></a><a href="javascript:void(0)" onclick="cambiarCaja('2');"><img id="selector2"src="img/box_selector.png" width="12" height="12" alt="Seleccionar" style="margin-left:10px; border:0" /></a><a href="javascript:void(0)" onclick="cambiarCaja('3');"><img id="selector3" src="img/box_selector.png" width="12" height="12" alt="Seleccionar" style="margin-left:10px; border:0" /></a></div>
       <?php
       }

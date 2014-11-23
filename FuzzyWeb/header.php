@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>fuzzydoDB</title>
+<title>fuzzydoDB <?php if (isset($seccion)) echo " - ".$seccion; ?></title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/png" />
 <link href='css/font.css' rel='stylesheet' type='text/css'>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
 <link href='css/main.css' rel='stylesheet' type='text/css'>
@@ -73,13 +74,13 @@ for($i=0; $i< count($localjs); $i++)
         ?>
         <div id="logo" style="background-image:url(img/logo.png); width:231px; height:51px; position:absolute; top: 45px;"></div>
         <div style="position: absolute; left: 1080px; top: 10px; font-size: 12px;"><strong>Español</strong> - <a href="process/idioma.php?lang=ENG&linkback=<?php echo $link; ?>">English</a> <span style="margin-left: 5px;" class="glyphicon glyphicon-globe"></span></div>
-        <div class="input-group" style="position:absolute; left:1010px; top:35px; width:160px;">
-        <input id="barra_busqueda" type="text" class="form-control" placeholder="Buscar" style="height: 21px; width: 120px;" />
+        <form action="#" method="GET">
+	<div class="input-group" style="position:absolute; left:1010px; top:35px; width:160px;">
+        <input id="searchbox" type="text" class="form-control" id="q" name="q" placeholder="Buscar" style="height: 21px; width: 120px;" />
         <span class="input-group-btn">
-          <button class="btn btn-custom" type="button" style="height: 21px"><span class="glyphicon glyphicon-search"></span></button>
-        </span>
-    </div>
-      
+          <button class="btn btn-custom" type="submit" style="height: 21px"><span class="glyphicon glyphicon-search"></span></button>
+      </div>
+      </form>
         <div id="menu" style="position: absolute; left: 263px; top: 84px;"><a href="index.php"><img src="img/menu_03.png" width="71" height="27" alt="Inicio" style="border:0" /></a><a href="acerca.php"><img src="img/menu_04.png" width="97" height="27" alt="Acerca" style="border:0" /></a><a href="descarga.php"><img src="img/menu_05.png" width="114" height="26" alt="Descarga" style="border:0" /></a><a href="api.php"><img src="img/menu_06.png" width="60" height="26" alt="API" style="border:0" /></a><a href="documentacion.php"><img src="img/menu_07.png" width="176" height="26" alt="Documentacion" style="border:0"/></a><a href="pruebas.php"><img src="img/menu_08.png" width="170" height="26" alt="Pruebas en linea" style="border:0"/></a><a href="desempeno.php"><img src="img/menu_09.png" width="127" height="26" alt="Desempeno" style="border:0"/></a><a href="comunidad.php"><img src="img/menu_10.png" width="121" height="26" alt="Contribuye" style="border:0" /></a></div>
   </div>
 </div>

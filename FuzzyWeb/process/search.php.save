@@ -1,0 +1,4 @@
+<?php
+
+$q = $_GET['q'];
+header("Location: https://www.google.com/cse?cx=000240132088512848809:tqutgqoshw4&cof=FORID&q=".$q);

@@ -48,6 +48,5 @@ elseif ($edit == 3)
 else
     die("Oh no. Algo no esta bien.");
 $coleccion->update($filter,$update);
-
 header("Location: ../".$link_back);
 ?>

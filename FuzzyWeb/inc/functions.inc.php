@@ -17,7 +17,7 @@ function encriptar_pass($pass)
     return md5("%&/(9".sha1($pass));
 }
 
-function get_subsecciones($seccion, $seccion2 = NULL)
+function get_subsecciones($seccion, $seccion2 = NULL, $otro_idioma = false)
 {
     $db = conectar_db();
     $coleccion = $db->subseccion;
@@ -32,6 +32,17 @@ function get_subsecciones($seccion, $seccion2 = NULL)
     {
         $subs[$i] = $doc;
         $i++;
+    }
+    if ($otro_idioma)
+    {
+    	$cursor = $coleccion->find(array("seccion" => $seccion, "idioma" => "ESP"));
+    	$j = 0;
+    	$cursor->sort(array('_id' => 1));
+    	foreach ($cursor as $doc)
+    	{
+        	$subs[-1][$j] = $doc;
+        	$j++;
+    	}
     }
     if ($seccion2 != NULL)
     {
@@ -50,7 +61,9 @@ function get_subsecciones($seccion, $seccion2 = NULL)
  * no lo es, no deja cargar la pagina.
  */
 function comprobar_sesion($acceso = "public", $link = "index.php", $acceso2 = "public") // $acceso puede ser: public, not_public, U_Normal, ...
-{ 
+{
+    if ($_GET['AJAX'] == "active")
+	$link = "errores/sesion.php"; 
     if ($_SESSION["ss_key"] != $G_SKEY)
         $ini = true;
     else

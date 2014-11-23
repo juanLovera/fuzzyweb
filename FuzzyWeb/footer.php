@@ -5,11 +5,30 @@
     Universidad Simón Bolívar - Venezuela
    </div>
 <div id="minifooter2" style="text-align:right; float: right">
-    Información legal - Información de contacto    
+   <strong>fuzzydoDB</strong> <?php echo date("Y"); ?>    
 </div>
 </div>
 </div>
-
+<?php
+if (isset($_GET['q']))
+{
+?>
+<script>
+(function() {
+  var cx = '000240132088512848809:tqutgqoshw4';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+      '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:searchresults-only></gcse:searchresults-only>
+<?php
+}
+?>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
       <div class="modal-content" style="display: table" >

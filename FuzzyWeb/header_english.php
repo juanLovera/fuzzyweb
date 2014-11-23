@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>fuzzydoDB</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/png" />
 <link href='css/font.css' rel='stylesheet' type='text/css'>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
 <link href='css/main.css' rel='stylesheet' type='text/css'>

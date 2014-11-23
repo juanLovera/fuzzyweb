@@ -35,8 +35,42 @@ if ($e == "1")
         if (($_SESSION['id'] == new MongoId($user)) && ($p ==2 || $p == 1)){
             header("Location: ../process/signout.php");
         } else {
-            header("Location: ../usuarios.php?sec=0&res=ok");
-            exit;
+		if ($usertype == $tipoUsu)
+			header("Location: ../usuarios.php?sec=0");
+		else
+		{
+			if ($usertype == "U_Normal")
+			{
+				$tipo1 = "Participante";
+			}
+			elseif ($usertype == "U_Desarrollador")
+			{
+				$tipo1 = "Desarrollador";
+			}
+			else
+			{
+				$tipo1 = "Administrador";
+			}
+
+			if ($tipoUsu == "U_Normal")
+                	{
+                        	$tipo2 = "Participante";
+                	}
+                	elseif ($tipoUsu == "U_Desarrollador")
+                	{ 
+                        	$tipo2 = "Desarrollador";
+                	}
+                	else
+                	{ 
+                        	$tipo2 = "Administrador";
+                	}
+			$to = $cursor3['correo'];
+
+			if (!mail($to,"fuzzydodb: su tipo de usuario ha cambiado.","Un administrador del sistema fuzzydodb ha cambiado su tipo de usuario de " . $tipo2 . " a " . $tipo1))
+				die("Su correo no pudo ser enviado. Intente de nuevo.");
+            		header("Location: ../usuarios.php?sec=0&res=ok");
+            		exit;
+		}
         }
     }  else {
         header("Location: ../usuarios.php?sec=0&res=err");
